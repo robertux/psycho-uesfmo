@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Font Name="Tahoma" Size="8.25" />
+  <Class Name="FuncionalidadClassLib.Aspirante">
+    <Position X="2" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Aspirante.vb</FileName>
+      <HashCode>EAAIhBAAAQAYCCAFgPAAgAsJAM4AAAAQUABAAkAACIg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FuncionalidadClassLib.manejadorAspirante">
+    <Position X="0.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>manejadorAspirante.vb</FileName>
+      <HashCode>AACAAAAAAAAQAAAAASAAAQAAAAAEACAAAABAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FuncionalidadClassLib.Administrador">
+    <Position X="3.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Administrador.vb</FileName>
+      <HashCode>AAAAAAAAAQQQAAAAAAAAgAgAAAAAAAAAAAAAAAIAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FuncionalidadClassLib.ManejadorAdmin">
+    <Position X="5.25" Y="2.25" Width="2.25" />
+    <TypeIdentifier>
+      <FileName>ManejadorAdmin.vb</FileName>
+      <HashCode>ABAAAAAgAgAIAAAUAIAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FuncionalidadClassLib.Prueba">
+    <Position X="8.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Prueba.vb</FileName>
+      <HashCode>AAAAACAAAAgAAAAAAAAAAAACAAAABAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FuncionalidadClassLib.Grupo">
+    <Position X="12" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Grupo.vb</FileName>
+      <HashCode>AAAAAAAAIAgAAAEAAIAAAAADBAAAAAAQQAAAAgAAAAI=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FuncionalidadClassLib.ManejadorGrupo">
+    <Position X="13.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>ManejadorGrupo.vb</FileName>
+      <HashCode>AAAAAAAAAAgAAEAAAAEAAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FuncionalidadClassLib.Estadisticas">
+    <Position X="13.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Estadisticas.vb</FileName>
+      <HashCode>CAABAAAAAAAAAAAAAIAAAAAAEAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FuncionalidadClassLib.Resultados">
+    <Position X="9.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Resultados.vb</FileName>
+      <HashCode>AAAAACAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAgAgAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FuncionalidadClassLib.Pregunta">
+    <Position X="10.5" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Pregunta.vb</FileName>
+      <HashCode>AAAAYAAAAAAAgABAAAAAAAAEAAAAAAAAAAAAAAABAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FuncionalidadClassLib.Respuesta">
+    <Position X="13" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Respuesta.vb</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAQBAAAAAEAAAAAACAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FuncionalidadClassLib.Evaluador">
+    <Position X="8.5" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Evaluador.vb</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FuncionalidadClassLib.FilaDatos">
+    <Position X="6.75" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>FilaDatos.vb</FileName>
+      <HashCode>AkAAQAAAEAAAAAABAAAAAAAAKAAAQAAAMAAAAAAAAAE=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FuncionalidadClassLib.PreguntasCeps">
+    <Position X="8.5" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>PreguntasCeps.vb</FileName>
+      <HashCode>AQAAAAAQAABQADgAAAAAAAAAAAAAAAAAAAAAgASgAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FuncionalidadClassLib.PreguntasRaven">
+    <Position X="10.5" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>PreguntasRaven.vb</FileName>
+      <HashCode>AQAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FuncionalidadClassLib.PruebaCeps">
+    <Position X="6.75" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>PruebaCeps.vb</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAEAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FuncionalidadClassLib.ResultadoCeps">
+    <Position X="8.5" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>ResultadoCeps.vb</FileName>
+      <HashCode>AApAAAAAAAAAAEBAACEAAAAAIAAgQAAAAAAgAAAAACQ=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FuncionalidadClassLib.ResultadoRaven">
+    <Position X="10.5" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>ResultadoRaven.vb</FileName>
+      <HashCode>AAgAAAAAAAAAAAAAACAAAAAQAAAAAAAAAAAIAARAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FuncionalidadClassLib.PruebaRaven">
+    <Position X="6.5" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>PruebaRaven.vb</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAEAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+</ClassDiagram>

@@ -1,0 +1,11 @@
+<%@ Control Language="C#" AutoEventWireup="true" CodeFile="ListaAspirGrupo.ascx.cs" Inherits="Admin_Controles_ListaAspir" %>
+<%@ Register Namespace="MsdnMag.CuttingEdge.Controls" TagPrefix="x" Assembly="HotGridView" %>
+
+<x:GridView ID="grdAspirGrupo" runat="server" BackColor="#E1EFE2"
+    Font-Names="Verdana" Font-Size="Small" AllowPaging="False" AutoGenerateColumns="False" ForeColor="Black" Width="560px" AutoGenerateCheckBoxColumn="true">
+    <HeaderStyle BackColor="#A7BE85" />
+    <AlternatingRowStyle BackColor="#D3E8D2" />
+    <PagerSettings Mode="NumericFirstLast" PageButtonCount="5" />
+    <SelectedRowStyle BackColor="#A5D3DD" Font-Bold="True" ForeColor="Black" />
+</x:GridView>
+&nbsp;

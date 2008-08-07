@@ -1,0 +1,97 @@
+using System;
+using System.Data;
+using System.Configuration;
+using System.Collections.Generic;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+
+public partial class Admin_Controles_ListaAspir : System.Web.UI.UserControl
+{
+    private string _codGrupo;
+    private AccesoDatos.AccesoDatos datos;
+
+    public string CodGrupo
+    {
+        get { return this._codGrupo; }
+        set { this._codGrupo = value; }
+    }
+
+    public string Selected
+    {
+        get 
+        {
+            try
+            {
+                return this.grdAspirGrupo.Rows[this.grdAspirGrupo.GetSelectedIndices()[0]].Cells[1].Text;
+            }
+            catch (Exception ex)
+            {
+                return "-1";
+            }
+        }
+    }
+
+    public List<string> MultiSelected
+    {
+        get
+        {
+            try
+            {
+                List<string> lista = new List<string>();
+                foreach (int i in this.grdAspirGrupo.GetSelectedIndices())
+                    lista.Add(this.grdAspirGrupo.Rows[i].Cells[1].Text);
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+    }
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        this.datos = ((AccesoDatos.AccesoDatos)Session["datos"]);
+            this.RellenarGrid();
+        
+    }
+
+    public void RellenarGrid()
+    {
+        this.grdAspirGrupo.Columns.Clear();
+        DataView dv = this.datos.ds.Tables["aspirantes"].DefaultView;
+        dv.RowFilter = "codgrupo='GrpTemp'";
+        this.grdAspirGrupo.DataSource = dv;
+        BoundField bfCodigo = new BoundField();
+        BoundField bfNombres = new BoundField();
+        BoundField bfApellidos = new BoundField();
+        BoundField bfEstado = new BoundField();
+        BoundField bfCarrera = new BoundField();
+        //CommandField cfSel = new CommandField();
+        bfCodigo.DataField = "codigo";
+        bfCodigo.HeaderText = "codigo";
+        bfNombres.DataField = "nombres";
+        bfNombres.HeaderText = "nombres";
+        bfApellidos.DataField = "apellidos";
+        bfApellidos.HeaderText = "apellidos";
+        bfEstado.DataField = "estado";
+        bfEstado.HeaderText = "estado";
+        bfCarrera.DataField = "carrera";
+        bfCarrera.HeaderText = "carrera";
+        //cfSel.ButtonType = ButtonType.Link;
+        //cfSel.SelectText = "Seleccionar";
+        //cfSel.ShowSelectButton = true;
+        //this.grdAspirGrupo.Columns.Add(cfSel);
+        this.grdAspirGrupo.Columns.Add(bfCodigo);
+        this.grdAspirGrupo.Columns.Add(bfApellidos);
+        this.grdAspirGrupo.Columns.Add(bfNombres);
+        this.grdAspirGrupo.Columns.Add(bfCarrera);
+        this.grdAspirGrupo.Columns.Add(bfEstado);
+        this.grdAspirGrupo.DataBind();
+        //this.grdAspirGrupo.SelectedIndex = -1;
+    }
+}

@@ -1,0 +1,46 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="About.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>Psycho v1.2</title>
+</head>
+<body background="../Recursos/TramaFondo.JPG">
+    <form id="form1" runat="server">
+            <table border="0" cellpadding="0" cellspacing="0" width="750px" bgcolor="white" style="left: 0px; position: absolute; top: 0px">
+                <tr>
+                    <td colspan="3" bgcolor="#A7BE85" align="center" valign="top">
+                    <object type="application/x-shockwave-flash" width="750" height="130" data="../Recursos/MainBanner.swf">
+                                    <param name="movie" value="../Recursos/MainBanner.swf"/>
+                                </object>
+                    </td>
+                </tr>
+                <tr>
+                    <td bgcolor="#A7BE85">
+                    </td>
+                    <td bgcolor="#E1EFE2"><div align="right"><img src="../Recursos/LogoDesconocido.png" alt=""/></div></td>
+                    <td bgcolor="#A7BE85">
+                    </td>
+                </tr>
+                <tr>
+                    <td bgcolor="#A7BE85">
+                    </td>
+                    <td align="center" valign="top" bgcolor="#E1EFE2">
+                        <asp:ContentPlaceHolder ID="Contenido1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </td>
+                    <td bgcolor="#A7BE85">
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" colspan="3" bgcolor="#A7BE85" style="height: 55px">
+                    <font face="verdana">Sistema en Línea de Pruebas Psicológicas para Aspirantes a Profesorado</font><br />
+                    </td>
+                </tr>
+            </table>
+        <div>
+            &nbsp;</div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,32 @@
+ 
+<html>
+
+<head>
+<title>Calcula tiempo de carga de la página - Códigos asp, programacion asp, descargas asp, rutinas asp</title>
+</head>
+
+<body style="font-family: Arial; font-size: 9pt">
+
+
+<center><b><font size="3" face="Arial">Calcula tiempo de carga de la página</font></b>
+
+<p align="left">Inserta la siguiente instrucción al principio de la página.<br>
+
+&lt;%start_time = time%&gt; <br>
+<br>
+<br>
+
+Y al final, escribe el código siguiente.
+<br>
+response.write &quot;&lt;b&gt;Tiempo de carga: &quot; &amp; formatdatetime(time-start_time,3) &amp; 
+&quot; segundo(s)&lt;/b&gt;&quot;
+</p>
+<p align="left">Para obtener el número de segundos que tarda en cargarse la página.<br>
+<br>
+</p>
+
+
+<b>Tiempo de carga: 00:00:02 segundo(s)</b>
+
+</body>
+</html>
