@@ -1,0 +1,30 @@
+Que es lo que falta(En orden de prioridad):
+
+-A la hora de agregar un nuevo grupo, verificar que el centro de computo no este ocupado a la fecha y hora seleccionadas
+-Verificar problemas con el acceso a las paginas (login/logout)(clue: outputcache, clue: location.replace)
+--------Hasta aqui tiene que estar para la presentacion--------------
+-Si el WebSite se cierra inesperadamente antes que el Aspirante termine la prueba(ej. si se va la luz), guardar el progreso de las preguntas contestadas y cuando se vuelva a loguear, redireccionar automaticamente a la prueba en la pregunta que se quedo
+-Permitir a los administradores agregar un comentario al diagnostico del aspirante
+-(yo)Hacer a los grids multiseleccionables
+-Hacer los reportes
+-Hacer las estadisticas
+-Hacer toda la funcionalidad de Consultar/Agregar/Modificar/Eliminar administradores(ni modo, appWeb)
+-Hacer toda la funcionalidad de Consultar/Agregar/Modificar/Eliminar centros de computo
+-(otro)Cambiar la pagina principal para incluir mayor informacion sobre el proyecto, las pruebas psicologicas y estadisticas
+
+Psycho:
+    -Validaciones en el ingreso de datos
+        -Controles texto (hacerlos required)
+        -Calendarios (fechas validas)
+    -Manejo de reportes
+        -Formatos segun Lic. Arana
+        -Resultados por aspirante
+        -Reultados por grupos de aspirantes(por carreras)
+    -Estadisticas
+        -%de aptos / no aptos por carrera
+        -%de aptos / no aptos por sexo
+        -%de aptos / no aptos por inst. de procedencia
+    -Seguridad en el acceso a las paginas
+        -Evitar que puedan ingresar a las paginas privadas digitando su URL en la barra de direcciones (Ej. pasar directamente a InstruccionesFin[CEPS,RAVEN].aspx sin haber ingresado el correcto codigo de grupo
+        -Evitar que el navegador recuerde las contraseñas (evitar que muestre el mensaje de pregunta o aunque lo muestre y lo guarde, limpiar el buffer o donde guarde esa informacion)
+        

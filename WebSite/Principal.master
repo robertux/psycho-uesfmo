@@ -1,0 +1,49 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Principal.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>Psycho v1.2</title>
+</head>
+<body background="Recursos/TramaFondo.JPG">
+    <form id="form1" runat="server">
+        <div>
+            <table border="0" cellpadding="0" cellspacing="0" width="750px" bgcolor="white" style="left: 87px; position: absolute; top: 72px">
+                <tr>
+                    <td colspan="3" bgcolor="#A7BE85" style="height: 100px" align="center" valign="top">
+                    <object type="application/x-shockwave-flash" width="750" height="130" data="Recursos/MainBanner.swf">
+                                    <param name="movie" value="Recursos/MainBanner.swf"/>
+                                </object>
+                    </td>
+                </tr>
+                <tr>
+                    <td bgcolor="#A7BE85" style="width: 8px">
+                    </td>
+                    <td bgcolor="#E1EFE2"><div align="right"><img src="Recursos/LogoDesconocido.png" alt=""/></div></td>
+                    <td bgcolor="#A7BE85" width="8px">
+                    </td>
+                </tr>
+                <tr>
+                    <td bgcolor="#A7BE85" width="8px" style="height: 225px">
+                    </td>
+                    <td align="center" valign="top" style="width: 731px; height: 225px;" bgcolor="#E1EFE2">
+                        <asp:ContentPlaceHolder ID="Contenido1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </td>
+                    <td bgcolor="#A7BE85" width="8px" style="height: 225px">
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" colspan="3" bgcolor="#A7BE85" style="height: 55px">
+                    <font face="verdana">Sistema en Línea de Pruebas Psicológicas para Aspirantes a Profesorado<br />
+                        <a href="" onclick="window.open('About/About.aspx',null,'left=20, top=20, height=600, width= 800, status=no, resizable= no, scrollbars= yes, toolbar= no,location= no, dependent= yes, menubar= no');" >Desarrolladores...</a></font>
+                        </td>
+                </tr>
+            </table>
+            <br/>
+            <br/>
+        </div>
+    </form>
+</body>
+</html>

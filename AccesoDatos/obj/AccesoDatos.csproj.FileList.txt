@@ -1,0 +1,10 @@
+bin\Debug\AccesoDatos.dll
+bin\Debug\AccesoDatos.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\AccesoDatos.dll
+obj\Debug\AccesoDatos.pdb
+bin\Debug\AccesoDatos.dll.config
+obj\Release\ResolveAssemblyReference.cache
+bin\Debug\FuncionalidadClassLib.dll
+bin\Debug\FuncionalidadClassLib.xml
+bin\Debug\FuncionalidadClassLib.pdb

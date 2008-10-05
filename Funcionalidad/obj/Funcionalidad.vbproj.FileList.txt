@@ -1,0 +1,15 @@
+bin\Debug\FuncionalidadClassLib.pdb
+bin\Debug\FuncionalidadClassLib.xml
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\FuncionalidadClassLib.Resources.resources
+obj\Debug\Funcionalidad.vbproj.GenerateResource.Cache
+obj\Debug\FuncionalidadClassLib.dll
+obj\Debug\FuncionalidadClassLib.xml
+obj\Debug\FuncionalidadClassLib.pdb
+bin\Debug\CrypterClassLib.dll
+bin\Debug\MySql.Data.dll
+bin\Debug\AccesoDatos.dll
+bin\Debug\XmlClassLib.dll
+bin\Debug\AccesoDatos.pdb
+bin\Debug\FuncionalidadClassLib.dll
+obj\Debug\Funcionalidad.vbproj.ResolveComReference.cache
