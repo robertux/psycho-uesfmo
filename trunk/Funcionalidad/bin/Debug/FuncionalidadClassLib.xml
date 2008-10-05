@@ -1,0 +1,292 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+FuncionalidadClassLib
+</name>
+</assembly>
+<members>
+<member name="T:FuncionalidadClassLib.manejadorAspirante">
+	<summary>
+ Representa un conjunto de metodos que se encargan de las operaciones relacionadas con los aspirantes
+ </summary>
+	<remarks></remarks>
+</member><member name="P:FuncionalidadClassLib.PreguntasCeps.Preguntas">
+	<summary>
+ Devuelve o establece el conjunto de preguntas CEPS
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:FuncionalidadClassLib.PreguntasCeps">
+	<summary>
+ Representa el conjunto de preguntas correspondientes a la prueba CEPS
+ </summary>
+	<remarks></remarks>
+</member><member name="P:FuncionalidadClassLib.PruebaRaven.Respuestas">
+	<summary>
+ Devuelve o establece la lista de respuestas de la prueba
+ </summary>
+	<value>Lista de respuestas</value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:FuncionalidadClassLib.PruebaRaven">
+	<summary>
+ Prueba de inteligencia realizada a los aspirantes, contiene la lista de respuestas contestadas por el aspirante
+ </summary>
+	<remarks></remarks>
+</member><member name="P:FuncionalidadClassLib.Respuesta.NumPregunta">
+	<summary>
+ Devuelve o establece el numero de pregunta al que corresponde la respuesta
+ </summary>
+	<value>Un valor entero sin signo</value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:FuncionalidadClassLib.Respuesta.RespuestaAsp">
+	<summary>
+ Devuelve o establece la respuesta que el aspirante contesto
+ </summary>
+	<value>Un valor entero sin signo</value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:FuncionalidadClassLib.Respuesta">
+	<summary>
+ Representa a una respuesta contestada por un aspirante en una prueba
+ </summary>
+	<remarks></remarks>
+</member><member name="M:FuncionalidadClassLib.Pager.GetNumRows(System.Data.DataTable)">
+	<summary>
+ Devuelve el total de filas que tiene una tabla
+ </summary>
+	<param name="tabla">La tabla a calcular</param>
+	<returns>Devuelve el total de filas de la tabla</returns>
+	<remarks></remarks>
+</member><member name="M:FuncionalidadClassLib.Pager.GetNumPages(System.Data.DataTable,System.Int32)">
+	<summary>
+ Devuelve el total de paginas en las que se puede dividir la tabla
+ </summary>
+	<param name="tabla">La tabla a calcular</param>
+	<param name="pgSize">El tamanio de la pagina(numero de filas)</param>
+	<returns>Devuelve el total de paginas</returns>
+	<remarks></remarks>
+</member><member name="M:FuncionalidadClassLib.Pager.GetRowsPerPage(System.Data.DataTable,System.Int32,System.Int32)">
+	<summary>
+ Devuelve una tabla que contiene unicamente las filas correspondientes a la pagina a mostrar
+ </summary>
+	<param name="tabla">La tabla a calcular</param>
+	<param name="indice">El indice de pagina a mostrar</param>
+	<param name="pgSize">El tamanio de la pagina</param>
+	<returns>La tabla paginada</returns>
+	<remarks></remarks>
+</member><member name="P:FuncionalidadClassLib.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:FuncionalidadClassLib.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:FuncionalidadClassLib.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="T:FuncionalidadClassLib.Evaluador">
+	<summary>
+ aplica todos los criteios de evaluacion de las pruebas
+ </summary>
+	<remarks></remarks>
+</member><member name="P:FuncionalidadClassLib.ResultadoRaven.Consistencia">
+	<summary>
+ Devuelve o establece la consistencia de las respuestas del aspirante. Puede ser adecuada o inadecuada
+ </summary>
+	<value>Los posibles valores en string</value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:FuncionalidadClassLib.ResultadoRaven.Percentil">
+	<summary>
+ Devuelve o establece el percentil en el cual se clasifican las respuetas del aspirante
+ </summary>
+	<value>Un valor entero sin signo</value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:FuncionalidadClassLib.ResultadoRaven.Diagnostico">
+	<summary>
+ Devuelve o establece un conjunto de caracteres que describen el rango del percentil. Puede ser S para superior, STM para superior al Termino medio, TM para termino medio, ITM para inferior al termino medio y D para deficiente
+ </summary>
+	<value>Un string con los caracteres del diagnostico</value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:FuncionalidadClassLib.ResultadoRaven">
+	<summary>
+ Representa los resultados de la prueba de inteligencia de un aspirante
+ </summary>
+	<remarks></remarks>
+</member><member name="P:FuncionalidadClassLib.Pregunta.Numero">
+	<summary>
+ Devuelve o establece el numero de pregunta
+ </summary>
+	<value>Un entero sin signo</value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:FuncionalidadClassLib.Pregunta.Valor">
+	<summary>
+ Devuelve o establece el valor, ya sea la ruta de una imagen o un texto que represente visualmente a la pregunta
+ </summary>
+	<value>Un string</value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:FuncionalidadClassLib.Pregunta.RespuestaCorrecta">
+	<summary>
+ Devuelve o establece la respuesta correcta de la pregunta
+ </summary>
+	<value>Un entero sin signo</value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:FuncionalidadClassLib.Pregunta">
+	<summary>
+ Clase generica que representa una pregunta realizada en una prueba. No se puede instanciar de ella solo heredar
+ </summary>
+	<remarks></remarks>
+</member><member name="P:FuncionalidadClassLib.Prueba.CodAspirante">
+	<summary>
+ Devuelve o establece el codigo del aspirante al cual esta asociado la prueba
+ </summary>
+	<value>Un string de 7 caracteres</value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:FuncionalidadClassLib.Prueba.FechaRealizacion">
+	<summary>
+ Devuelve o establece la fecha en que se realizara o se realizo la prueba
+ </summary>
+	<value>Una fecha menor a la fecha actual</value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:FuncionalidadClassLib.Prueba">
+	<summary>
+ Prueba generica realizada a los aspirantes. No se puede instanciar de ella solo heredar
+ </summary>
+	<remarks></remarks>
+</member><member name="M:FuncionalidadClassLib.TableFormatter.FormatAspirantes(System.Data.DataTable,System.Data.DataTable,System.Data.DataTable)">
+	<summary>
+ Formatea la tabla aspirantes para que pueda mostrar la informacion en un Grid de forma adecuada
+ </summary>
+	<param name="tblAspir">La tabla original de aspirantes</param>
+	<param name="tblFacultades">La tabla de facultades</param>
+	<param name="tblCarreras">La tabla de carreras</param>
+	<returns>Retorna una nueva tabla de aspirantes con las columnas apropiadas</returns>
+	<remarks></remarks>
+</member><member name="M:FuncionalidadClassLib.TableFormatter.FormatGrupos(System.Data.DataTable,System.Data.DataTable,System.Data.DataTable)">
+	<summary>
+ Formatea la tabla grupos para que pueda mostrar la informacion en un Grid de forma adecuada
+ </summary>
+	<param name="tblGrupos">La tabla original de grupos</param>
+	<param name="tblAspir">La tabla de aspirantes</param>
+	<param name="tblCCom">La tabla de centros de computo</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:FuncionalidadClassLib.PreguntasRaven.Preguntas">
+	<summary>
+ Devuelve o establece el conjunto de preguntas RAVEN
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:FuncionalidadClassLib.PreguntasRaven">
+	<summary>
+ Representa el conjunto de preguntas correspondientes a la prueba RAVEN
+ </summary>
+	<remarks></remarks>
+</member><member name="M:FuncionalidadClassLib.ManejadorGrupo.generarCodigo(FuncionalidadClassLib.Grupo,System.Data.DataTable)">
+	<summary>
+ Genera el codigo de un grupo basado en la fecha y hora de realizacion
+ </summary>
+	<param name="G">El grupo del cual se desea generar el codigo</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:FuncionalidadClassLib.ManejadorGrupo">
+	<summary>
+ Representa un conjunto de metodos que se encargan de las operaciones relacionadas con los grupos
+ </summary>
+	<remarks></remarks>
+</member><member name="P:FuncionalidadClassLib.PruebaCeps.Respuestas">
+	<summary>
+ Devuelve o establece la lista de respuestas de la prueba
+ </summary>
+	<value>Lista de respuestas</value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:FuncionalidadClassLib.PruebaCeps">
+	<summary>
+ Prueba de personalidad realizada a los aspirantes, contiene la lista de respuestas contestadas por el aspirante
+ </summary>
+	<remarks></remarks>
+</member><member name="P:FuncionalidadClassLib.ResultadoCeps.PControl">
+	<summary>
+ Devuelve o establece el percentil correspondiente al control emocional
+ </summary>
+	<value></value>
+	<returns>Valor entero sin signo</returns>
+	<remarks></remarks>
+</member><member name="P:FuncionalidadClassLib.ResultadoCeps.PExtrover">
+	<summary>
+ Devuelve o establece el percentil correspondiente a la extroversion
+ </summary>
+	<value>Valor entero sin signo</value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:FuncionalidadClassLib.ResultadoCeps.PParan">
+	<summary>
+ Devuelve o establece el percentil correspondiente al paranoidismo
+ </summary>
+	<value>Valor entero sin signo</value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:FuncionalidadClassLib.ResultadoCeps.PSin">
+	<summary>
+ Devuelve o establece el percentil correspondiente a la sinceridad
+ </summary>
+	<value>Un valor entero sin signo</value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:FuncionalidadClassLib.ResultadoCeps.PDecision">
+	<summary>
+ Devuelve o establece el percentil correspondiente a la capacidad de decision
+ </summary>
+	<value>Un valor entero sin signo</value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:FuncionalidadClassLib.ResultadoCeps.Diagnostico">
+	<summary>
+ Devuelve o establece el diagnostico del aspirante el cual puede tener un valor de adecuada o inadecuada
+ </summary>
+	<value>Un string donde va la descripcion</value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:FuncionalidadClassLib.ResultadoCeps">
+	<summary>
+ Representa los resultados de la prueba de personalidad de un aspirante
+ </summary>
+	<remarks></remarks>
+</member><member name="P:FuncionalidadClassLib.Resultados.CodAspirante">
+	<summary>
+ Devuelve o establece el codigo del aspirante al que pertenece
+ </summary>
+	<value>Un string de 7 caracteres</value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:FuncionalidadClassLib.Resultados.TiempoRealizacionPrueba">
+	<summary>
+ Devuelve o establece el tiempo en minutos que el aspirante se tardo en realizar la prueba
+ </summary>
+	<value>Un entero sin signo</value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:FuncionalidadClassLib.Resultados">
+	<summary>
+ Representa los resultados de un aspirante de manera generica. No se puede instanciar de ella. Hay que heredar
+ </summary>
+	<remarks></remarks>
+</member>
+</members>
+</doc>

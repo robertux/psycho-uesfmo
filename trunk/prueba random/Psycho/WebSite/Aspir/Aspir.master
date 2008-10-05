@@ -1,0 +1,35 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Aspir.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>Psycho v.0.2</title>
+</head>
+<body background="Recursos/TramaFondo.JPG">
+    <form id="form1" runat="server">
+        <div>
+            <table border="0" cellpadding="0" cellspacing="0" width="650px" bgcolor="white" style="left: 87px; position: absolute; top: 72px">
+                <tr>
+                    <td colspan="3" bgcolor="#669999" style="height: 100px" align="center" valign="top">
+                        <font face="tahoma" size="3" ><h2>Universidad de El Salvador</h2><h4>Facultad Multidisciplinaria de Occidente</h4><h5>Departamento de Ciencias y Humanidades</h5></font>
+                    </td>
+                </tr>
+                <tr>
+                    <td bgcolor="#669999" width="8px">
+                    </td>
+                    <td align="center" valign="top" style="width: 631px" bgcolor="#ffffff">
+                        <asp:ContentPlaceHolder ID="Contenido1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </td>
+                    <td bgcolor="#669999" width="8px">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" bgcolor="#669999" style="height: 55px"></td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</body>
+</html>

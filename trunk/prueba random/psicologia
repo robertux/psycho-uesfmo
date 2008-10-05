@@ -1,0 +1,242 @@
+-- MySQL Administrator dump 1.4
+--
+-- ------------------------------------------------------
+-- Server version	5.0.22-community-nt
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+
+
+--
+-- Create schema psicologia
+--
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ psicologia;
+USE psicologia;
+
+--
+-- Table structure for table `psicologia`.`administradores`
+--
+
+DROP TABLE IF EXISTS `administradores`;
+CREATE TABLE `administradores` (
+  `codigo` char(7) NOT NULL default '',
+  `nombres` varchar(80) NOT NULL default '',
+  `privilegio` varchar(45) NOT NULL default '',
+  `contrasenia` varchar(45) NOT NULL default '',
+  PRIMARY KEY  (`codigo`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `psicologia`.`administradores`
+--
+
+/*!40000 ALTER TABLE `administradores` DISABLE KEYS */;
+INSERT INTO `administradores` (`codigo`,`nombres`,`privilegio`,`contrasenia`) VALUES 
+ ('0000001','Roberto','El mero mero papa de todos(Interfaz)',''),
+ ('0000002','Jhoni','El encargado del acceso a datos',''),
+ ('0000003','Shiru','El encargado del acceso a datos',''),
+ ('0000004','Shiru','La encargada del acceso a datos',''),
+ ('0000005','Henoch','El encargado de la interfaz',''),
+ ('0000006','Any','La encargada de la interfaz',''),
+ ('0000007','Antony','El mero mero evaluador RAVEN',''),
+ ('0000008','Tavo','El mero mero evaluador CEPS',''),
+ ('0000090','Tavoneto','no se','');
+/*!40000 ALTER TABLE `administradores` ENABLE KEYS */;
+
+
+--
+-- Table structure for table `psicologia`.`aspirantes`
+--
+
+DROP TABLE IF EXISTS `aspirantes`;
+CREATE TABLE `aspirantes` (
+  `codigo` char(7) NOT NULL default '',
+  `nombres` varchar(50) NOT NULL default '',
+  `apellidos` varchar(50) NOT NULL default '',
+  `direccion` varchar(60) NOT NULL default '',
+  `telefono` char(9) NOT NULL default '',
+  `lugarestudio` varchar(80) NOT NULL default '',
+  `ciudad` varchar(50) NOT NULL default '',
+  `departamento` varchar(45) NOT NULL default '',
+  `anioaprobado` int(10) unsigned NOT NULL default '0',
+  `estado` varchar(45) NOT NULL default '',
+  `sexo` char(1) NOT NULL default '',
+  `carrera` varchar(80) NOT NULL default '',
+  `facultadcarrera` varchar(80) NOT NULL default '',
+  `fechanacimiento` datetime NOT NULL default '0000-00-00 00:00:00',
+  `codgrupo` char(7) default NULL,
+  `resultado` varchar(10) default NULL,
+  `codpruebac` char(7) default NULL,
+  `codpruebar` char(7) default NULL,
+  `codresceps` char(7) default NULL,
+  `codresraven` char(7) default NULL,
+  PRIMARY KEY  (`codigo`),
+  KEY `FK_codgrupo` (`codgrupo`),
+  KEY `FK_codpruebac` (`codpruebac`),
+  KEY `FK_codpruebar` (`codpruebar`),
+  KEY `FK_codresceps` (`codresceps`),
+  KEY `FK_codresraven` (`codresraven`),
+  CONSTRAINT `FK_codgrupo` FOREIGN KEY (`codgrupo`) REFERENCES `grupos` (`codgrupo`),
+  CONSTRAINT `FK_codpruebac` FOREIGN KEY (`codpruebac`) REFERENCES `pruebaceps` (`codprueba`),
+  CONSTRAINT `FK_codpruebar` FOREIGN KEY (`codpruebar`) REFERENCES `pruebaraven` (`codprueba`),
+  CONSTRAINT `FK_codresceps` FOREIGN KEY (`codresceps`) REFERENCES `resultadosceps` (`codresult`),
+  CONSTRAINT `FK_codresraven` FOREIGN KEY (`codresraven`) REFERENCES `resultadosraven` (`codresult`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `psicologia`.`aspirantes`
+--
+
+/*!40000 ALTER TABLE `aspirantes` DISABLE KEYS */;
+/*!40000 ALTER TABLE `aspirantes` ENABLE KEYS */;
+
+
+--
+-- Table structure for table `psicologia`.`grupos`
+--
+
+DROP TABLE IF EXISTS `grupos`;
+CREATE TABLE `grupos` (
+  `codgrupo` char(7) NOT NULL default '',
+  `fechahorarealizacion` datetime NOT NULL default '0000-00-00 00:00:00',
+  `tamanio` int(10) unsigned NOT NULL default '0',
+  `examinador` varchar(60) NOT NULL default '',
+  PRIMARY KEY  (`codgrupo`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `psicologia`.`grupos`
+--
+
+/*!40000 ALTER TABLE `grupos` DISABLE KEYS */;
+/*!40000 ALTER TABLE `grupos` ENABLE KEYS */;
+
+
+--
+-- Table structure for table `psicologia`.`pruebaceps`
+--
+
+DROP TABLE IF EXISTS `pruebaceps`;
+CREATE TABLE `pruebaceps` (
+  `codprueba` char(7) NOT NULL default '',
+  `codaspirante` char(7) NOT NULL default '',
+  `fecharealizacion` datetime NOT NULL default '0000-00-00 00:00:00',
+  PRIMARY KEY  (`codprueba`),
+  KEY `FK_pruebaceps` (`codaspirante`),
+  CONSTRAINT `FK_pruebaceps` FOREIGN KEY (`codaspirante`) REFERENCES `aspirantes` (`codigo`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `psicologia`.`pruebaceps`
+--
+
+/*!40000 ALTER TABLE `pruebaceps` DISABLE KEYS */;
+/*!40000 ALTER TABLE `pruebaceps` ENABLE KEYS */;
+
+
+--
+-- Table structure for table `psicologia`.`pruebaraven`
+--
+
+DROP TABLE IF EXISTS `pruebaraven`;
+CREATE TABLE `pruebaraven` (
+  `codprueba` char(7) NOT NULL default '',
+  `codaspirante` char(7) NOT NULL default '',
+  `fecharealizacion` datetime NOT NULL default '0000-00-00 00:00:00',
+  PRIMARY KEY  (`codprueba`),
+  KEY `FK_pruebaraven` (`codaspirante`),
+  CONSTRAINT `FK_pruebaraven` FOREIGN KEY (`codaspirante`) REFERENCES `aspirantes` (`codigo`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `psicologia`.`pruebaraven`
+--
+
+/*!40000 ALTER TABLE `pruebaraven` DISABLE KEYS */;
+/*!40000 ALTER TABLE `pruebaraven` ENABLE KEYS */;
+
+
+--
+-- Table structure for table `psicologia`.`respuestas`
+--
+
+DROP TABLE IF EXISTS `respuestas`;
+CREATE TABLE `respuestas` (
+  `codigo` char(7) NOT NULL,
+  `npregunta` int(10) NOT NULL,
+  `respuesta_asp` int(10) NOT NULL,
+  `codprueba` char(7) NOT NULL,
+  PRIMARY KEY  (`codigo`),
+  KEY `fk_codprueba2` (`codprueba`),
+  CONSTRAINT `fk_codprueba` FOREIGN KEY (`codprueba`) REFERENCES `pruebaceps` (`codprueba`),
+  CONSTRAINT `fk_codprueba2` FOREIGN KEY (`codprueba`) REFERENCES `pruebaraven` (`codprueba`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `psicologia`.`respuestas`
+--
+
+/*!40000 ALTER TABLE `respuestas` DISABLE KEYS */;
+/*!40000 ALTER TABLE `respuestas` ENABLE KEYS */;
+
+
+--
+-- Table structure for table `psicologia`.`resultadosceps`
+--
+
+DROP TABLE IF EXISTS `resultadosceps`;
+CREATE TABLE `resultadosceps` (
+  `codresult` char(7) NOT NULL default '',
+  `pcontrol` int(10) unsigned NOT NULL default '0',
+  `pextrover` int(10) unsigned NOT NULL default '0',
+  `pparanoi` int(10) unsigned NOT NULL default '0',
+  `psincer` int(10) unsigned NOT NULL default '0',
+  `pdecision` int(10) unsigned NOT NULL default '0',
+  `diagnostico` text NOT NULL,
+  `faltasin` tinyint(1) NOT NULL default '0',
+  PRIMARY KEY  (`codresult`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `psicologia`.`resultadosceps`
+--
+
+/*!40000 ALTER TABLE `resultadosceps` DISABLE KEYS */;
+/*!40000 ALTER TABLE `resultadosceps` ENABLE KEYS */;
+
+
+--
+-- Table structure for table `psicologia`.`resultadosraven`
+--
+
+DROP TABLE IF EXISTS `resultadosraven`;
+CREATE TABLE `resultadosraven` (
+  `codresult` char(7) NOT NULL default '',
+  `consistencia` varchar(15) NOT NULL default '',
+  `percentil` int(10) unsigned NOT NULL default '0',
+  `diagnostico` text NOT NULL,
+  PRIMARY KEY  (`codresult`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `psicologia`.`resultadosraven`
+--
+
+/*!40000 ALTER TABLE `resultadosraven` DISABLE KEYS */;
+/*!40000 ALTER TABLE `resultadosraven` ENABLE KEYS */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

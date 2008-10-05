@@ -1,0 +1,495 @@
+''' <summary>
+''' Representa el conjunto de preguntas correspondientes a la prueba CEPS
+''' </summary>
+''' <remarks></remarks>
+<Serializable()> _
+Public Class PreguntasCeps : Inherits Pregunta
+
+    Private _preguntas As List(Of Pregunta)
+    Public escc(32), esce(44), escp(42), escs(18) As Integer
+    Public aux(6), escalac(32), escalae(44), escalap(42), escalas(18) As Integer
+
+    Public Sub New()
+        Dim i As Integer
+        Me._preguntas = New List(Of Pregunta)
+
+        For i = 0 To 155
+            Dim pre As New Pregunta
+            pre.Numero = i + 1
+            Me._preguntas.Add(pre)
+        Next
+        Preguntas(0).Valor = "" '"¿Tiende a reducir sus amistades a un grupo escogido?"
+        Preguntas(1).Valor = "" '"¿Se encuentra a gusto entre mucha gente?"
+        Preguntas(2).Valor = "" '"¿Le gusta más actuar que pensar lo que hay que hacer?"
+        Preguntas(3).Valor = "" '"¿Cuando la gente se mete con usted suele tener respuesta inmediata?"
+        Preguntas(4).Valor = "" '"¿Fantasea a menudo con proyectos que no se realizan nunca?"
+        Preguntas(5).Valor = "" '"De pequeño, ¿era usted obediente?"
+        Preguntas(6).Valor = "" '"¿Es usted rápido y seguro en sus actos?"
+        Preguntas(7).Valor = "" '"¿Responde usted con dureza cuando alguien le ataca?"
+        Preguntas(8).Valor = "" '"¿Le molesta tener que hacer nuevas amistades?"
+        Preguntas(9).Valor = "" '"¿Deja a veces para mañana lo que podria hacer hoy?"
+        Preguntas(10).Valor = "" '"¿Toma su trabajo con naturalidad, esto es, sin preocuparse mas de lo necesario?"
+        Preguntas(11).Valor = "" '"¿Se disgusta con facilidad?"
+        Preguntas(12).Valor = "" '"¿Le gusta recordar momentos felices de su vida pasada?"
+        Preguntas(13).Valor = "" '"Cuando promete algo, ¿lo cumple siempre, aunque sea muy desfavorable para usted?"
+        Preguntas(14).Valor = "" '"¿Es un poco timido con las personas de otro sexo?"
+        Preguntas(15).Valor = "" '"¿Se deja de contemplaciones cuando sospecha que alguien le quiere hacer una mala jugada?"
+        Preguntas(16).Valor = "" '"¿Se enfurece alguna vez?"
+        Preguntas(17).Valor = "" '"¿Hay ocaciones en que se siente muy solo?"
+        Preguntas(18).Valor = "" '"¿Cree que las dificultades sólo detienen a los débiles?"
+        Preguntas(19).Valor = "" '"¿Le molesta mucho llegar tarde a una cita?"
+        Preguntas(20).Valor = "" '"¿Suelen ocurrirsele las respuestas cuando ya ha pasado la ocasión?"
+        Preguntas(21).Valor = "" '"¿Ha fanfarroneado alguna vez?"
+        Preguntas(22).Valor = "" '"¿Le irrita mucho que alguien no conteste a sus cartas?"
+        Preguntas(23).Valor = "" '"¿Tiende a ser escrupuloso en el cumplimiento de sus obligaciones?"
+        Preguntas(24).Valor = "" '"¿Lo suele pasar muy bien en fiestas y reuniones sociales?"
+        Preguntas(25).Valor = "" '"Al decir algo, ¿suele tener en cuenta lo que van a pensar los demás? "
+        Preguntas(26).Valor = "" '"¿Es propenso a cambiar de humor sin causa justificada?"
+        Preguntas(27).Valor = "" '"¿Le gusta gastar bromas a la gente?"
+        Preguntas(28).Valor = "" '"¿Le han cogido alguna vez en una mentira?"
+        Preguntas(29).Valor = "" '"¿Se le va a veces la imaginación cuando trata de concentrarse en algo?"
+        Preguntas(30).Valor = "" '"¿Se considera a si mismo como un individuo nervioso?"
+        Preguntas(31).Valor = "" '"¿Se le ocurre con frecuencia lo que debería haber hecho cuando ya ha pasado el momento?"
+        Preguntas(32).Valor = "" '"¿Le molesta mucho perder en el juego?"
+        Preguntas(33).Valor = "" '"¿Cree usted que desgraciadamente es verdad lo que indica el dicho 'piensa mal y acertarás'?"
+        Preguntas(34).Valor = "" '"¿Le resulta fácil, por lo general, hacer nuevas amistades?"
+        Preguntas(35).Valor = "" '"¿A tenido alguna vez la extraña sensación de ser distinto de como era antes?"
+        Preguntas(36).Valor = "" '"Cuando está trabajando, ¿le molesta mucho que le interrumpan?"
+        Preguntas(37).Valor = "" '"¿Cree que abundan las personas envidiosas?"
+        Preguntas(38).Valor = "" '"¿Toma muy 'a pecho' su trabajo?"
+        Preguntas(39).Valor = "" '"¿Se distrae a menudo en el curso de una conversación?"
+        Preguntas(40).Valor = "" '"¿Le critican más de lo que se merece?"
+        Preguntas(41).Valor = "" '"¿Se alegra de verdad si un amigo suyo consigue un éxito merecido?"
+        Preguntas(42).Valor = "" '"¿Le divierten las reuniones y fiestas más que ninguna otra cosa?"
+        Preguntas(43).Valor = "" '"¿Tiene a veces preocupaciones que no le dejan dormir?"
+        Preguntas(44).Valor = "" '"Modestia aparte, ¿se juzga usted superior a la mayoría de la gente?"
+        Preguntas(45).Valor = "" '"¿Murmura usted de vez en cuando?"
+        Preguntas(46).Valor = "" '"¿Suele pasarlo bien en las fiestas y reuniones sociales?"
+        Preguntas(47).Valor = "" '"¿Seconsidera usted una persona algo soñadora?"
+        Preguntas(48).Valor = "" '"¿Se siente a veces deprimido y cansado, sin ninguna razón justificada?"
+        Preguntas(49).Valor = "" '"¿Tiene usted a veces pensamientos o deseos que le avergonzarian si se supieran? "
+        Preguntas(50).Valor = "" '"¿Tiende usted a quedarse callado cuando se encuentra entre personas que conoce poco?"
+        Preguntas(51).Valor = "" '"¿Se encuentra a veces rebosante de energía y a veces francamente agotado?"
+        Preguntas(52).Valor = "" '"¿Se interpretan mal muchas de las cosas que usted dice o hace?"
+        Preguntas(53).Valor = "" '"¿Le gusta averiguar los motivos ocultos de la conducta ajena?"
+        Preguntas(54).Valor = "" '"¿Suele tener razón en las discuciones?"
+        Preguntas(55).Valor = "" '"¿Responde en seguida a todas las cartas que recibe?"
+        Preguntas(56).Valor = "" '"¿Se considra a si mismo como una persona habladora?"
+        Preguntas(57).Valor = "" '"¿Prefiere los trabajos de acción a los de pensamiento?"
+        Preguntas(58).Valor = "" '"¿Se conduce con igual corrección en su casa que cuando está de visita?"
+        Preguntas(59).Valor = "" '"¿Le gusta hacer nuevas amistades?"
+        Preguntas(60).Valor = "" '"¿Le deprime o le aburre estar solo?"
+        Preguntas(61).Valor = "" '"¿Le gusta meterse en asuntos que requieran energía y rapidez de acción?"
+        Preguntas(62).Valor = "" '"¿Piensa con frecuencia en los buenos tiempos pasados?"
+        Preguntas(63).Valor = "" '"¿Habla a veces de lo que no sabe?"
+        Preguntas(64).Valor = "" '"¿Cree que es imposible confiar de verdad en nadie?"
+        Preguntas(65).Valor = "" '"¿Le ocurre a menudo que una idea tonta le venga insistentemente a la imaginación?"
+        Preguntas(66).Valor = "" '"¿Le considera la gente como una persona animada?"
+        Preguntas(67).Valor = "" '"¿Sabe aguantar bien a las personas que abusan de su autoridad?"
+        Preguntas(68).Valor = "" '"¿Ha dejado alguna vez de cumplir con su palabra?"
+        Preguntas(69).Valor = "" '"¿Suele tener un humor casi siempre igual?"
+        Preguntas(70).Valor = "" '"¿Le duele mucho que le traten secamente?"
+        Preguntas(71).Valor = "" '"¿Se conforma cuando no se sale con la suya?"
+        Preguntas(72).Valor = "" '"¿Se siente muy herido en sus sentimientos cuando la gente es desconsiderada con usted?"
+        Preguntas(73).Valor = "" '"¿Presume a veces más de lo debido?"
+        Preguntas(74).Valor = "" '"¿Le gusta dirigir grupos, reuniones, etc.?"
+        Preguntas(75).Valor = "" '"¿Se considera a si mismo una persona alegre y optimista?"
+        Preguntas(76).Valor = "" '"¿Ha tenido alguna vez apuros económicos?"
+        Preguntas(77).Valor = "" '"¿Le ha convencido la vida de que para hacerse respetar hay que ser duro?"
+        Preguntas(78).Valor = "" '"Si alguien se mete con usted, ¿no para hasta darle su merecido?"
+        Preguntas(79).Valor = "" '"¿Se pone a veces tan nervioso que no puede permanecer sentado?"
+        Preguntas(80).Valor = "" '"En general, ¿le gustan las fiestas?"
+        Preguntas(81).Valor = "" '"¿Se considera a si mismo como una persona animada?"
+        Preguntas(82).Valor = "" '"¿Está convencido de que en esta vida es necesario ser un poco 'zorro' con la gente?"
+        Preguntas(83).Valor = "" '"¿Cree que al que se destaca, en seguida tratan de hundirlo?"
+        Preguntas(84).Valor = "" '"¿Llega alguna vez tarde a su trabajo?"
+        Preguntas(85).Valor = "" '"¿Se siente deprimido a veces sin saber exactamente por qué?"
+        Preguntas(86).Valor = "" '"Cuando hace algo mal, ¿piensa mucho en ello?"
+        Preguntas(87).Valor = "" '"¿Cambia de humor con facilidad?"
+        Preguntas(88).Valor = "" '"¿Cree que la vida ha sido justa con usted?"
+        Preguntas(89).Valor = "" '"¿Le gusta tener muchas relaciones sociales?"
+        Preguntas(90).Valor = "" '"¿Ha hecho alguna vez algo de lo que tenga que avergonzarse?"
+        Preguntas(91).Valor = "" '"Sinceramente, ¿se considera capaz de hacer las cosas mejor que la mayoria?"
+        Preguntas(92).Valor = "" '"¿Cree que la gente habla de usted con frecuencia?"
+        Preguntas(93).Valor = "" '"¿Ha perdido el control de sus nervios alguna vez?"
+        Preguntas(94).Valor = "" '"¿Protesta siempre que se comete una injusticia con usted?"
+        Preguntas(95).Valor = "" '"¿Se siente alegre unas veces, y desgraciado otras, sin que haya razones claras para ello?"
+        Preguntas(96).Valor = "" '"¿Le resulta dificil participar de la alegría general en las reuniones y fiestas?"
+        Preguntas(97).Valor = "" '"Por lo general, ¿es usted una persona despreocupada?"
+        Preguntas(98).Valor = "" '"¿Le cambia fácilmente el humor, según le vayan las cosas?"
+        Preguntas(99).Valor = "" '"¿Pagaría usted impuestos aún sabiendo que nadie le iba a descubrir si no los pagaba?"
+        Preguntas(100).Valor = "" '"¿Cree que la vida hay que ajustarla a ideales y normas fijas?"
+        Preguntas(101).Valor = "" '"¿Le resulta difícil callarse en las discusiones?"
+        Preguntas(102).Valor = "" '"¿Le gustan los trabajos que requieren mucho cuidado y atención en los detalles?"
+        Preguntas(103).Valor = "" '"¿Hay ocasiones en que lo único que desea es estar solo y que lo dejen en paz?"
+        Preguntas(104).Valor = "" '"¿Cree usted, que en realidad, el mundo está gobernado por poderes secretos que poquísima gente conoce?"
+        Preguntas(105).Valor = "" '"¿Le gusta permanecer en segundo término en las fiestas y reuniones públicas?"
+        Preguntas(106).Valor = "" '"¿Cree que un puñado de hombres decididos pueda reformar la sociedad?"
+        Preguntas(107).Valor = "" '"¿Hay noches en que las preocupaciones le tienen despierto mucho tiempo?"
+        Preguntas(108).Valor = "" '"¿Reconoce que tiene el genio un poco violento?"
+        Preguntas(109).Valor = "" '"Entre las personas que conoce, ¿Hay algunas que le sean profundamente antipáticas?"
+        Preguntas(110).Valor = "" '"¿Le parece que muchas cosas le han salido mal debido a envidias y enemistades?"
+        Preguntas(111).Valor = "" '"¿Opina que la mujer debe gozar de igual libertad que el hombre?"
+        Preguntas(112).Valor = "" '"Cuando algo le sale mal, ¿Lo olvida en seguida?"
+        Preguntas(113).Valor = "" '"Por lo general, ¿Es usted quien da el primer paso para entablar una nueva amistad?"
+        Preguntas(114).Valor = "" '"¿Es usted distraído?"
+        Preguntas(115).Valor = "" '"¿Disfruta en las manifestaciones de entusiasmo colectivo, como el fútbol, la feria, etc.?"
+        Preguntas(116).Valor = "" '"Por lo general, ¿Mantiene ocultos sus propósitos?"
+        Preguntas(117).Valor = "" '"Cuando no se sale con la suya, ¿Se conforma fácilmente?"
+        Preguntas(118).Valor = "" '"¿Se le ha criticado más de lo debido?"
+        Preguntas(119).Valor = "" '"¿Encuentra que en el mundo actual no se puede fiar uno de nadie?"
+        Preguntas(120).Valor = "" '"¿Le cuesta mucho olvidar las ofensas, aunque las haya perdonado desde el primer momento?"
+        Preguntas(121).Valor = "" '"Cuando se le mete algo en la cabeza, ¿No para hasta realizarlo?"
+        Preguntas(122).Valor = "" '"Por la calle, ¿Se fijan en usted las personas del otro sexo?"
+        Preguntas(123).Valor = "" '"Durante los últimos cinco años, ¿Ha ocupado algún cargo directivo en juntas deportivas, benéficas, sociales, etc.?"
+        Preguntas(124).Valor = "" '"¿Cambia de aficiones con facilidad?"
+        Preguntas(125).Valor = "" '"¿Se le va a veces la imaginación, de modo que pierde el hilo de lo que está haciendo?"
+        Preguntas(126).Valor = "" '"Cuando está deprimido, ¿Busca alguien que lo anime?"
+        Preguntas(127).Valor = "" '"¿Hay ocasiones en que se siente solo en medio de la gente?"
+        Preguntas(128).Valor = "" '"Si llega tarde a una conferencia, ¿Prefiere quedarse de pie mejor que atravesar la sala para sentarse?"
+        Preguntas(129).Valor = "" '"¿Ha recaudado alguna vez fondos para una causa que le interese?"
+        Preguntas(130).Valor = "" '"¿Le gusta más el cine que el baile?"
+        Preguntas(131).Valor = "" '"¿Regañaría bruscamente a un subalterno suyo por no haberle tenido un trabajo a tiempo?"
+        Preguntas(132).Valor = "" '"Cuando se encarga de algo, ¿Prefiere asumir la responsabilidad usted solo?"
+        Preguntas(133).Valor = "" '"¿Cree que el respeto a las costrumbres sociales constituye un aspecto esencial de la vida humana?"
+        Preguntas(134).Valor = "" '"¿Suele tomarse más responsabilidades  y quehaceres más de los que le corresponden?"
+        Preguntas(135).Valor = "" '"¿Le desagrada la disciplina?"
+        Preguntas(136).Valor = "" '"¿Pasa a veces por periodos en que se siente muy solo?"
+        Preguntas(137).Valor = "" '"¿Ha experimentado en la vida muchas amarguras?"
+        Preguntas(138).Valor = "" '"Por lo general, ¿Comprende mejor los problemas estudiándolos usted solo que discutiéndolos con otros?"
+        Preguntas(139).Valor = "" '"Si un camarero le sirve mal, ¿Le llama usted la atención?"
+        Preguntas(140).Valor = "" '"Si alguien murmura de usted, ¿Le aborda abiertamente?"
+        Preguntas(141).Valor = "" '"¿Le irrita que se hablen ciertos asuntos delante de usted?"
+        Preguntas(142).Valor = "" '"¿Le molesta que le observen mientras trabaja?"
+        Preguntas(143).Valor = "" '"¿Le gusta intervenir en la organización de fiestas, reuniones, etc.?"
+        Preguntas(144).Valor = "" '"¿Ha sentido envidia alguna vez?"
+        Preguntas(145).Valor = "" '"¿Está convencido de que efectivamente se cumple el dicho 'El que la sigue la mata'?"
+        Preguntas(146).Valor = "" '"¿Se entuciasma fácilmente con ideas o proyectos nuevos?"
+        Preguntas(147).Valor = "" '"¿Le moloesta ver objetos mal colocados, cuadros torcidos, etc.?"
+        Preguntas(148).Valor = "" '"¿Se considera usted una persona de mucha fuerza de voluntad?"
+        Preguntas(149).Valor = "" '"¿Tiende a ponerse colorado en las situaciones embarazosas?"
+        Preguntas(150).Valor = "" '"¿Acostumbra a llevar el reloj un poco adelantado?"
+        Preguntas(151).Valor = "" '"¿Le molesta llevar flojo el nudo de la corbata?"
+        Preguntas(152).Valor = "" '"¿Olvida a veces dónde ha dejado las cosas?"
+        Preguntas(153).Valor = "" '"¿Suele excederse al dar propinas?"
+        Preguntas(154).Valor = "" '"¿Prefiere una vida tranquila a una vida de éxitos?"
+        Preguntas(155).Valor = "" '"Después de haber echado una carta ¿Duda de si las señas irían bien puestas?"
+        'RESPUESTAS
+        'llenar escala c
+        escc(0) = 1
+        escc(1) = 3
+        escc(2) = 3
+        escc(3) = 3
+        escc(4) = 2
+        escc(5) = 3
+        escc(6) = 3
+        escc(7) = 3
+        escc(8) = 3
+        escc(9) = 2
+        escc(10) = 3
+        escc(11) = 3
+        escc(12) = 3
+        escc(13) = 3
+        escc(14) = 3
+        escc(15) = 3
+        escc(16) = 3
+        escc(17) = 3
+        escc(18) = 3
+        escc(19) = 1
+        escc(20) = 2
+        escc(21) = 2
+        escc(22) = 3
+        escc(23) = 3
+        escc(24) = 3
+        escc(25) = 3
+        escc(26) = 3
+        escc(27) = 1
+        escc(28) = 3
+        escc(29) = 3
+        escc(30) = 2
+        escc(31) = 2
+        escc(32) = 3
+        'llenar escala e
+        esce(0) = 3
+        esce(1) = 1
+        esce(2) = 1
+        esce(3) = 1
+        esce(4) = 3
+        esce(5) = 1
+        esce(6) = 3
+        esce(7) = 3
+        esce(8) = 3
+        esce(9) = 3
+        esce(10) = 3
+        esce(11) = 1
+        esce(12) = 1
+        esce(13) = 3
+        esce(14) = 1
+        esce(15) = 3
+        esce(16) = 3
+        esce(17) = 1
+        esce(18) = 1
+        esce(19) = 3
+        esce(20) = 3
+        esce(21) = 1
+        esce(22) = 1
+        esce(23) = 1
+        esce(24) = 1
+        esce(25) = 1
+        esce(26) = 3
+        esce(27) = 1
+        esce(28) = 1
+        esce(29) = 1
+        esce(30) = 1
+        esce(31) = 1
+        esce(32) = 3
+        esce(33) = 1
+        esce(34) = 2
+        esce(35) = 3
+        esce(36) = 1
+        esce(37) = 3
+        esce(38) = 3
+        esce(39) = 3
+        esce(40) = 1
+        esce(41) = 1
+        esce(42) = 1
+        esce(43) = 1
+        esce(44) = 1
+        'llenar escala p
+        escp(0) = 3
+        escp(1) = 1
+        escp(2) = 1
+        escp(3) = 1
+        escp(4) = 1
+        escp(5) = 1
+        escp(6) = 1
+        escp(7) = 1
+        escp(8) = 1
+        escp(9) = 1
+        escp(10) = 1
+        escp(11) = 1
+        escp(12) = 1
+        escp(13) = 1
+        escp(14) = 1
+        escp(15) = 1
+        escp(16) = 3
+        escp(17) = 1
+        escp(18) = 3
+        escp(19) = 1
+        escp(20) = 1
+        escp(21) = 1
+        escp(22) = 1
+        escp(23) = 1
+        escp(24) = 3
+        escp(25) = 1
+        escp(26) = 1
+        escp(27) = 1
+        escp(28) = 1
+        escp(29) = 1
+        escp(30) = 1
+        escp(31) = 1
+        escp(32) = 1
+        escp(33) = 3
+        escp(34) = 3
+        escp(35) = 3
+        escp(36) = 1
+        escp(37) = 3
+        escp(38) = 1
+        escp(39) = 1
+        escp(40) = 1
+        escp(41) = 1
+        escp(42) = 1
+        'llenar escala s
+        escs(0) = 1
+        escs(1) = 3
+        escs(2) = 1
+        escs(3) = 1
+        escs(4) = 1
+        escs(5) = 1
+        escs(6) = 3
+        escs(7) = 1
+        escs(8) = 1
+        escs(9) = 3
+        escs(10) = 3
+        escs(11) = 1
+        escs(12) = 1
+        escs(13) = 1
+        escs(14) = 1
+        escs(15) = 1
+        escs(16) = 1
+        escs(17) = 3
+        escs(18) = 1
+        'PREGUNTAS
+        'llenar escala c 
+        escalac(0) = 7
+        escalac(1) = 12
+        escalac(2) = 18
+        escalac(3) = 23
+        escalac(4) = 24
+        escalac(5) = 27
+        escalac(6) = 30
+        escalac(7) = 31
+        escalac(8) = 36
+        escalac(9) = 39
+        escalac(10) = 40
+        escalac(11) = 44
+        escalac(12) = 48
+        escalac(13) = 49
+        escalac(14) = 52
+        escalac(15) = 55
+        escalac(16) = 61
+        escalac(17) = 63
+        escalac(18) = 66
+        escalac(19) = 70
+        escalac(20) = 72
+        escalac(21) = 76
+        escalac(22) = 80
+        escalac(23) = 86
+        escalac(24) = 88
+        escalac(25) = 96
+        escalac(26) = 99
+        escalac(27) = 101
+        escalac(28) = 104
+        escalac(29) = 108
+        escalac(30) = 119
+        escalac(31) = 122
+        escalac(32) = 126
+        'llenar escala e
+        escalae(0) = 1
+        escalae(1) = 2
+        escalae(2) = 3
+        escalae(3) = 7
+        escalae(4) = 9
+        escalae(5) = 11
+        escalae(6) = 13
+        escalae(7) = 15
+        escalae(8) = 20
+        escalae(9) = 21
+        escalae(10) = 24
+        escalae(11) = 25
+        escalae(12) = 28
+        escalae(13) = 32
+        escalae(14) = 35
+        escalae(15) = 37
+        escalae(16) = 39
+        escalae(17) = 43
+        escalae(18) = 47
+        escalae(19) = 48
+        escalae(20) = 51
+        escalae(21) = 57
+        escalae(22) = 58
+        escalae(23) = 60
+        escalae(24) = 61
+        escalae(25) = 62
+        escalae(26) = 63
+        escalae(27) = 67
+        escalae(28) = 75
+        escalae(29) = 76
+        escalae(30) = 81
+        escalae(31) = 82
+        escalae(32) = 87
+        escalae(33) = 90
+        escalae(34) = 92
+        escalae(35) = 97
+        escalae(36) = 98
+        escalae(37) = 101
+        escalae(38) = 103
+        escalae(39) = 106
+        escalae(40) = 113
+        escalae(41) = 114
+        escalae(42) = 116
+        escalae(43) = 124
+        escalae(44) = 125
+        'llenar escala p
+        escalap(0) = 6
+        escalap(1) = 8
+        escalap(2) = 15
+        escalap(3) = 16
+        escalap(4) = 19
+        escalap(5) = 23
+        escalap(6) = 26
+        escalap(7) = 34
+        escalap(8) = 36
+        escalap(9) = 38
+        escalap(10) = 41
+        escalap(11) = 45
+        escalap(12) = 53
+        escalap(13) = 54
+        escalap(14) = 55
+        escalap(15) = 65
+        escalap(16) = 68
+        escalap(17) = 71
+        escalap(18) = 72
+        escalap(19) = 73
+        escalap(20) = 78
+        escalap(21) = 79
+        escalap(22) = 83
+        escalap(23) = 84
+        escalap(24) = 89
+        escalap(25) = 92
+        escalap(26) = 93
+        escalap(27) = 95
+        escalap(28) = 102
+        escalap(29) = 105
+        escalap(30) = 107
+        escalap(31) = 109
+        escalap(32) = 111
+        escalap(33) = 112
+        escalap(34) = 113
+        escalap(35) = 115
+        escalap(36) = 117
+        escalap(37) = 118
+        escalap(38) = 119
+        escalap(39) = 120
+        escalap(40) = 121
+        escalap(41) = 122
+        escalap(42) = 123
+        'llenar escala s
+        escalas(0) = 10
+        escalas(1) = 14
+        escalas(2) = 17
+        escalas(3) = 22
+        escalas(4) = 29
+        escalas(5) = 33
+        escalas(6) = 42
+        escalas(7) = 46
+        escalas(8) = 50
+        escalas(9) = 56
+        escalas(10) = 59
+        escalas(11) = 64
+        escalas(12) = 69
+        escalas(13) = 74
+        escalas(14) = 77
+        escalas(15) = 85
+        escalas(16) = 91
+        escalas(17) = 100
+        escalas(18) = 110
+        'llenar arreglo auxiliar de preguntas que tienen dos respuestas
+        aux(0) = 1
+        aux(1) = 13
+        aux(2) = 24
+        aux(3) = 57
+        aux(4) = 58
+        aux(5) = 98
+        aux(6) = 103
+
+    End Sub
+
+
+    ''' <summary>
+    ''' Devuelve o establece el conjunto de preguntas CEPS
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Public Property Preguntas() As List(Of Pregunta)
+        Get
+            Return Me._preguntas
+        End Get
+        Set(ByVal value As List(Of Pregunta))
+            Me._preguntas = value
+        End Set
+    End Property
+
+
+End Class
