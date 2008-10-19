@@ -20,7 +20,7 @@ namespace WinApp
 	{
 		#region Campos
 				
-		private DataGridViewCellStyle normalStyle, alternateStyle;
+		private DataGridViewCellStyle alternateStyle;
 		private Font fnt;
 		
 		#endregion
@@ -32,7 +32,7 @@ namespace WinApp
 				
 		public GridBase()
 		{			
-			this.FormatearGrid();			
+			this.FormatearGrid();;
 		}				
 		
 		public void FormatearGrid()
@@ -61,9 +61,9 @@ namespace WinApp
 			this.MultiSelect = false;
 		}
 		
-		public void CargarGrid()
+		public virtual void CargarGrid()
 		{	}
-		
+				
 		#endregion
 	}
 }

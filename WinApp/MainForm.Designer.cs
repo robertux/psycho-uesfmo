@@ -39,7 +39,9 @@ namespace WinApp
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.gridRaven1 = new WinApp.GridRaven();
+			this.pbxRaven = new System.Windows.Forms.PictureBox();
 			((System.ComponentModel.ISupportInitialize)(this.gridRaven1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pbxRaven)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// gridRaven1
@@ -68,27 +70,40 @@ namespace WinApp
 			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
 			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
 			this.gridRaven1.DefaultCellStyle = dataGridViewCellStyle2;
-			this.gridRaven1.Location = new System.Drawing.Point(12, 12);
+			this.gridRaven1.Location = new System.Drawing.Point(16, 20);
 			this.gridRaven1.MultiSelect = false;
 			this.gridRaven1.Name = "gridRaven1";
 			this.gridRaven1.ReadOnly = true;
 			this.gridRaven1.RowHeadersVisible = false;
 			this.gridRaven1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.gridRaven1.Size = new System.Drawing.Size(240, 332);
+			this.gridRaven1.Size = new System.Drawing.Size(240, 427);
 			this.gridRaven1.TabIndex = 0;
+			this.gridRaven1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GridRaven1KeyDown);
+			this.gridRaven1.SelectionChanged += new System.EventHandler(this.GridRaven1SelectionChanged);
+			// 
+			// pbxRaven
+			// 
+			this.pbxRaven.Location = new System.Drawing.Point(281, 20);
+			this.pbxRaven.Name = "pbxRaven";
+			this.pbxRaven.Size = new System.Drawing.Size(339, 427);
+			this.pbxRaven.TabIndex = 1;
+			this.pbxRaven.TabStop = false;
 			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(632, 356);
+			this.ClientSize = new System.Drawing.Size(632, 459);
+			this.Controls.Add(this.pbxRaven);
 			this.Controls.Add(this.gridRaven1);
 			this.Name = "MainForm";
 			this.Text = "Evaluador de la Prueba RAVEN";
 			this.Load += new System.EventHandler(this.MainFormLoad);
 			((System.ComponentModel.ISupportInitialize)(this.gridRaven1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pbxRaven)).EndInit();
 			this.ResumeLayout(false);
 		}
+		private System.Windows.Forms.PictureBox pbxRaven;
 		private WinApp.GridRaven gridRaven1;
 	}
 }
