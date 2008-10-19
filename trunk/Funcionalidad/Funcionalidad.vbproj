@@ -100,8 +100,6 @@
     <Compile Include="Prueba.vb" />
     <Compile Include="PruebaCeps.vb" />
     <Compile Include="PruebaRaven.vb" />
-    <Compile Include="reportes.vb" />
-    <Compile Include="reporte_oficial.vb" />
     <Compile Include="Respuesta.vb" />
     <Compile Include="ResultadoCeps.vb" />
     <Compile Include="ResultadoRaven.vb" />
