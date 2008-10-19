@@ -32,10 +32,10 @@ namespace WinApp
 				
 		public GridRaven(): base()
 		{
-			this.pregs = new PreguntasRaven();			
+			this.pregs = new PreguntasRaven();
 		}						
 		
-		public void CargarGrid()
+		public override void CargarGrid()
 		{
 			this.Columns.Clear();
 			this.Columns.Add("colNumero", "Numero");
