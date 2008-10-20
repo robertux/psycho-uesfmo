@@ -35,7 +35,7 @@ namespace WinApp
 			this.FormatearGrid();;
 		}				
 		
-		public void FormatearGrid()
+		public virtual void FormatearGrid()
 		{
 			this.fnt = new Font("Arial", 18, FontStyle.Regular);
 			

@@ -6,7 +6,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccesoDatos", "AccesoDatos\
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Funcionalidad", "Funcionalidad\Funcionalidad.vbproj", "{8620E460-23C7-4F5D-8275-9C3C30BC2649}"
 EndProject
-
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinApp", "WinApp\WinApp.csproj", "{D64B4AAC-0FB3-4AAE-BA7A-159DE57753FE}"
 EndProject
 Global
