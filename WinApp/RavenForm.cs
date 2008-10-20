@@ -18,17 +18,14 @@ namespace WinApp
 	/// <summary>
 	/// Description of MainForm.
 	/// </summary>
-	public partial class MainForm : Form
+	public partial class frmRaven : Form
 	{
 		
-		
-		
-		public MainForm()
+		public frmRaven()
 		{
-			InitializeComponent();
-			
+			InitializeComponent();			
 		}
-		
+				
 		void MainFormLoad(object sender, EventArgs e)
 		{
 			this.gridRaven1.CargarGrid();			
@@ -53,6 +50,7 @@ namespace WinApp
 					if(e.KeyValue <= 104)	//Equivalente a la tecla numeral 8
 					{
 						this.gridRaven1.Rows[sIndex].Cells[1].Value = (e.KeyValue - 96).ToString();
+						this.gridRaven1[sIndex] = e.KeyValue - 96;
 						if(sIndex < (this.gridRaven1.Rows.Count-1))
 						{
 							this.gridRaven1.Rows[sIndex+1].Cells[0].Selected = true;
@@ -67,6 +65,7 @@ namespace WinApp
 					if(e.KeyValue <= 102)	//Equivalente a la tecla numeral 6
 					{
 						this.gridRaven1.SelectedRows[0].Cells[1].Value = (e.KeyValue - 96).ToString();
+						this.gridRaven1[sIndex] = e.KeyValue - 96;
 						if(sIndex < (this.gridRaven1.Rows.Count-1))
 						{
 							this.gridRaven1.Rows[sIndex+1].Cells[0].Selected = true;
