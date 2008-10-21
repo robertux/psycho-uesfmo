@@ -23,11 +23,12 @@ namespace WinApp
 	{
 		public Aspirante aspir;
 		private AccesoDatos.AccesoDatos ad;
-		List<centroestudio> centros;
-		List<Departamento> deptos;
-		List<Ciudad> ciudades;
-		List<Facultad> facultades;
-		List<Carrera> carreras;
+		private List<centroestudio> centros;
+		private List<Departamento> deptos;
+		private List<Ciudad> ciudades;
+		private List<Facultad> facultades;
+		private List<Carrera> carreras;
+		private bool editMode;
 		
 		public frmAddEditAspir()
 		{			
@@ -41,6 +42,41 @@ namespace WinApp
 			this.ciudades = new List<Ciudad>();
 			this.facultades = new List<Facultad>();
 			this.carreras = new List<Carrera>();
+			this.editMode = false;
+		}
+		
+		public frmAddEditAspir(Aspirante pAspir): this()
+		{
+			this.aspir = pAspir;
+			this.txtApellidos.Text = this.aspir.Apellidos;
+			this.txtNombres.Text = this.aspir.Nombres;
+			this.txtDireccion.Text = this.aspir.Direccion;
+			this.txtTelefono.Text = this.aspir.Telefono;
+			this.rbtnMasculino.Checked = (this.aspir.Sexo == 'M');
+			this.rbtnFemenino.Checked = !this.rbtnMasculino.Checked;
+			this.dtpFechaNac.Value = this.aspir.FechaNacimiento;
+			
+			for(int i=0; i<this.deptos.Count; i++)
+				if(this.deptos[i].CodDepartamento == this.aspir.Depto.CodDepartamento)
+					this.cmbDepto.SelectedIndex = i;
+			
+			for(int i=0; i<this.ciudades.Count; i++)
+				if(this.ciudades[i].CodCiudad == this.aspir.Ciudad.CodCiudad)
+					this.cmbCiudad.SelectedIndex = i;
+			
+			for(int i=0; i<this.centros.Count; i++)
+				if(this.centros[i].codigo == this.aspir.LugarEstudios.codigo)
+					this.cmbCentroEstudios.SelectedIndex = i;
+			
+			for(int i=0; i<this.facultades.Count; i++)
+				if(this.facultades[i].CodFacultad == this.aspir.Facultad.CodFacultad)
+					this.cmbFacultad.SelectedIndex = i;
+			
+			for(int i=0; i<this.carreras.Count; i++)
+				if(this.carreras[i].CodCarrera == this.aspir.Carrera.CodCarrera)
+					this.cmbCarrera.SelectedIndex = i;
+			
+			this.editMode = true;
 		}
 		
 		void FrmAddEditAspirLoad(object sender, EventArgs e)
@@ -58,9 +94,23 @@ namespace WinApp
 		
 		void Button2Click(object sender, EventArgs e)
 		{
-			this.DialogResult = DialogResult.OK;			
-			string cod = manejadorAspirante.GenerarCodigo(this.txtApellidos.Text, this.txtNombres.Text, this.ad.ds.Tables["aspirantes"]);
-			this.aspir = new Aspirante(cod, this.txtNombres.Text, this.txtApellidos.Text, "0", this.txtDireccion.Text, this.txtTelefono.Text, this.centros[this.cmbCentroEstudios.SelectedIndex], this.ciudades[this.cmbCiudad.SelectedIndex], this.deptos[this.cmbDepto.SelectedIndex], "", "pendiente", this.carreras[this.cmbCarrera.SelectedIndex], (this.rbtnMasculino.Checked? 'M': 'F'), this.dtpFechaNac.Value, this.facultades[this.cmbFacultad.SelectedIndex], (uint)DateTime.Now.Year, "");
+			this.DialogResult = DialogResult.OK;
+			string cod, estado;
+			uint anioRegistrado;
+			if(this.editMode)
+			{
+				cod = this.aspir.Codigo;
+				anioRegistrado = this.aspir.AnioRegistrado;
+				estado = this.aspir.Estado;
+			}
+			else
+			{				
+				cod = manejadorAspirante.GenerarCodigo(this.txtApellidos.Text, this.txtNombres.Text, this.ad.ds.Tables["aspirantes"]);
+				anioRegistrado = (uint)DateTime.Now.Year;
+				estado = "pendiente";
+			}
+
+			this.aspir = new Aspirante(cod, this.txtNombres.Text, this.txtApellidos.Text, "0", this.txtDireccion.Text, this.txtTelefono.Text, this.centros[this.cmbCentroEstudios.SelectedIndex], this.ciudades[this.cmbCiudad.SelectedIndex], this.deptos[this.cmbDepto.SelectedIndex], "", estado, this.carreras[this.cmbCarrera.SelectedIndex], (this.rbtnMasculino.Checked? 'M': 'F'), this.dtpFechaNac.Value, this.facultades[this.cmbFacultad.SelectedIndex], anioRegistrado, "");
 			this.Close();
 		}
 		

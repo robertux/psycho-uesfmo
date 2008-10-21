@@ -107,5 +107,33 @@ namespace WinApp
 				}
 			}
 		}
+		
+		
+		void BtnDelAspirClick(object sender, EventArgs e)
+		{
+			if(MessageBox.Show("Esta seguro que desea borrar este aspirante?","Confirmacion", MessageBoxButtons.YesNo) == DialogResult.Yes)
+			{
+				manejadorAspirante.eliminarAspirante(this.gridAspir1.Aspirs[this.gridAspir1.SelectedRows[0].Index],this.ad.ds.Tables["aspirantes"]);
+				this.ad.Conectar();
+				this.ad.ActualizarBD();
+				this.ad.EjecutarComando("DELETE FROM aspirantes WHERE codigo = '" + this.gridAspir1.Aspirs[this.gridAspir1.SelectedRows[0].Index].Codigo + "'");
+				this.ad.Desconectar();
+				this.gridAspir1.CargarGrid((int)this.comboBox1.Items[this.comboBox1.SelectedIndex]);
+			}
+		}
+		
+		void BtnEditAspirClick(object sender, EventArgs e)
+		{
+			frmAddEditAspir frmasp = new frmAddEditAspir(this.gridAspir1.Aspirs[this.gridAspir1.SelectedRows[0].Index]);
+			frmasp.ShowDialog(this);
+			if(frmasp.DialogResult == DialogResult.OK)
+			{
+				manejadorAspirante.modificarAspirante(frmasp.aspir, this.ad.ds.Tables["aspirantes"]);
+				this.ad.Conectar();
+				this.ad.ActualizarBD();					
+				this.ad.Desconectar();
+				this.gridAspir1.CargarGrid((int)this.comboBox1.Items[this.comboBox1.SelectedIndex]);
+			}
+		}
 	}
 }

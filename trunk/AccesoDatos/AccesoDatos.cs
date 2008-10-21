@@ -252,6 +252,12 @@ namespace AccesoDatos
 
             this.ds.AcceptChanges();
         }
+        
+        public void EjecutarComando(string cmdQuery)
+        {
+        	MySqlCommand cmd = new MySqlCommand(cmdQuery, this._cn);
+        	cmd.ExecuteNonQuery();
+        }
 
         #endregion
 
