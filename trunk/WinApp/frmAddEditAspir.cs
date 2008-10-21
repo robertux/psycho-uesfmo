@@ -32,22 +32,31 @@ namespace WinApp
 		
 		public frmAddEditAspir()
 		{			
-			InitializeComponent();
+			InitializeComponent();			
 			this.ad = new AccesoDatos.AccesoDatos("app.config");
 			this.ad.Conectar();
 			this.ad.RellenarDS();
 			this.ad.Desconectar();
-			this.centros = new List<centroestudio>();
-			this.deptos = new List<Departamento>();
-			this.ciudades = new List<Ciudad>();
-			this.facultades = new List<Facultad>();
-			this.carreras = new List<Carrera>();
 			this.editMode = false;
 		}
 		
 		public frmAddEditAspir(Aspirante pAspir): this()
 		{
 			this.aspir = pAspir;
+			this.editMode = true;
+		}
+		
+		public void SetDefaultValues()
+		{			
+			this.centros = new List<centroestudio>();
+			this.deptos = new List<Departamento>();
+			this.ciudades = new List<Ciudad>();
+			this.facultades = new List<Facultad>();
+			this.carreras = new List<Carrera>();			
+		}
+		
+		public void SetAspirValues()
+		{			
 			this.txtApellidos.Text = this.aspir.Apellidos;
 			this.txtNombres.Text = this.aspir.Nombres;
 			this.txtDireccion.Text = this.aspir.Direccion;
@@ -56,6 +65,7 @@ namespace WinApp
 			this.rbtnFemenino.Checked = !this.rbtnMasculino.Checked;
 			this.dtpFechaNac.Value = this.aspir.FechaNacimiento;
 			
+			int count = this.deptos.Count;
 			for(int i=0; i<this.deptos.Count; i++)
 				if(this.deptos[i].CodDepartamento == this.aspir.Depto.CodDepartamento)
 					this.cmbDepto.SelectedIndex = i;
@@ -75,15 +85,16 @@ namespace WinApp
 			for(int i=0; i<this.carreras.Count; i++)
 				if(this.carreras[i].CodCarrera == this.aspir.Carrera.CodCarrera)
 					this.cmbCarrera.SelectedIndex = i;
-			
-			this.editMode = true;
 		}
 		
 		void FrmAddEditAspirLoad(object sender, EventArgs e)
 		{
+			this.SetDefaultValues();
 			this.CargarCentrosEstudios();
 			this.CargarDeptos();
 			this.CargarFacultades();			
+			if(this.editMode)
+				this.SetAspirValues();
 		}
 						
 		void Button1Click(object sender, EventArgs e)
