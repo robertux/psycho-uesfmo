@@ -10,6 +10,7 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using FuncionalidadClassLib;
 
 namespace WinApp
 {
@@ -18,6 +19,16 @@ namespace WinApp
 	/// </summary>
 	public partial class frmCeps : Form
 	{
+		public PruebaCeps Prueba
+		{
+			get { return this.gridCeps1.Prueba; }
+		}
+		
+		public PreguntasCeps Pregs
+		{
+			get { return this.gridCeps1.Pregs; }
+		}
+		
 		public frmCeps()
 		{
 			InitializeComponent();

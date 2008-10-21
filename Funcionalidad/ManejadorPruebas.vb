@@ -168,9 +168,11 @@ Public Class ManejadorPruebas
 	Public Shared Function GetMaxCodeResultados(ByVal tblResultados As DataTable) As String
 		Dim maxCode As String = "00000"
 		For Each fila As DataRow In tblResultados.Rows
-			If (String.Compare(fila("codresult"),maxCode) > 0) Then
-                maxCode = fila("codresult")
-			End If
+			if (not (typeof(fila("codresult")) is DBNull))
+				If (String.Compare(fila("codresult"),maxCode) > 0) Then
+			                maxCode = fila("codresult")
+				End If
+			end if
 		next
 		return maxCode		
 	End Function

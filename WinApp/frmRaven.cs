@@ -20,6 +20,15 @@ namespace WinApp
 	/// </summary>
 	public partial class frmRaven : Form
 	{
+		public PruebaRaven Prueba
+		{
+			get { return this.gridRaven1.Prueba; }
+		}
+		
+		public PreguntasRaven Pregs
+		{
+			get { return this.gridRaven1.Pregs; }
+		}
 		
 		public frmRaven()
 		{

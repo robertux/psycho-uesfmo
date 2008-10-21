@@ -82,14 +82,7 @@ namespace WinApp
 				this.btnEvaluarCeps.Visible = false;
 				this.lblResultadoCeps.Text = aspir.ResCeps.Diagnostico;
 			}
-		}
-		
-		void BtnEvaluarRavenClick(object sender, EventArgs e)
-		{
-			frmRaven frmr = new frmRaven();
-			frmr.ShowDialog(this);
-		}
-		
+		}	
 		
 		void BtnAddAspirClick(object sender, EventArgs e)
 		{
@@ -136,10 +129,40 @@ namespace WinApp
 			}
 		}
 		
+		void BtnEvaluarRavenClick(object sender, EventArgs e)
+		{
+			frmRaven frmr = new frmRaven();
+			frmr.ShowDialog(this);
+			if(frmr.DialogResult == DialogResult.OK)
+			{
+				this.gridAspir1.Aspirs[this.gridAspir1.SelectedRows[0].Index] = ManejadorPruebas.RealizarPruebaRaven(this.gridAspir1.Aspirs[this.gridAspir1.SelectedRows[0].Index], frmr.Prueba);
+				this.gridAspir1.Aspirs[this.gridAspir1.SelectedRows[0].Index].ResRaven.codresult =  (int.Parse(ManejadorPruebas.GetMaxCodeResultados(this.ad.ds.Tables["resultadosraven"])) + 1).ToString();
+				this.gridAspir1.Aspirs[this.gridAspir1.SelectedRows[0].Index].Estado = "evaluando";
+				this.gridAspir1.Aspirs[this.gridAspir1.SelectedRows[0].Index].ResCeps = null;			//solo para evitar un bug de la funcionalidad
+				ManejadorPruebas.AgregarResultados(this.gridAspir1.Aspirs[this.gridAspir1.SelectedRows[0].Index], this.ad.ds.Tables["resultadosceps"], this.ad.ds.Tables["resultadosraven"]);
+				this.ad.Conectar();
+				this.ad.ActualizarBD();
+				this.ad.Desconectar();
+				this.GridAspir1SelectionChanged(this, new EventArgs());
+			}
+		}
+		
 		void BtnEvaluarCepsClick(object sender, EventArgs e)
 		{
 			frmCeps frmc = new frmCeps();
 			frmc.ShowDialog(this);
+			if(frmc.DialogResult == DialogResult.OK)
+			{
+				this.gridAspir1.Aspirs[this.gridAspir1.SelectedRows[0].Index] = ManejadorPruebas.RealizarPruebaCeps(this.gridAspir1.Aspirs[this.gridAspir1.SelectedRows[0].Index], frmc.Prueba);				
+				this.gridAspir1.Aspirs[this.gridAspir1.SelectedRows[0].Index].ResCeps.codresult = (int.Parse(ManejadorPruebas.GetMaxCodeResultados(this.ad.ds.Tables["resultadosceps"])) + 1).ToString().PadLeft(7, '0');
+				this.gridAspir1.Aspirs[this.gridAspir1.SelectedRows[0].Index].Estado = "evaluado";
+				this.gridAspir1.Aspirs[this.gridAspir1.SelectedRows[0].Index].ResRaven = null;   				//solo para evitar un bug de la funcionalidad
+				ManejadorPruebas.AgregarResultados(this.gridAspir1.Aspirs[this.gridAspir1.SelectedRows[0].Index], this.ad.ds.Tables["resultadosceps"], this.ad.ds.Tables["resultadosraven"]);
+				this.ad.Conectar();
+				this.ad.ActualizarBD();
+				this.ad.Desconectar();
+				this.GridAspir1SelectionChanged(this, new EventArgs());				
+			}
 		}
 	}
 }
