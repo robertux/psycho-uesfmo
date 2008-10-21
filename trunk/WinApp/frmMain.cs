@@ -20,11 +20,17 @@ namespace WinApp
 	/// </summary>
 	public partial class frmMain : Form
 	{
+		private AccesoDatos.AccesoDatos ad;
+		
 		public frmMain()
 		{
 			InitializeComponent();
 			this.CargarCombo();
-			this.gridAspir1.CargarGrid();			
+			this.gridAspir1.CargarGrid();
+			this.ad = new AccesoDatos.AccesoDatos("app.config");
+			this.ad.Conectar();
+			this.ad.RellenarDS();
+			this.ad.Desconectar();
 		}
 		
 		private void CargarCombo()
@@ -42,7 +48,12 @@ namespace WinApp
 		}
 		
 		void GridAspir1SelectionChanged(object sender, EventArgs e)
-		{			
+		{
+			this.lblResultadoCeps.Text = "";
+			this.lblResultadoRaven.Text = "";
+			this.btnEvaluarCeps.Visible = false;
+			this.btnEvaluarRaven.Visible = false;
+			if(this.gridAspir1.SelectedRows.Count == 0) return;
 			int sIndex = this.gridAspir1.SelectedRows[0].Index;
 			AccesoDatos.AccesoDatos ad = new AccesoDatos.AccesoDatos("app.config");
 			ad.Conectar();
@@ -70,6 +81,30 @@ namespace WinApp
 			{
 				this.btnEvaluarCeps.Visible = false;
 				this.lblResultadoCeps.Text = aspir.ResCeps.Diagnostico;
+			}
+		}
+		
+		void BtnEvaluarRavenClick(object sender, EventArgs e)
+		{
+			frmRaven frmr = new frmRaven();
+			frmr.ShowDialog(this);
+		}
+		
+		
+		void BtnAddAspirClick(object sender, EventArgs e)
+		{
+			frmAddEditAspir frmasp = new frmAddEditAspir();
+			frmasp.ShowDialog(this);
+			if(frmasp.DialogResult == DialogResult.OK)
+			{
+				if(frmasp.aspir != null)
+				{
+					manejadorAspirante.agregarAspirante(frmasp.aspir, this.ad.ds.Tables["aspirantes"]);
+					this.ad.Conectar();
+					this.ad.ActualizarBD();					
+					this.ad.Desconectar();
+					this.gridAspir1.CargarGrid((int)this.comboBox1.Items[this.comboBox1.SelectedIndex]);
+				}
 			}
 		}
 	}

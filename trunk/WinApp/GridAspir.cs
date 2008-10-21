@@ -76,7 +76,7 @@ namespace WinApp
 			this.Rows.Clear();
 			foreach(Aspirante aspir in this._aspirs)
 			{
-				this.Rows.Add(new object[]{aspir.Codigo, aspir.Apellidos, aspir.Nombres, aspir.Carrera.NombreCarrera.Substring(0, 60) + "...", aspir.Estado});
+				this.Rows.Add(new object[]{aspir.Codigo, aspir.Apellidos, aspir.Nombres, aspir.Carrera.NombreCarrera.Substring(0, 50) + "...", aspir.Estado});
 			}
 		}
 		
