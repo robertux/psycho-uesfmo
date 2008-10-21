@@ -36,6 +36,7 @@ namespace WinApp
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddEditAspir));
 			this.txtApellidos = new Bullets.Visuales.CustomTextBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
@@ -44,8 +45,6 @@ namespace WinApp
 			this.txtDireccion = new Bullets.Visuales.CustomTextBox();
 			this.txtTelefono = new Bullets.Visuales.CustomTextBox();
 			this.label5 = new System.Windows.Forms.Label();
-			this.btnCancelar = new System.Windows.Forms.Button();
-			this.btnAceptar = new System.Windows.Forms.Button();
 			this.cmbDepto = new System.Windows.Forms.ComboBox();
 			this.label6 = new System.Windows.Forms.Label();
 			this.label7 = new System.Windows.Forms.Label();
@@ -61,6 +60,8 @@ namespace WinApp
 			this.label11 = new System.Windows.Forms.Label();
 			this.cmbFacultad = new System.Windows.Forms.ComboBox();
 			this.cmbCarrera = new System.Windows.Forms.ComboBox();
+			this.button2 = new System.Windows.Forms.Button();
+			this.button1 = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// txtApellidos
@@ -157,27 +158,6 @@ namespace WinApp
 			this.label5.Size = new System.Drawing.Size(71, 20);
 			this.label5.TabIndex = 3;
 			this.label5.Text = "Telefono";
-			// 
-			// btnCancelar
-			// 
-			this.btnCancelar.Location = new System.Drawing.Point(421, 530);
-			this.btnCancelar.Name = "btnCancelar";
-			this.btnCancelar.Size = new System.Drawing.Size(147, 32);
-			this.btnCancelar.TabIndex = 12;
-			this.btnCancelar.Text = "&Cancelar";
-			this.btnCancelar.UseVisualStyleBackColor = true;
-			this.btnCancelar.Click += new System.EventHandler(this.Button1Click);
-			// 
-			// btnAceptar
-			// 
-			this.btnAceptar.Enabled = false;
-			this.btnAceptar.Location = new System.Drawing.Point(268, 530);
-			this.btnAceptar.Name = "btnAceptar";
-			this.btnAceptar.Size = new System.Drawing.Size(147, 32);
-			this.btnAceptar.TabIndex = 11;
-			this.btnAceptar.Text = "&Aceptar";
-			this.btnAceptar.UseVisualStyleBackColor = true;
-			this.btnAceptar.Click += new System.EventHandler(this.Button2Click);
 			// 
 			// cmbDepto
 			// 
@@ -331,11 +311,46 @@ namespace WinApp
 			this.cmbCarrera.Size = new System.Drawing.Size(346, 28);
 			this.cmbCarrera.TabIndex = 11;
 			// 
+			// button2
+			// 
+			this.button2.FlatAppearance.BorderSize = 0;
+			this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+			this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+			this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.button2.Location = new System.Drawing.Point(332, 521);
+			this.button2.Name = "button2";
+			this.button2.Size = new System.Drawing.Size(115, 45);
+			this.button2.TabIndex = 13;
+			this.button2.Text = "C&ancelar";
+			this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.button2.UseVisualStyleBackColor = true;
+			this.button2.Click += new System.EventHandler(this.Button2Click);
+			// 
+			// button1
+			// 
+			this.button1.Enabled = false;
+			this.button1.FlatAppearance.BorderSize = 0;
+			this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+			this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+			this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.button1.Location = new System.Drawing.Point(453, 521);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(115, 45);
+			this.button1.TabIndex = 12;
+			this.button1.Text = "&Calificar";
+			this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.button1.UseVisualStyleBackColor = true;
+			this.button1.Click += new System.EventHandler(this.Button1Click);
+			// 
 			// frmAddEditAspir
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(580, 569);
+			this.ClientSize = new System.Drawing.Size(580, 574);
+			this.Controls.Add(this.button2);
+			this.Controls.Add(this.button1);
 			this.Controls.Add(this.dtpFechaNac);
 			this.Controls.Add(this.rbtnFemenino);
 			this.Controls.Add(this.rbtnMasculino);
@@ -344,8 +359,6 @@ namespace WinApp
 			this.Controls.Add(this.cmbFacultad);
 			this.Controls.Add(this.cmbCiudad);
 			this.Controls.Add(this.cmbDepto);
-			this.Controls.Add(this.btnAceptar);
-			this.Controls.Add(this.btnCancelar);
 			this.Controls.Add(this.label11);
 			this.Controls.Add(this.label9);
 			this.Controls.Add(this.label4);
@@ -370,8 +383,8 @@ namespace WinApp
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
-		private System.Windows.Forms.Button btnCancelar;
-		private System.Windows.Forms.Button btnAceptar;
+		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.Button button2;
 		private System.Windows.Forms.ComboBox cmbCarrera;
 		private System.Windows.Forms.ComboBox cmbFacultad;
 		private System.Windows.Forms.DateTimePicker dtpFechaNac;

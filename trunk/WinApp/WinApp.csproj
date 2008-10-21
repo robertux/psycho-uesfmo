@@ -38,6 +38,10 @@
     <Compile Include="frmAddEditAspir.Designer.cs">
       <DependentUpon>frmAddEditAspir.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCeps.cs" />
+    <Compile Include="frmCeps.Designer.cs">
+      <DependentUpon>frmCeps.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs" />
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
@@ -53,6 +57,9 @@
     <Compile Include="Program.cs" />
     <EmbeddedResource Include="frmAddEditAspir.resx">
       <DependentUpon>frmAddEditAspir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCeps.resx">
+      <DependentUpon>frmCeps.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>

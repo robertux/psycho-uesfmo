@@ -37,8 +37,8 @@ namespace WinApp
 		private void InitializeComponent()
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.btnDelAspir = new System.Windows.Forms.Button();
 			this.btnEditAspir = new System.Windows.Forms.Button();
@@ -81,7 +81,7 @@ namespace WinApp
 			this.btnDelAspir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnDelAspir.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnDelAspir.Image = ((System.Drawing.Image)(resources.GetObject("btnDelAspir.Image")));
-			this.btnDelAspir.Location = new System.Drawing.Point(302, 7);
+			this.btnDelAspir.Location = new System.Drawing.Point(298, 7);
 			this.btnDelAspir.Name = "btnDelAspir";
 			this.btnDelAspir.Size = new System.Drawing.Size(55, 56);
 			this.btnDelAspir.TabIndex = 6;
@@ -129,18 +129,23 @@ namespace WinApp
 			// 
 			this.lblResultadoCeps.Location = new System.Drawing.Point(15, 41);
 			this.lblResultadoCeps.Name = "lblResultadoCeps";
-			this.lblResultadoCeps.Size = new System.Drawing.Size(812, 51);
+			this.lblResultadoCeps.Size = new System.Drawing.Size(730, 51);
 			this.lblResultadoCeps.TabIndex = 2;
 			// 
 			// btnEvaluarCeps
 			// 
-			this.btnEvaluarCeps.Location = new System.Drawing.Point(711, 10);
+			this.btnEvaluarCeps.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+			this.btnEvaluarCeps.Image = ((System.Drawing.Image)(resources.GetObject("btnEvaluarCeps.Image")));
+			this.btnEvaluarCeps.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnEvaluarCeps.Location = new System.Drawing.Point(751, 10);
 			this.btnEvaluarCeps.Name = "btnEvaluarCeps";
-			this.btnEvaluarCeps.Size = new System.Drawing.Size(128, 28);
+			this.btnEvaluarCeps.Size = new System.Drawing.Size(88, 44);
 			this.btnEvaluarCeps.TabIndex = 1;
 			this.btnEvaluarCeps.Text = "Evaluar";
+			this.btnEvaluarCeps.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			this.btnEvaluarCeps.UseVisualStyleBackColor = true;
 			this.btnEvaluarCeps.Visible = false;
+			this.btnEvaluarCeps.Click += new System.EventHandler(this.BtnEvaluarCepsClick);
 			// 
 			// groupBox2
 			// 
@@ -157,16 +162,20 @@ namespace WinApp
 			// 
 			this.lblResultadoRaven.Location = new System.Drawing.Point(15, 41);
 			this.lblResultadoRaven.Name = "lblResultadoRaven";
-			this.lblResultadoRaven.Size = new System.Drawing.Size(812, 50);
+			this.lblResultadoRaven.Size = new System.Drawing.Size(730, 50);
 			this.lblResultadoRaven.TabIndex = 1;
 			// 
 			// btnEvaluarRaven
 			// 
-			this.btnEvaluarRaven.Location = new System.Drawing.Point(711, 10);
+			this.btnEvaluarRaven.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+			this.btnEvaluarRaven.Image = ((System.Drawing.Image)(resources.GetObject("btnEvaluarRaven.Image")));
+			this.btnEvaluarRaven.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnEvaluarRaven.Location = new System.Drawing.Point(751, 10);
 			this.btnEvaluarRaven.Name = "btnEvaluarRaven";
-			this.btnEvaluarRaven.Size = new System.Drawing.Size(128, 28);
+			this.btnEvaluarRaven.Size = new System.Drawing.Size(88, 44);
 			this.btnEvaluarRaven.TabIndex = 0;
 			this.btnEvaluarRaven.Text = "Evaluar";
+			this.btnEvaluarRaven.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			this.btnEvaluarRaven.UseVisualStyleBackColor = true;
 			this.btnEvaluarRaven.Visible = false;
 			this.btnEvaluarRaven.Click += new System.EventHandler(this.BtnEvaluarRavenClick);
@@ -188,27 +197,27 @@ namespace WinApp
 			this.gridAspir1.AllowUserToDeleteRows = false;
 			this.gridAspir1.AllowUserToResizeColumns = false;
 			this.gridAspir1.AllowUserToResizeRows = false;
-			dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
-			dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 18F);
-			dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-			dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-			dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.gridAspir1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightGray;
+			dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 18F);
+			dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.gridAspir1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
 			this.gridAspir1.Aspirs = null;
 			this.gridAspir1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
 			this.gridAspir1.BackgroundColor = System.Drawing.SystemColors.Control;
 			this.gridAspir1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedVertical;
 			this.gridAspir1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-			dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 18F);
-			dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.gridAspir1.DefaultCellStyle = dataGridViewCellStyle2;
+			dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+			dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 18F);
+			dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+			dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.gridAspir1.DefaultCellStyle = dataGridViewCellStyle4;
 			this.gridAspir1.Location = new System.Drawing.Point(31, 69);
 			this.gridAspir1.MultiSelect = false;
 			this.gridAspir1.Name = "gridAspir1";

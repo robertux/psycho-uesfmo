@@ -135,5 +135,11 @@ namespace WinApp
 				this.gridAspir1.CargarGrid((int)this.comboBox1.Items[this.comboBox1.SelectedIndex]);
 			}
 		}
+		
+		void BtnEvaluarCepsClick(object sender, EventArgs e)
+		{
+			frmCeps frmc = new frmCeps();
+			frmc.ShowDialog(this);
+		}
 	}
 }
