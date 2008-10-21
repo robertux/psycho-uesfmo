@@ -88,12 +88,6 @@ namespace WinApp
 						
 		void Button1Click(object sender, EventArgs e)
 		{
-			this.DialogResult = DialogResult.Cancel;
-			this.Close();
-		}
-		
-		void Button2Click(object sender, EventArgs e)
-		{
 			this.DialogResult = DialogResult.OK;
 			string cod, estado;
 			uint anioRegistrado;
@@ -112,6 +106,12 @@ namespace WinApp
 
 			this.aspir = new Aspirante(cod, this.txtNombres.Text, this.txtApellidos.Text, "0", this.txtDireccion.Text, this.txtTelefono.Text, this.centros[this.cmbCentroEstudios.SelectedIndex], this.ciudades[this.cmbCiudad.SelectedIndex], this.deptos[this.cmbDepto.SelectedIndex], "", estado, this.carreras[this.cmbCarrera.SelectedIndex], (this.rbtnMasculino.Checked? 'M': 'F'), this.dtpFechaNac.Value, this.facultades[this.cmbFacultad.SelectedIndex], anioRegistrado, "");
 			this.Close();
+		}
+		
+		void Button2Click(object sender, EventArgs e)
+		{
+			this.DialogResult = DialogResult.Cancel;
+			this.Close();			
 		}
 		
 		public void CargarCentrosEstudios()
@@ -177,9 +177,9 @@ namespace WinApp
 		public void CheckAceptButton()
 		{
 			if(this.txtApellidos.Text == "" || this.txtNombres.Text == "")
-				this.btnAceptar.Enabled = false;
+				this.button1.Enabled = false;
 			else
-				this.btnAceptar.Enabled = true;
+				this.button1.Enabled = true;
 		}
 		
 		void TxtApellidosTextChanged(object sender, EventArgs e)

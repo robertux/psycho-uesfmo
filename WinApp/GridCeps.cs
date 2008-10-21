@@ -54,11 +54,26 @@ namespace WinApp
 		public GridCeps(): base()
 		{
 			this._prueba = new PruebaCeps("");
-			this._pregs = new PreguntasCeps();
+			for(int i=0; i<156; i++)
+				this._prueba.Respuestas.Add(new Respuesta("", (uint)i+1, (uint)0));			
+		}
+		
+		public override void FormatearGrid()
+		{
+			base.FormatearGrid();
+			this.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+			this.DefaultCellStyle.Font = new Font("Arial", 10, FontStyle.Regular);
+			this.AlternatingRowsDefaultCellStyle.Font = this.DefaultCellStyle.Font;
 		}
 		
 		public override void CargarGrid()
-		{
+		{			
+			this.FormatearGrid();
+			this._pregs = new PreguntasCeps();
+			this._prueba = new PruebaCeps("");
+			for(int i=0; i<156; i++)
+				this._prueba.Respuestas.Add(new Respuesta("", (uint)i+1, (uint)0));			
+			
 			this.Columns.Clear();
 			this.Columns.Add("colNumero", "Numero");
 			this.Columns.Add("colPregunta", "Pregunta");

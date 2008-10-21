@@ -82,6 +82,13 @@ namespace WinApp
 		
 		void Button1Click(object sender, EventArgs e)
 		{
+			this.DialogResult = DialogResult.OK;
+			this.Close();
+		}
+		
+		void Button2Click(object sender, EventArgs e)
+		{
+			this.DialogResult = DialogResult.Cancel;
 			this.Close();
 		}
 	}
