@@ -36,8 +36,9 @@ namespace WinApp
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRaven));
 			this.gridRaven1 = new WinApp.GridRaven();
 			this.pbxRaven = new System.Windows.Forms.PictureBox();
 			this.button1 = new System.Windows.Forms.Button();
@@ -51,29 +52,31 @@ namespace WinApp
 			this.gridRaven1.AllowUserToDeleteRows = false;
 			this.gridRaven1.AllowUserToResizeColumns = false;
 			this.gridRaven1.AllowUserToResizeRows = false;
-			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightGray;
-			dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 18F);
-			dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.gridRaven1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+			dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
+			dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 18F);
+			dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+			dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.gridRaven1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
 			this.gridRaven1.BackgroundColor = System.Drawing.SystemColors.Control;
 			this.gridRaven1.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.gridRaven1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedVertical;
 			this.gridRaven1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-			dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 18F);
-			dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-			dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-			dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.gridRaven1.DefaultCellStyle = dataGridViewCellStyle4;
+			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+			dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 18F);
+			dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.gridRaven1.DefaultCellStyle = dataGridViewCellStyle2;
 			this.gridRaven1.Location = new System.Drawing.Point(16, 20);
 			this.gridRaven1.MultiSelect = false;
 			this.gridRaven1.Name = "gridRaven1";
+			this.gridRaven1.Pregs = ((FuncionalidadClassLib.PreguntasRaven)(resources.GetObject("gridRaven1.Pregs")));
+			this.gridRaven1.Prueba = ((FuncionalidadClassLib.PruebaRaven)(resources.GetObject("gridRaven1.Prueba")));
 			this.gridRaven1.ReadOnly = true;
 			this.gridRaven1.RowHeadersVisible = false;
 			this.gridRaven1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -99,8 +102,9 @@ namespace WinApp
 			this.button1.TabIndex = 2;
 			this.button1.Text = "&Calificar";
 			this.button1.UseVisualStyleBackColor = true;
+			this.button1.Click += new System.EventHandler(this.Button1Click);
 			// 
-			// MainForm
+			// frmRaven
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -108,9 +112,10 @@ namespace WinApp
 			this.Controls.Add(this.button1);
 			this.Controls.Add(this.pbxRaven);
 			this.Controls.Add(this.gridRaven1);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;
-			this.Name = "MainForm";
+			this.Name = "frmRaven";
 			this.Text = "Evaluador de la Prueba RAVEN";
 			this.Load += new System.EventHandler(this.MainFormLoad);
 			((System.ComponentModel.ISupportInitialize)(this.gridRaven1)).EndInit();

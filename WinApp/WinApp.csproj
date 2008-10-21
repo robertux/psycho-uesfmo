@@ -33,23 +33,32 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="CustomTextBox.cs" />
+    <Compile Include="frmAddEditAspir.cs" />
+    <Compile Include="frmAddEditAspir.Designer.cs">
+      <DependentUpon>frmAddEditAspir.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs" />
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
     <Compile Include="GridAspir.cs" />
     <Compile Include="GridBase.cs" />
+    <Compile Include="GridCeps.cs" />
     <Compile Include="GridRaven.cs" />
-    <Compile Include="RavenForm.cs" />
-    <Compile Include="RavenForm.Designer.cs">
-      <DependentUpon>RavenForm.cs</DependentUpon>
+    <Compile Include="frmRaven.cs" />
+    <Compile Include="frmRaven.Designer.cs">
+      <DependentUpon>frmRaven.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <EmbeddedResource Include="frmAddEditAspir.resx">
+      <DependentUpon>frmAddEditAspir.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RavenForm.resx">
-      <DependentUpon>RavenForm.cs</DependentUpon>
+    <EmbeddedResource Include="frmRaven.resx">
+      <DependentUpon>frmRaven.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

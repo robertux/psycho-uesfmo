@@ -1,4 +1,4 @@
-/*
+	/*
  * Created by SharpDevelop.
  * user: Robertux
  * Date: 13/10/2008
@@ -41,7 +41,8 @@ namespace WinApp
 		
 		void GridRaven1KeyDown(object sender, KeyEventArgs e)
 		{
-			
+			Console.WriteLine(e.KeyCode);
+			if(this.gridRaven1.SelectedRows.Count == 0) return;
 			int sIndex = this.gridRaven1.SelectedRows[0].Index;
 			if(e.KeyValue >= 97) //Equivalente a la tecla numeral 1
 			{
@@ -78,5 +79,10 @@ namespace WinApp
 			}
 		}
 		
+		
+		void Button1Click(object sender, EventArgs e)
+		{
+			this.Close();
+		}
 	}
 }

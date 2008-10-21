@@ -82,7 +82,6 @@ CREATE TABLE `aspirantes` (
   CONSTRAINT `FK_carreras` FOREIGN KEY (`carrera`) REFERENCES `carreras` (`codigo`),
   CONSTRAINT `FK_centroestudio` FOREIGN KEY (`lugarestudio`) REFERENCES `centroestudio` (`codigo`),
   CONSTRAINT `FK_ciudades` FOREIGN KEY (`ciudad`) REFERENCES `ciudades` (`codigo`),
-  CONSTRAINT `FK_codgrupo` FOREIGN KEY (`codgrupo`) REFERENCES `grupos` (`codgrupo`),
   CONSTRAINT `FK_departamentos` FOREIGN KEY (`departamento`) REFERENCES `departamentos` (`codigo`),
   CONSTRAINT `FK_facultades` FOREIGN KEY (`facultad`) REFERENCES `facultades` (`codigo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
