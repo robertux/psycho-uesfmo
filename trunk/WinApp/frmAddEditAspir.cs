@@ -29,11 +29,24 @@ namespace WinApp
 		private List<Facultad> facultades;
 		private List<Carrera> carreras;
 		private bool editMode;
-		
-		public frmAddEditAspir()
+
+        //Lo agrego por conveniencia
+        public frmAddEditAspir()
+        {
+            InitializeComponent();
+            this.ad = new AccesoDatos.AccesoDatos("WinApp.exe.config");
+            this.ad.Conectar();
+            this.ad.RellenarDS();
+            this.ad.Desconectar();
+            this.editMode = false;
+        }
+
+		public frmAddEditAspir(AccesoDatos.AccesoDatos pAD)
 		{			
 			InitializeComponent();			
-			this.ad = new AccesoDatos.AccesoDatos("app.config");
+            ////Se le pasa como argumento.
+			//this.ad = new AccesoDatos.AccesoDatos("app.config"); //WinApp.exe.config
+            this.ad = pAD;
 			this.ad.Conectar();
 			this.ad.RellenarDS();
 			this.ad.Desconectar();

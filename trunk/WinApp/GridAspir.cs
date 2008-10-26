@@ -35,7 +35,13 @@ namespace WinApp
 			get { return this._aspirs; }
 			set { this._aspirs = value; }
 		}
-		
+
+        public AccesoDatos.AccesoDatos AD
+        {
+            set { this._ad = value; }
+        }
+
+
 		#endregion
 		
 		#region Metodos
@@ -61,7 +67,7 @@ namespace WinApp
 		public void CargarGrid(int anio)
 		{
 			this.FormatearGrid();
-			this._ad = new AccesoDatos.AccesoDatos("app.config");
+            if (this._ad == null) this._ad = new AccesoDatos.AccesoDatos("WinApp.exe.config"); //en todo caso, esto casi siempre me da error, aun no se por que.
 			this._ad.Conectar();
 			this._ad.RellenarDS();
 			this._aspirs = manejadorAspirante.ConsultarAspirantes((uint)anio, this._ad.ds);

@@ -25,9 +25,17 @@ namespace WinApp
 		public frmMain()
 		{
 			InitializeComponent();
+            ////Primero instanciamos el acceso a datos
+            ////(renombrado de app.config a WinApp.exe.config para poderlo usar con ClickOnce)
+            this.ad = new AccesoDatos.AccesoDatos("WinApp.exe.config");
+            ////Como ya existe un acceso a datos, lo pasamos al gridAspir1.
+            this.gridAspir1.AD = this.ad;
+
 			this.CargarCombo();
-			this.gridAspir1.CargarGrid();
-			this.ad = new AccesoDatos.AccesoDatos("app.config");
+            ////La siguiente linea NO es necesaria, pues en CargarCombo(), se llama a
+            ////ComboBox1SelectedIndexChanged(), en donde se ejecuta CargarGrid(...).
+			//this.gridAspir1.CargarGrid();
+			
 			this.ad.Conectar();
 			this.ad.RellenarDS();
 			this.ad.Desconectar();
@@ -55,7 +63,8 @@ namespace WinApp
 			this.btnEvaluarRaven.Visible = false;
 			if(this.gridAspir1.SelectedRows.Count == 0) return;
 			int sIndex = this.gridAspir1.SelectedRows[0].Index;
-			AccesoDatos.AccesoDatos ad = new AccesoDatos.AccesoDatos("app.config");
+            ////Para Que?, si ya existe?
+			//AccesoDatos.AccesoDatos ad = new AccesoDatos.AccesoDatos("WinApp.exe.config");
 			ad.Conectar();
 			ad.RellenarDS();
 			ad.Desconectar();
@@ -86,7 +95,7 @@ namespace WinApp
 		
 		void BtnAddAspirClick(object sender, EventArgs e)
 		{
-			frmAddEditAspir frmasp = new frmAddEditAspir();
+			frmAddEditAspir frmasp = new frmAddEditAspir(this.ad);
 			frmasp.ShowDialog(this);
 			if(frmasp.DialogResult == DialogResult.OK)
 			{
@@ -96,6 +105,8 @@ namespace WinApp
 					this.ad.Conectar();
 					this.ad.ActualizarBD();					
 					this.ad.Desconectar();
+                    ////Otra linea no necesaria, GridAspir ya tiene ad.
+                    //this.gridAspir1.AD = this.ad;
 					this.gridAspir1.CargarGrid((int)this.comboBox1.Items[this.comboBox1.SelectedIndex]);
 				}
 			}
