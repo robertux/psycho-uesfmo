@@ -148,9 +148,11 @@ namespace WinApp
 			{
 				this.gridAspir1.Aspirs[this.gridAspir1.SelectedRows[0].Index] = ManejadorPruebas.RealizarPruebaRaven(this.gridAspir1.Aspirs[this.gridAspir1.SelectedRows[0].Index], frmr.Prueba);
 				this.gridAspir1.Aspirs[this.gridAspir1.SelectedRows[0].Index].ResRaven.codresult =  (int.Parse(ManejadorPruebas.GetMaxCodeResultados(this.ad.ds.Tables["resultadosraven"])) + 1).ToString();
-				this.gridAspir1.Aspirs[this.gridAspir1.SelectedRows[0].Index].Estado = "evaluando";
+				this.gridAspir1.Aspirs[this.gridAspir1.SelectedRows[0].Index].Estado = "evaluado";
+				this.gridAspir1.SelectedRows[0].Cells[4].Value = "evaluado";
 				this.gridAspir1.Aspirs[this.gridAspir1.SelectedRows[0].Index].ResCeps = null;			//solo para evitar un bug de la funcionalidad
 				ManejadorPruebas.AgregarResultados(this.gridAspir1.Aspirs[this.gridAspir1.SelectedRows[0].Index], this.ad.ds.Tables["resultadosceps"], this.ad.ds.Tables["resultadosraven"]);
+				manejadorAspirante.modificarAspirante(this.gridAspir1.Aspirs[this.gridAspir1.SelectedRows[0].Index], this.ad.ds.Tables["aspirantes"]);				
 				this.ad.Conectar();
 				this.ad.ActualizarBD();
 				this.ad.Desconectar();
@@ -167,8 +169,10 @@ namespace WinApp
 				this.gridAspir1.Aspirs[this.gridAspir1.SelectedRows[0].Index] = ManejadorPruebas.RealizarPruebaCeps(this.gridAspir1.Aspirs[this.gridAspir1.SelectedRows[0].Index], frmc.Prueba);				
 				this.gridAspir1.Aspirs[this.gridAspir1.SelectedRows[0].Index].ResCeps.codresult = (int.Parse(ManejadorPruebas.GetMaxCodeResultados(this.ad.ds.Tables["resultadosceps"])) + 1).ToString().PadLeft(7, '0');
 				this.gridAspir1.Aspirs[this.gridAspir1.SelectedRows[0].Index].Estado = "evaluado";
+				this.gridAspir1.SelectedRows[0].Cells[4].Value = "evaluado";
 				this.gridAspir1.Aspirs[this.gridAspir1.SelectedRows[0].Index].ResRaven = null;   				//solo para evitar un bug de la funcionalidad
 				ManejadorPruebas.AgregarResultados(this.gridAspir1.Aspirs[this.gridAspir1.SelectedRows[0].Index], this.ad.ds.Tables["resultadosceps"], this.ad.ds.Tables["resultadosraven"]);
+				manejadorAspirante.modificarAspirante(this.gridAspir1.Aspirs[this.gridAspir1.SelectedRows[0].Index], this.ad.ds.Tables["aspirantes"]);
 				this.ad.Conectar();
 				this.ad.ActualizarBD();
 				this.ad.Desconectar();
