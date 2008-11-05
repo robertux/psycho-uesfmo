@@ -117,7 +117,7 @@ namespace AccesoDatos
         
         protected void InicializarVariables(string tuid, string tpwd, string thost, string tdbname)
         {
-        	 this.Usuario = tuid;
+        	this.Usuario = tuid;
             this.Clave = tpwd;
             this.Servidor = thost;
             this.BaseDatos = tdbname;
