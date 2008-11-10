@@ -20,7 +20,7 @@ namespace WinApp
 	/// </summary>
 	public partial class frmMain : Form
 	{
-		private AccesoDatos.AccesoDatos ad;
+		private AccesoDatos.AccesoDatos ad;		
 		
 		public frmMain()
 		{
@@ -29,7 +29,7 @@ namespace WinApp
             ////(renombrado de app.config a WinApp.exe.config para poderlo usar con ClickOnce)
             this.ad = new AccesoDatos.AccesoDatos("WinApp.exe.config");
             ////Como ya existe un acceso a datos, lo pasamos al gridAspir1.
-            this.gridAspir1.AD = this.ad;
+            //this.gridAspir1.AD = this.ad;
 
 			this.CargarCombo();
             ////La siguiente linea NO es necesaria, pues en CargarCombo(), se llama a
@@ -52,7 +52,23 @@ namespace WinApp
 		void ComboBox1SelectedIndexChanged(object sender, EventArgs e)
 		{
 			if(this.comboBox1.SelectedIndex != -1)
+			{
 				this.gridAspir1.CargarGrid((int)this.comboBox1.Items[this.comboBox1.SelectedIndex]);
+				if(this.gridAspir1.Rows.Count == 0)
+				{
+					this.btnEditAspir.Enabled = false;
+					this.btnDelAspir.Enabled = false;
+					this.label1.Text = "Alumnos";
+					this.label2.Text = "Evaluados: 0    Pendientes: 0";
+				}
+				else
+				{
+					this.btnEditAspir.Enabled = true;
+					this.btnDelAspir.Enabled = true;
+					this.label1.Text = "Alumnos(" + this.gridAspir1.Rows.Count.ToString() + ")";
+					this.label2.Text = "Evaluados: " + this.gridAspir1.TotalEvaluados.ToString() + "    Pendientes: " + this.gridAspir1.TotalPendientes.ToString();
+				}
+			}
 		}
 		
 		void GridAspir1SelectionChanged(object sender, EventArgs e)
@@ -108,6 +124,8 @@ namespace WinApp
                     ////Otra linea no necesaria, GridAspir ya tiene ad.
                     //this.gridAspir1.AD = this.ad;
 					this.gridAspir1.CargarGrid((int)this.comboBox1.Items[this.comboBox1.SelectedIndex]);
+					this.btnEditAspir.Enabled = true;
+					this.btnDelAspir.Enabled = true;
 				}
 			}
 		}
@@ -123,6 +141,11 @@ namespace WinApp
 				this.ad.EjecutarComando("DELETE FROM aspirantes WHERE codigo = '" + this.gridAspir1.Aspirs[this.gridAspir1.SelectedRows[0].Index].Codigo + "'");
 				this.ad.Desconectar();
 				this.gridAspir1.CargarGrid((int)this.comboBox1.Items[this.comboBox1.SelectedIndex]);
+				if(this.gridAspir1.Rows.Count == 0)
+				{
+					this.btnEditAspir.Enabled = false;
+					this.btnDelAspir.Enabled = false;
+				}
 			}
 		}
 		

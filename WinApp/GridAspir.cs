@@ -25,6 +25,9 @@ namespace WinApp
 		
 		private List<Aspirante> _aspirs;
 		private AccesoDatos.AccesoDatos _ad;
+		private System.Windows.Forms.DataGridViewCellStyle estiloEvaluado;
+		private int _totalEvaluados;
+		private int _totalPendientes;
 		
 		#endregion
 		
@@ -39,6 +42,16 @@ namespace WinApp
         public AccesoDatos.AccesoDatos AD
         {
             set { this._ad = value; }
+        }
+        
+        public int TotalEvaluados
+        {
+        	get { return this._totalEvaluados; }        	
+        }
+        
+        public int TotalPendientes
+        {
+        	get { return this._totalPendientes; }
         }
 
 
@@ -59,14 +72,18 @@ namespace WinApp
 		{
 			base.FormatearGrid();
 			this.DefaultCellStyle.Font = new Font("Arial", 12, FontStyle.Regular);
+			this.estiloEvaluado = new DataGridViewCellStyle(this.DefaultCellStyle);
+			this.estiloEvaluado.ForeColor = Color.Green;
 			this.AlternatingRowsDefaultCellStyle.Font = new Font("Arial", 12, FontStyle.Regular);
 			this.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
 			this.BorderStyle = BorderStyle.FixedSingle;
 		}
 		
 		public void CargarGrid(int anio)
-		{
+		{			
 			this.FormatearGrid();
+			this._totalEvaluados = 0;
+			this._totalPendientes = 0;
             if (this._ad == null) this._ad = new AccesoDatos.AccesoDatos("WinApp.exe.config"); //en todo caso, esto casi siempre me da error, aun no se por que.
 			this._ad.Conectar();
 			this._ad.RellenarDS();
@@ -83,6 +100,15 @@ namespace WinApp
 			foreach(Aspirante aspir in this._aspirs)
 			{
 				this.Rows.Add(new object[]{aspir.Codigo, aspir.Apellidos, aspir.Nombres, aspir.Carrera.NombreCarrera.Substring(0, 50) + "...", aspir.Estado});
+				this.estiloEvaluado.BackColor = this.Rows[this.Rows.Count-1].Cells[0].Style.BackColor;
+				if(aspir.Estado == "evaluado")
+				{
+					this._totalEvaluados++;
+					foreach(DataGridViewCell celda in this.Rows[this.Rows.Count-1].Cells)
+						celda.Style = this.estiloEvaluado;
+				}
+				else if(aspir.Estado == "pendiente")
+					this._totalPendientes++;
 			}
 		}
 		
