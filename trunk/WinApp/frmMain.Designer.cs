@@ -37,8 +37,8 @@ namespace WinApp
 		private void InitializeComponent()
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.btnDelAspir = new System.Windows.Forms.Button();
 			this.btnEditAspir = new System.Windows.Forms.Button();
@@ -52,6 +52,7 @@ namespace WinApp
 			this.comboBox1 = new System.Windows.Forms.ComboBox();
 			this.gridAspir1 = new WinApp.GridAspir();
 			this.label1 = new System.Windows.Forms.Label();
+			this.label2 = new System.Windows.Forms.Label();
 			this.groupBox1.SuspendLayout();
 			this.groupBox3.SuspendLayout();
 			this.groupBox2.SuspendLayout();
@@ -61,6 +62,7 @@ namespace WinApp
 			// groupBox1
 			// 
 			this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
+			this.groupBox1.Controls.Add(this.label2);
 			this.groupBox1.Controls.Add(this.btnDelAspir);
 			this.groupBox1.Controls.Add(this.btnEditAspir);
 			this.groupBox1.Controls.Add(this.btnAddAspir);
@@ -71,7 +73,7 @@ namespace WinApp
 			this.groupBox1.Controls.Add(this.label1);
 			this.groupBox1.Location = new System.Drawing.Point(58, 46);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(904, 598);
+			this.groupBox1.Size = new System.Drawing.Size(904, 669);
 			this.groupBox1.TabIndex = 0;
 			this.groupBox1.TabStop = false;
 			// 
@@ -81,7 +83,7 @@ namespace WinApp
 			this.btnDelAspir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnDelAspir.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnDelAspir.Image = ((System.Drawing.Image)(resources.GetObject("btnDelAspir.Image")));
-			this.btnDelAspir.Location = new System.Drawing.Point(298, 7);
+			this.btnDelAspir.Location = new System.Drawing.Point(382, 7);
 			this.btnDelAspir.Name = "btnDelAspir";
 			this.btnDelAspir.Size = new System.Drawing.Size(55, 56);
 			this.btnDelAspir.TabIndex = 6;
@@ -94,7 +96,7 @@ namespace WinApp
 			this.btnEditAspir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnEditAspir.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnEditAspir.Image = ((System.Drawing.Image)(resources.GetObject("btnEditAspir.Image")));
-			this.btnEditAspir.Location = new System.Drawing.Point(241, 7);
+			this.btnEditAspir.Location = new System.Drawing.Point(325, 7);
 			this.btnEditAspir.Name = "btnEditAspir";
 			this.btnEditAspir.Size = new System.Drawing.Size(55, 56);
 			this.btnEditAspir.TabIndex = 6;
@@ -107,7 +109,7 @@ namespace WinApp
 			this.btnAddAspir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnAddAspir.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnAddAspir.Image = ((System.Drawing.Image)(resources.GetObject("btnAddAspir.Image")));
-			this.btnAddAspir.Location = new System.Drawing.Point(180, 7);
+			this.btnAddAspir.Location = new System.Drawing.Point(264, 7);
 			this.btnAddAspir.Name = "btnAddAspir";
 			this.btnAddAspir.Size = new System.Drawing.Size(55, 56);
 			this.btnAddAspir.TabIndex = 6;
@@ -118,7 +120,7 @@ namespace WinApp
 			// 
 			this.groupBox3.Controls.Add(this.lblResultadoCeps);
 			this.groupBox3.Controls.Add(this.btnEvaluarCeps);
-			this.groupBox3.Location = new System.Drawing.Point(31, 467);
+			this.groupBox3.Location = new System.Drawing.Point(31, 546);
 			this.groupBox3.Name = "groupBox3";
 			this.groupBox3.Size = new System.Drawing.Size(845, 104);
 			this.groupBox3.TabIndex = 5;
@@ -151,7 +153,7 @@ namespace WinApp
 			// 
 			this.groupBox2.Controls.Add(this.lblResultadoRaven);
 			this.groupBox2.Controls.Add(this.btnEvaluarRaven);
-			this.groupBox2.Location = new System.Drawing.Point(31, 357);
+			this.groupBox2.Location = new System.Drawing.Point(31, 436);
 			this.groupBox2.Name = "groupBox2";
 			this.groupBox2.Size = new System.Drawing.Size(845, 104);
 			this.groupBox2.TabIndex = 4;
@@ -187,7 +189,7 @@ namespace WinApp
 			this.comboBox1.FormattingEnabled = true;
 			this.comboBox1.Location = new System.Drawing.Point(638, 22);
 			this.comboBox1.Name = "comboBox1";
-			this.comboBox1.Size = new System.Drawing.Size(248, 28);
+			this.comboBox1.Size = new System.Drawing.Size(238, 28);
 			this.comboBox1.TabIndex = 3;
 			this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.ComboBox1SelectedIndexChanged);
 			// 
@@ -197,34 +199,34 @@ namespace WinApp
 			this.gridAspir1.AllowUserToDeleteRows = false;
 			this.gridAspir1.AllowUserToResizeColumns = false;
 			this.gridAspir1.AllowUserToResizeRows = false;
-			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightGray;
-			dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 18F);
-			dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.gridAspir1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+			dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
+			dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 18F);
+			dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+			dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.gridAspir1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
 			this.gridAspir1.Aspirs = null;
 			this.gridAspir1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
 			this.gridAspir1.BackgroundColor = System.Drawing.SystemColors.Control;
 			this.gridAspir1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedVertical;
 			this.gridAspir1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-			dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 18F);
-			dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-			dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-			dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.gridAspir1.DefaultCellStyle = dataGridViewCellStyle4;
-			this.gridAspir1.Location = new System.Drawing.Point(31, 69);
+			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+			dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 18F);
+			dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.gridAspir1.DefaultCellStyle = dataGridViewCellStyle2;
+			this.gridAspir1.Location = new System.Drawing.Point(31, 77);
 			this.gridAspir1.MultiSelect = false;
 			this.gridAspir1.Name = "gridAspir1";
 			this.gridAspir1.ReadOnly = true;
 			this.gridAspir1.RowHeadersVisible = false;
 			this.gridAspir1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.gridAspir1.Size = new System.Drawing.Size(845, 272);
+			this.gridAspir1.Size = new System.Drawing.Size(845, 353);
 			this.gridAspir1.TabIndex = 2;
 			this.gridAspir1.SelectionChanged += new System.EventHandler(this.GridAspir1SelectionChanged);
 			// 
@@ -238,12 +240,20 @@ namespace WinApp
 			this.label1.TabIndex = 1;
 			this.label1.Text = "Alumnos";
 			// 
+			// label2
+			// 
+			this.label2.Location = new System.Drawing.Point(31, 59);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(227, 15);
+			this.label2.TabIndex = 7;
+			this.label2.Text = "label2";
+			// 
 			// frmMain
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.SystemColors.AppWorkspace;
-			this.ClientSize = new System.Drawing.Size(1028, 676);
+			this.ClientSize = new System.Drawing.Size(1028, 755);
 			this.Controls.Add(this.groupBox1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
 			this.MaximizeBox = false;
@@ -257,6 +267,7 @@ namespace WinApp
 			((System.ComponentModel.ISupportInitialize)(this.gridAspir1)).EndInit();
 			this.ResumeLayout(false);
 		}
+		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Button btnDelAspir;
 		private System.Windows.Forms.Button btnEditAspir;
 		private System.Windows.Forms.Button btnAddAspir;

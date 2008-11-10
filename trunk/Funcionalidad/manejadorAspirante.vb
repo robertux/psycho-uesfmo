@@ -71,14 +71,18 @@ Public Class manejadorAspirante
     End Sub
 
     Public Shared Function GenerarCodigo(ByVal apl As String, ByVal nom As String, ByVal tabla As DataTable) As String
-        Dim cuantos As Integer = 0
+        Dim cuantos As Integer = 1
         Dim codigo As String
+        dim nuevoCod as String = (apl.ToUpper().PadLeft(2, "0").Substring(0, 1) + nom.ToUpper().PadLeft(2, "0").Substring(0, 1)) + cuantos.ToString().PadLeft(5, "0")
         For i As Integer = 0 To tabla.Rows.Count - 1
-            If (tabla.Rows(i)("apellidos").ToString().ToUpper().PadLeft(2, "0").Substring(0, 1) = apl.ToUpper().PadLeft(2, "0").Substring(0, 1) And tabla.Rows(i)("nombres").ToString().ToUpper().PadLeft(2, "0").Substring(0, 1) = nom.ToUpper().PadLeft(2, "0").Substring(0, 1)) Then
+        	Dim actualCod As String = tabla.Rows(i)("codigo")
+        	'If (tabla.Rows(i)("apellidos").ToString().ToUpper().PadLeft(2, "0").Substring(0, 1) = apl.ToUpper().PadLeft(2, "0").Substring(0, 1) And tabla.Rows(i)("nombres").ToString().ToUpper().PadLeft(2, "0").Substring(0, 1) = nom.ToUpper().PadLeft(2, "0").Substring(0, 1)) Then
+        	if(actualCod = nuevoCod) then            
                 cuantos += 1
+                nuevoCod = (apl.ToUpper().PadLeft(2, "0").Substring(0, 1) + nom.ToUpper().PadLeft(2, "0").Substring(0, 1)) + cuantos.ToString().PadLeft(5, "0")
             End If
         Next
-        codigo = apl.PadLeft(2, "0").Substring(0, 1) + nom.PadLeft(2, "0").Substring(0, 1) + (cuantos + 1).ToString().PadLeft(5, "0")
+        codigo = apl.PadLeft(2, "0").Substring(0, 1) + nom.PadLeft(2, "0").Substring(0, 1) + (cuantos).ToString().PadLeft(5, "0")
         Return codigo
     End Function
 
