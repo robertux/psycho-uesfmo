@@ -52,9 +52,6 @@ namespace WinApp
 			this.cmbCentroEstudios = new System.Windows.Forms.ComboBox();
 			this.label9 = new System.Windows.Forms.Label();
 			this.label8 = new System.Windows.Forms.Label();
-			this.label10 = new System.Windows.Forms.Label();
-			this.rbtnMasculino = new System.Windows.Forms.RadioButton();
-			this.rbtnFemenino = new System.Windows.Forms.RadioButton();
 			this.dtpFechaNac = new System.Windows.Forms.DateTimePicker();
 			this.label4 = new System.Windows.Forms.Label();
 			this.label11 = new System.Windows.Forms.Label();
@@ -62,6 +59,9 @@ namespace WinApp
 			this.cmbCarrera = new System.Windows.Forms.ComboBox();
 			this.button2 = new System.Windows.Forms.Button();
 			this.button1 = new System.Windows.Forms.Button();
+			this.rbtnFemenino = new System.Windows.Forms.RadioButton();
+			this.rbtnMasculino = new System.Windows.Forms.RadioButton();
+			this.label10 = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
 			// txtApellidos
@@ -116,7 +116,7 @@ namespace WinApp
 			// 
 			this.label3.AutoSize = true;
 			this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label3.Location = new System.Drawing.Point(29, 102);
+			this.label3.Location = new System.Drawing.Point(29, 265);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(75, 20);
 			this.label3.TabIndex = 3;
@@ -127,7 +127,7 @@ namespace WinApp
 			this.txtDireccion.AceptarLetras = Bullets.Visuales.TipoLetra.Todos;
 			this.txtDireccion.AceptarNumeros = Bullets.Visuales.TipoNumero.Todos;
 			this.txtDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtDireccion.Location = new System.Drawing.Point(204, 99);
+			this.txtDireccion.Location = new System.Drawing.Point(204, 262);
 			this.txtDireccion.MaxLength = 200;
 			this.txtDireccion.Multiline = true;
 			this.txtDireccion.Name = "txtDireccion";
@@ -141,7 +141,7 @@ namespace WinApp
 			this.txtTelefono.AceptarLetras = Bullets.Visuales.TipoLetra.Ninguno;
 			this.txtTelefono.AceptarNumeros = Bullets.Visuales.TipoNumero.Todos;
 			this.txtTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtTelefono.Location = new System.Drawing.Point(204, 181);
+			this.txtTelefono.Location = new System.Drawing.Point(204, 344);
 			this.txtTelefono.MaxLength = 9;
 			this.txtTelefono.Name = "txtTelefono";
 			this.txtTelefono.NumeroDeDecimales = 0;
@@ -153,7 +153,7 @@ namespace WinApp
 			// 
 			this.label5.AutoSize = true;
 			this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label5.Location = new System.Drawing.Point(29, 184);
+			this.label5.Location = new System.Drawing.Point(29, 347);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(71, 20);
 			this.label5.TabIndex = 3;
@@ -164,7 +164,7 @@ namespace WinApp
 			this.cmbDepto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cmbDepto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.cmbDepto.FormattingEnabled = true;
-			this.cmbDepto.Location = new System.Drawing.Point(204, 307);
+			this.cmbDepto.Location = new System.Drawing.Point(204, 162);
 			this.cmbDepto.Name = "cmbDepto";
 			this.cmbDepto.Size = new System.Drawing.Size(420, 28);
 			this.cmbDepto.TabIndex = 7;
@@ -174,7 +174,7 @@ namespace WinApp
 			// 
 			this.label6.AutoSize = true;
 			this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label6.Location = new System.Drawing.Point(29, 310);
+			this.label6.Location = new System.Drawing.Point(29, 165);
 			this.label6.Name = "label6";
 			this.label6.Size = new System.Drawing.Size(112, 20);
 			this.label6.TabIndex = 3;
@@ -184,7 +184,7 @@ namespace WinApp
 			// 
 			this.label7.AutoSize = true;
 			this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label7.Location = new System.Drawing.Point(29, 344);
+			this.label7.Location = new System.Drawing.Point(29, 199);
 			this.label7.Name = "label7";
 			this.label7.Size = new System.Drawing.Size(59, 20);
 			this.label7.TabIndex = 3;
@@ -195,7 +195,7 @@ namespace WinApp
 			this.cmbCiudad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cmbCiudad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.cmbCiudad.FormattingEnabled = true;
-			this.cmbCiudad.Location = new System.Drawing.Point(204, 341);
+			this.cmbCiudad.Location = new System.Drawing.Point(204, 196);
 			this.cmbCiudad.Name = "cmbCiudad";
 			this.cmbCiudad.Size = new System.Drawing.Size(420, 28);
 			this.cmbCiudad.TabIndex = 8;
@@ -226,48 +226,16 @@ namespace WinApp
 			// 
 			this.label8.AutoSize = true;
 			this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label8.Location = new System.Drawing.Point(29, 274);
+			this.label8.Location = new System.Drawing.Point(29, 233);
 			this.label8.Name = "label8";
 			this.label8.Size = new System.Drawing.Size(159, 20);
 			this.label8.TabIndex = 3;
 			this.label8.Text = "Fecha de Nacimiento";
 			// 
-			// label10
-			// 
-			this.label10.AutoSize = true;
-			this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label10.Location = new System.Drawing.Point(29, 242);
-			this.label10.Name = "label10";
-			this.label10.Size = new System.Drawing.Size(45, 20);
-			this.label10.TabIndex = 3;
-			this.label10.Text = "Sexo";
-			// 
-			// rbtnMasculino
-			// 
-			this.rbtnMasculino.Checked = true;
-			this.rbtnMasculino.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.rbtnMasculino.Location = new System.Drawing.Point(204, 238);
-			this.rbtnMasculino.Name = "rbtnMasculino";
-			this.rbtnMasculino.Size = new System.Drawing.Size(104, 24);
-			this.rbtnMasculino.TabIndex = 4;
-			this.rbtnMasculino.TabStop = true;
-			this.rbtnMasculino.Text = "Masculino";
-			this.rbtnMasculino.UseVisualStyleBackColor = true;
-			// 
-			// rbtnFemenino
-			// 
-			this.rbtnFemenino.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.rbtnFemenino.Location = new System.Drawing.Point(348, 238);
-			this.rbtnFemenino.Name = "rbtnFemenino";
-			this.rbtnFemenino.Size = new System.Drawing.Size(104, 24);
-			this.rbtnFemenino.TabIndex = 5;
-			this.rbtnFemenino.Text = "Femenino";
-			this.rbtnFemenino.UseVisualStyleBackColor = true;
-			// 
 			// dtpFechaNac
 			// 
 			this.dtpFechaNac.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.dtpFechaNac.Location = new System.Drawing.Point(204, 271);
+			this.dtpFechaNac.Location = new System.Drawing.Point(204, 230);
 			this.dtpFechaNac.Name = "dtpFechaNac";
 			this.dtpFechaNac.Size = new System.Drawing.Size(420, 26);
 			this.dtpFechaNac.TabIndex = 6;
@@ -320,7 +288,7 @@ namespace WinApp
 			this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
 			this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.button2.Location = new System.Drawing.Point(388, 517);
+			this.button2.Location = new System.Drawing.Point(388, 539);
 			this.button2.Name = "button2";
 			this.button2.Size = new System.Drawing.Size(115, 45);
 			this.button2.TabIndex = 13;
@@ -337,7 +305,7 @@ namespace WinApp
 			this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
 			this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.button1.Location = new System.Drawing.Point(509, 517);
+			this.button1.Location = new System.Drawing.Point(509, 539);
 			this.button1.Name = "button1";
 			this.button1.Size = new System.Drawing.Size(115, 45);
 			this.button1.TabIndex = 12;
@@ -346,16 +314,49 @@ namespace WinApp
 			this.button1.UseVisualStyleBackColor = true;
 			this.button1.Click += new System.EventHandler(this.Button1Click);
 			// 
+			// rbtnFemenino
+			// 
+			this.rbtnFemenino.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.rbtnFemenino.Location = new System.Drawing.Point(348, 104);
+			this.rbtnFemenino.Name = "rbtnFemenino";
+			this.rbtnFemenino.Size = new System.Drawing.Size(104, 24);
+			this.rbtnFemenino.TabIndex = 16;
+			this.rbtnFemenino.Text = "Femenino";
+			this.rbtnFemenino.UseVisualStyleBackColor = true;
+			// 
+			// rbtnMasculino
+			// 
+			this.rbtnMasculino.Checked = true;
+			this.rbtnMasculino.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.rbtnMasculino.Location = new System.Drawing.Point(204, 104);
+			this.rbtnMasculino.Name = "rbtnMasculino";
+			this.rbtnMasculino.Size = new System.Drawing.Size(104, 24);
+			this.rbtnMasculino.TabIndex = 15;
+			this.rbtnMasculino.TabStop = true;
+			this.rbtnMasculino.Text = "Masculino";
+			this.rbtnMasculino.UseVisualStyleBackColor = true;
+			// 
+			// label10
+			// 
+			this.label10.AutoSize = true;
+			this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label10.Location = new System.Drawing.Point(29, 108);
+			this.label10.Name = "label10";
+			this.label10.Size = new System.Drawing.Size(45, 20);
+			this.label10.TabIndex = 14;
+			this.label10.Text = "Sexo";
+			// 
 			// frmAddEditAspir
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(636, 574);
+			this.ClientSize = new System.Drawing.Size(636, 596);
+			this.Controls.Add(this.rbtnFemenino);
+			this.Controls.Add(this.rbtnMasculino);
+			this.Controls.Add(this.label10);
 			this.Controls.Add(this.button2);
 			this.Controls.Add(this.button1);
 			this.Controls.Add(this.dtpFechaNac);
-			this.Controls.Add(this.rbtnFemenino);
-			this.Controls.Add(this.rbtnMasculino);
 			this.Controls.Add(this.cmbCarrera);
 			this.Controls.Add(this.cmbCentroEstudios);
 			this.Controls.Add(this.cmbFacultad);
@@ -366,7 +367,6 @@ namespace WinApp
 			this.Controls.Add(this.label4);
 			this.Controls.Add(this.label7);
 			this.Controls.Add(this.label8);
-			this.Controls.Add(this.label10);
 			this.Controls.Add(this.label6);
 			this.Controls.Add(this.label5);
 			this.Controls.Add(this.label3);

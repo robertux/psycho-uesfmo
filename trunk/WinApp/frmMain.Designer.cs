@@ -40,19 +40,21 @@ namespace WinApp
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.label2 = new System.Windows.Forms.Label();
 			this.btnDelAspir = new System.Windows.Forms.Button();
 			this.btnEditAspir = new System.Windows.Forms.Button();
 			this.btnAddAspir = new System.Windows.Forms.Button();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
+			this.lblDetallesResultadoCeps = new System.Windows.Forms.Label();
 			this.lblResultadoCeps = new System.Windows.Forms.Label();
 			this.btnEvaluarCeps = new System.Windows.Forms.Button();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
+			this.lblDetallesResultadoRaven = new System.Windows.Forms.Label();
 			this.lblResultadoRaven = new System.Windows.Forms.Label();
 			this.btnEvaluarRaven = new System.Windows.Forms.Button();
 			this.comboBox1 = new System.Windows.Forms.ComboBox();
 			this.gridAspir1 = new WinApp.GridAspir();
 			this.label1 = new System.Windows.Forms.Label();
-			this.label2 = new System.Windows.Forms.Label();
 			this.groupBox1.SuspendLayout();
 			this.groupBox3.SuspendLayout();
 			this.groupBox2.SuspendLayout();
@@ -76,6 +78,14 @@ namespace WinApp
 			this.groupBox1.Size = new System.Drawing.Size(904, 669);
 			this.groupBox1.TabIndex = 0;
 			this.groupBox1.TabStop = false;
+			// 
+			// label2
+			// 
+			this.label2.Location = new System.Drawing.Point(31, 59);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(227, 15);
+			this.label2.TabIndex = 7;
+			this.label2.Text = "label2";
 			// 
 			// btnDelAspir
 			// 
@@ -118,6 +128,7 @@ namespace WinApp
 			// 
 			// groupBox3
 			// 
+			this.groupBox3.Controls.Add(this.lblDetallesResultadoCeps);
 			this.groupBox3.Controls.Add(this.lblResultadoCeps);
 			this.groupBox3.Controls.Add(this.btnEvaluarCeps);
 			this.groupBox3.Location = new System.Drawing.Point(31, 546);
@@ -127,11 +138,20 @@ namespace WinApp
 			this.groupBox3.TabStop = false;
 			this.groupBox3.Text = "Resultado Prueba CEPS";
 			// 
+			// lblDetallesResultadoCeps
+			// 
+			this.lblDetallesResultadoCeps.BackColor = System.Drawing.SystemColors.Control;
+			this.lblDetallesResultadoCeps.Location = new System.Drawing.Point(8, 26);
+			this.lblDetallesResultadoCeps.Name = "lblDetallesResultadoCeps";
+			this.lblDetallesResultadoCeps.Size = new System.Drawing.Size(282, 74);
+			this.lblDetallesResultadoCeps.TabIndex = 2;
+			// 
 			// lblResultadoCeps
 			// 
-			this.lblResultadoCeps.Location = new System.Drawing.Point(15, 41);
+			this.lblResultadoCeps.BackColor = System.Drawing.SystemColors.Control;
+			this.lblResultadoCeps.Location = new System.Drawing.Point(296, 24);
 			this.lblResultadoCeps.Name = "lblResultadoCeps";
-			this.lblResultadoCeps.Size = new System.Drawing.Size(730, 51);
+			this.lblResultadoCeps.Size = new System.Drawing.Size(449, 76);
 			this.lblResultadoCeps.TabIndex = 2;
 			// 
 			// btnEvaluarCeps
@@ -151,6 +171,7 @@ namespace WinApp
 			// 
 			// groupBox2
 			// 
+			this.groupBox2.Controls.Add(this.lblDetallesResultadoRaven);
 			this.groupBox2.Controls.Add(this.lblResultadoRaven);
 			this.groupBox2.Controls.Add(this.btnEvaluarRaven);
 			this.groupBox2.Location = new System.Drawing.Point(31, 436);
@@ -160,11 +181,20 @@ namespace WinApp
 			this.groupBox2.TabStop = false;
 			this.groupBox2.Text = "Resultado Prueba RAVEN";
 			// 
+			// lblDetallesResultadoRaven
+			// 
+			this.lblDetallesResultadoRaven.BackColor = System.Drawing.SystemColors.Control;
+			this.lblDetallesResultadoRaven.Location = new System.Drawing.Point(6, 26);
+			this.lblDetallesResultadoRaven.Name = "lblDetallesResultadoRaven";
+			this.lblDetallesResultadoRaven.Size = new System.Drawing.Size(282, 74);
+			this.lblDetallesResultadoRaven.TabIndex = 2;
+			// 
 			// lblResultadoRaven
 			// 
-			this.lblResultadoRaven.Location = new System.Drawing.Point(15, 41);
+			this.lblResultadoRaven.BackColor = System.Drawing.SystemColors.Control;
+			this.lblResultadoRaven.Location = new System.Drawing.Point(294, 25);
 			this.lblResultadoRaven.Name = "lblResultadoRaven";
-			this.lblResultadoRaven.Size = new System.Drawing.Size(730, 50);
+			this.lblResultadoRaven.Size = new System.Drawing.Size(451, 75);
 			this.lblResultadoRaven.TabIndex = 1;
 			// 
 			// btnEvaluarRaven
@@ -228,6 +258,8 @@ namespace WinApp
 			this.gridAspir1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.gridAspir1.Size = new System.Drawing.Size(845, 353);
 			this.gridAspir1.TabIndex = 2;
+			this.gridAspir1.TotalEvaluados = 0;
+			this.gridAspir1.TotalPendientes = 0;
 			this.gridAspir1.SelectionChanged += new System.EventHandler(this.GridAspir1SelectionChanged);
 			// 
 			// label1
@@ -239,14 +271,6 @@ namespace WinApp
 			this.label1.Size = new System.Drawing.Size(143, 37);
 			this.label1.TabIndex = 1;
 			this.label1.Text = "Alumnos";
-			// 
-			// label2
-			// 
-			this.label2.Location = new System.Drawing.Point(31, 59);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(227, 15);
-			this.label2.TabIndex = 7;
-			this.label2.Text = "label2";
 			// 
 			// frmMain
 			// 
@@ -267,6 +291,8 @@ namespace WinApp
 			((System.ComponentModel.ISupportInitialize)(this.gridAspir1)).EndInit();
 			this.ResumeLayout(false);
 		}
+		private System.Windows.Forms.Label lblDetallesResultadoRaven;
+		private System.Windows.Forms.Label lblDetallesResultadoCeps;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Button btnDelAspir;
 		private System.Windows.Forms.Button btnEditAspir;

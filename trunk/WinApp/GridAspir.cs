@@ -46,12 +46,19 @@ namespace WinApp
         
         public int TotalEvaluados
         {
-        	get { return this._totalEvaluados; }        	
+        	get { return this._totalEvaluados; }
+        	set { this._totalEvaluados = value; }
         }
         
         public int TotalPendientes
         {
         	get { return this._totalPendientes; }
+        	set { this._totalPendientes = value; }
+        }
+        
+        public DataGridViewCellStyle EstiloEvaluado
+        {
+        	get { return this.estiloEvaluado; }
         }
 
 

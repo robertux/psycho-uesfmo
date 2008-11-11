@@ -91,21 +91,29 @@ namespace WinApp
 			{
 				this.btnEvaluarRaven.Visible = true;
 				this.lblResultadoRaven.Text = "";
+				this.lblDetallesResultadoRaven.Text = "";
 			}
 			else
 			{
 				this.btnEvaluarRaven.Visible = false;
 				this.lblResultadoRaven.Text = aspir.ResRaven.Diagnostico;
+				this.lblDetallesResultadoRaven.Text = "puntaje: " + aspir.ResRaven.Puntaje.ToString() + "\n" +
+					"percentil: " + aspir.ResRaven.Percentil.ToString() + "\n";					
 			}
 			if(aspir.ResCeps == null)
 			{
 				this.btnEvaluarCeps.Visible = true;
+				this.lblResultadoCeps.Text = "";
 				this.lblResultadoCeps.Text = "";
 			}
 			else
 			{
 				this.btnEvaluarCeps.Visible = false;
 				this.lblResultadoCeps.Text = aspir.ResCeps.Diagnostico;
+				this.lblDetallesResultadoCeps.Text = "C: " + aspir.ResCeps.PControl.ToString() + "\n" +
+					"E: " + aspir.ResCeps.PExtrover + "\n" + 
+					"P: " + aspir.ResCeps.PParan + "\n" +
+					"S: " + aspir.ResCeps.PSin + "\n";
 			}
 		}	
 		
@@ -126,6 +134,7 @@ namespace WinApp
 					this.gridAspir1.CargarGrid((int)this.comboBox1.Items[this.comboBox1.SelectedIndex]);
 					this.btnEditAspir.Enabled = true;
 					this.btnDelAspir.Enabled = true;
+					this.label1.Text = "Alumnos(" + this.gridAspir1.Rows.Count.ToString() + ")";
 				}
 			}
 		}
@@ -146,6 +155,7 @@ namespace WinApp
 					this.btnEditAspir.Enabled = false;
 					this.btnDelAspir.Enabled = false;
 				}
+				this.label1.Text = "Alumnos(" + this.gridAspir1.Rows.Count.ToString() + ")";
 			}
 		}
 		
@@ -179,7 +189,7 @@ namespace WinApp
 				this.ad.Conectar();
 				this.ad.ActualizarBD();
 				this.ad.Desconectar();
-				this.GridAspir1SelectionChanged(this, new EventArgs());
+				this.GridAspir1SelectionChanged(this, new EventArgs());				
 			}
 		}
 		
@@ -193,13 +203,18 @@ namespace WinApp
 				this.gridAspir1.Aspirs[this.gridAspir1.SelectedRows[0].Index].ResCeps.codresult = (int.Parse(ManejadorPruebas.GetMaxCodeResultados(this.ad.ds.Tables["resultadosceps"])) + 1).ToString().PadLeft(7, '0');
 				this.gridAspir1.Aspirs[this.gridAspir1.SelectedRows[0].Index].Estado = "evaluado";
 				this.gridAspir1.SelectedRows[0].Cells[4].Value = "evaluado";
+				for(int i=0; i<this.gridAspir1.Columns.Count;i++)
+					this.gridAspir1.SelectedRows[0].Cells[i].Style = this.gridAspir1.EstiloEvaluado;
 				this.gridAspir1.Aspirs[this.gridAspir1.SelectedRows[0].Index].ResRaven = null;   				//solo para evitar un bug de la funcionalidad
 				ManejadorPruebas.AgregarResultados(this.gridAspir1.Aspirs[this.gridAspir1.SelectedRows[0].Index], this.ad.ds.Tables["resultadosceps"], this.ad.ds.Tables["resultadosraven"]);
 				manejadorAspirante.modificarAspirante(this.gridAspir1.Aspirs[this.gridAspir1.SelectedRows[0].Index], this.ad.ds.Tables["aspirantes"]);
 				this.ad.Conectar();
 				this.ad.ActualizarBD();
 				this.ad.Desconectar();
-				this.GridAspir1SelectionChanged(this, new EventArgs());				
+				this.GridAspir1SelectionChanged(this, new EventArgs());
+				this.gridAspir1.TotalEvaluados += 1;
+				this.gridAspir1.TotalPendientes -= 1;
+				this.label2.Text = "Evaluados: " + this.gridAspir1.TotalEvaluados.ToString() + "    Pendientes: " + this.gridAspir1.TotalPendientes.ToString();
 			}
 		}
 	}
