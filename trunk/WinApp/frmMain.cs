@@ -95,16 +95,30 @@ namespace WinApp
 			}
 			else
 			{
-				this.btnEvaluarRaven.Visible = false;
+				this.btnEvaluarRaven.Visible = false;				
 				this.lblResultadoRaven.Text = aspir.ResRaven.Diagnostico;
-				this.lblDetallesResultadoRaven.Text = "puntaje: " + aspir.ResRaven.Puntaje.ToString() + "\n" +
-					"percentil: " + aspir.ResRaven.Percentil.ToString() + "\n";					
+				if(aspir.ResRaven.Diagnostico == "NO SE PUEDE DAR UN DIAGNOSTICO")
+				{
+					this.btnEvaluarRaven.Visible = true;
+					this.gridAspir1.SelectedRows[0].Cells[4].Value = "pendiente";					
+					this.gridAspir1.Aspirs[this.gridAspir1.SelectedRows[0].Index].ResRaven = null;	
+					manejadorAspirante.modificarAspirante(this.gridAspir1.Aspirs[this.gridAspir1.SelectedRows[0].Index], this.ad.ds.Tables["aspirantes"]);										
+					this.ad.Conectar();
+					this.ad.EjecutarComando("DELETE FROM resultadosraven where codaspirante = '" + this.gridAspir1.Aspirs[this.gridAspir1.SelectedRows[0].Index].Codigo +  "';");
+					this.ad.ActualizarBD();
+					this.ad.Desconectar();
+				}
+				else
+				{
+					this.lblDetallesResultadoRaven.Text = "puntaje: " + aspir.ResRaven.Puntaje.ToString() + "\n" +
+						"percentil: " + aspir.ResRaven.Percentil.ToString() + "\n";					
+				}
 			}
 			if(aspir.ResCeps == null)
 			{
 				this.btnEvaluarCeps.Visible = true;
 				this.lblResultadoCeps.Text = "";
-				this.lblResultadoCeps.Text = "";
+				this.lblDetallesResultadoCeps.Text = "";
 			}
 			else
 			{
@@ -179,13 +193,15 @@ namespace WinApp
 			frmr.ShowDialog(this);
 			if(frmr.DialogResult == DialogResult.OK)
 			{
-				this.gridAspir1.Aspirs[this.gridAspir1.SelectedRows[0].Index] = ManejadorPruebas.RealizarPruebaRaven(this.gridAspir1.Aspirs[this.gridAspir1.SelectedRows[0].Index], frmr.Prueba);
-				this.gridAspir1.Aspirs[this.gridAspir1.SelectedRows[0].Index].ResRaven.codresult =  (int.Parse(ManejadorPruebas.GetMaxCodeResultados(this.ad.ds.Tables["resultadosraven"])) + 1).ToString();
-				this.gridAspir1.Aspirs[this.gridAspir1.SelectedRows[0].Index].Estado = "evaluado";
+				Aspirante selectedAspir = this.gridAspir1.Aspirs[this.gridAspir1.SelectedRows[0].Index];
+				selectedAspir.PruebaR = frmr.Prueba;
+				selectedAspir = ManejadorPruebas.RealizarPruebaRaven(selectedAspir, frmr.Prueba);
+				selectedAspir.ResRaven.codresult =  (int.Parse(ManejadorPruebas.GetMaxCodeResultados(this.ad.ds.Tables["resultadosraven"])) + 1).ToString();
+				selectedAspir.Estado = "evaluado";
 				this.gridAspir1.SelectedRows[0].Cells[4].Value = "evaluado";
-				this.gridAspir1.Aspirs[this.gridAspir1.SelectedRows[0].Index].ResCeps = null;			//solo para evitar un bug de la funcionalidad
-				ManejadorPruebas.AgregarResultados(this.gridAspir1.Aspirs[this.gridAspir1.SelectedRows[0].Index], this.ad.ds.Tables["resultadosceps"], this.ad.ds.Tables["resultadosraven"]);
-				manejadorAspirante.modificarAspirante(this.gridAspir1.Aspirs[this.gridAspir1.SelectedRows[0].Index], this.ad.ds.Tables["aspirantes"]);				
+				selectedAspir.ResCeps = null;			//solo para evitar un bug de la funcionalidad
+				ManejadorPruebas.AgregarResultados(selectedAspir, this.ad.ds.Tables["resultadosceps"], this.ad.ds.Tables["resultadosraven"]);				
+				manejadorAspirante.modificarAspirante(selectedAspir, this.ad.ds.Tables["aspirantes"]);
 				this.ad.Conectar();
 				this.ad.ActualizarBD();
 				this.ad.Desconectar();

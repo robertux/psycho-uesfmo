@@ -51,6 +51,7 @@ namespace WinApp
 			this.ad.RellenarDS();
 			this.ad.Desconectar();
 			this.editMode = false;
+			this.dtpFechaNac.Value = new DateTime(DateTime.Now.Year - 15, DateTime.Now.Month, DateTime.Now.Day);
 		}
 		
 		public frmAddEditAspir(Aspirante pAspir): this()
@@ -112,6 +113,12 @@ namespace WinApp
 						
 		void Button1Click(object sender, EventArgs e)
 		{
+			if(this.dtpFechaNac.Value.Year > (DateTime.Now.Year - 15))
+			{
+				MessageBox.Show("Introduzca una fecha de nacimiento menor o igual a " + (DateTime.Now.Year-15).ToString());
+				this.dtpFechaNac.Focus();
+				return;
+			}
 			this.DialogResult = DialogResult.OK;
 			string cod, estado;
 			uint anioRegistrado;

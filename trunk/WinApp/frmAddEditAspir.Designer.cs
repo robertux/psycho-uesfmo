@@ -139,10 +139,10 @@ namespace WinApp
 			// txtTelefono
 			// 
 			this.txtTelefono.AceptarLetras = Bullets.Visuales.TipoLetra.Ninguno;
-			this.txtTelefono.AceptarNumeros = Bullets.Visuales.TipoNumero.Todos;
+			this.txtTelefono.AceptarNumeros = Bullets.Visuales.TipoNumero.EnteroSinSigno;
 			this.txtTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtTelefono.Location = new System.Drawing.Point(204, 344);
-			this.txtTelefono.MaxLength = 9;
+			this.txtTelefono.MaxLength = 8;
 			this.txtTelefono.Name = "txtTelefono";
 			this.txtTelefono.NumeroDeDecimales = 0;
 			this.txtTelefono.OtrosCaracteresPermitidos = "";
