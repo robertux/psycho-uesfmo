@@ -88,8 +88,8 @@ namespace WinApp
 				if(this.ciudades[i].CodCiudad == this.aspir.Ciudad.CodCiudad)
 					this.cmbCiudad.SelectedIndex = i;
 			
-			for(int i=0; i<this.centros.Count; i++)
-				if(this.centros[i].codigo == this.aspir.LugarEstudios.codigo)
+			for(int i=0; i<this.cmbCentroEstudios.Items.Count; i++)
+				if(this.cmbCentroEstudios.Items[i].ToString() == this.aspir.LugarEstudios.Nombre)
 					this.cmbCentroEstudios.SelectedIndex = i;
 			
 			for(int i=0; i<this.facultades.Count; i++)
@@ -113,6 +113,8 @@ namespace WinApp
 						
 		void Button1Click(object sender, EventArgs e)
 		{
+			if(!this.CheckCentroEstudios())
+				return;
 			if(this.dtpFechaNac.Value.Year > (DateTime.Now.Year - 15))
 			{
 				MessageBox.Show("Introduzca una fecha de nacimiento menor o igual a " + (DateTime.Now.Year-15).ToString());
@@ -231,6 +233,48 @@ namespace WinApp
 		void CmbCarreraSelectedIndexChanged(object sender, EventArgs e)
 		{
 			
+		}
+		
+		void CmbCentroEstudiosLeave(object sender, EventArgs e)
+		{
+			this.CheckCentroEstudios();
+		}
+		
+		public bool CheckCentroEstudios()
+		{
+			bool centroExistente = false;			
+			foreach(centroestudio centro in this.centros)
+			{
+				if(this.cmbCentroEstudios.Text == centro.Nombre)
+					centroExistente = true;
+			}
+			if(!centroExistente)
+			{
+				if(MessageBox.Show("El Centro de estudios que ha escrito no existe. Desea agregarlo como nuevo?", "Confirmacion", MessageBoxButtons.YesNo) == DialogResult.Yes)
+				{
+					string maxCode = "0";
+					string nombre = this.cmbCentroEstudios.Text;
+					foreach(centroestudio centro in this.centros)
+					{
+						if(int.Parse(centro.codigo) > int.Parse(maxCode))
+							maxCode = centro.codigo;
+					}
+					maxCode = (int.Parse(maxCode)+1).ToString();
+					
+					string queryAgregarCentro = "INSERT INTO centroestudio(codigo, nombre, codciudad, caracter_inst, sector) values('" + maxCode + "', '" + nombre + "', '210', 'N', 'Publico');";
+					this.ad.Conectar();
+					this.ad.EjecutarComando(queryAgregarCentro);
+					this.ad.RellenarDS();
+					this.ad.Desconectar();	
+					this.centros = ManejadorMisc.GetCentroEstudios(this.ad.ds.Tables["centroestudio"]);
+					this.cmbCentroEstudios.Items.Add(nombre);
+					this.cmbCentroEstudios.SelectedIndex = this.cmbCentroEstudios.Items.Count-1;
+					return true;
+				}
+				else
+					return false;
+			}
+			return true;
 		}
 	}
 }

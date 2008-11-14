@@ -217,6 +217,7 @@ namespace WinApp
 			this.cmbCentroEstudios.Sorted = true;
 			this.cmbCentroEstudios.TabIndex = 10;
 			this.cmbCentroEstudios.SelectedIndexChanged += new System.EventHandler(this.CmbCentroEstudiosSelectedIndexChanged);
+			this.cmbCentroEstudios.Leave += new System.EventHandler(this.CmbCentroEstudiosLeave);
 			// 
 			// label9
 			// 
