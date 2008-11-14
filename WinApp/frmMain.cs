@@ -193,6 +193,9 @@ namespace WinApp
 			frmr.ShowDialog(this);
 			if(frmr.DialogResult == DialogResult.OK)
 			{
+				this.ad.Conectar();
+				this.ad.RellenarDS();
+				//this.ad.Desconectar();
 				Aspirante selectedAspir = this.gridAspir1.Aspirs[this.gridAspir1.SelectedRows[0].Index];
 				selectedAspir.PruebaR = frmr.Prueba;
 				selectedAspir = ManejadorPruebas.RealizarPruebaRaven(selectedAspir, frmr.Prueba);
@@ -202,7 +205,7 @@ namespace WinApp
 				selectedAspir.ResCeps = null;			//solo para evitar un bug de la funcionalidad
 				ManejadorPruebas.AgregarResultados(selectedAspir, this.ad.ds.Tables["resultadosceps"], this.ad.ds.Tables["resultadosraven"]);				
 				manejadorAspirante.modificarAspirante(selectedAspir, this.ad.ds.Tables["aspirantes"]);
-				this.ad.Conectar();
+				//this.ad.Conectar();
 				this.ad.ActualizarBD();
 				this.ad.Desconectar();
 				this.GridAspir1SelectionChanged(this, new EventArgs());				
