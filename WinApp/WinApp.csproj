@@ -61,10 +61,6 @@
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
   <ItemGroup>
-    <Reference Include="AccesoDatos">
-      <HintPath>..\AccesoDatos\bin\Debug\AccesoDatos.dll</HintPath>
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
     <Reference Include="CrypterClassLib">
       <HintPath>..\Funcionalidad\bin\Debug\CrypterClassLib.dll</HintPath>
       <SpecificVersion>False</SpecificVersion>
@@ -148,5 +144,9 @@
       <ProductName>.NET Framework 2.0</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+    <ProjectReference Include="..\AccesoDatos\AccesoDatos.csproj">
+      <Project>{C21194FC-0454-47B8-AC42-476351712AB8}</Project>
+      <Name>AccesoDatos</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>
