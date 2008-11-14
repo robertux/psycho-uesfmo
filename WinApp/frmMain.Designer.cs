@@ -277,13 +277,10 @@ namespace WinApp
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.SystemColors.AppWorkspace;
-			this.ClientSize = new System.Drawing.Size(1028, 755);
+			this.ClientSize = new System.Drawing.Size(1018, 739);
 			this.Controls.Add(this.groupBox1);
-			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-			this.MaximizeBox = false;
 			this.Name = "frmMain";
-			this.Text = "frmMain";
-			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+			this.Text = "Psycho Evaluador";
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
 			this.groupBox3.ResumeLayout(false);
