@@ -134,7 +134,7 @@ namespace WinApp
 			this.txtDireccion.NumeroDeDecimales = 0;
 			this.txtDireccion.OtrosCaracteresPermitidos = "";
 			this.txtDireccion.Size = new System.Drawing.Size(420, 76);
-			this.txtDireccion.TabIndex = 2;
+			this.txtDireccion.TabIndex = 8;
 			// 
 			// txtTelefono
 			// 
@@ -147,7 +147,7 @@ namespace WinApp
 			this.txtTelefono.NumeroDeDecimales = 0;
 			this.txtTelefono.OtrosCaracteresPermitidos = "";
 			this.txtTelefono.Size = new System.Drawing.Size(420, 26);
-			this.txtTelefono.TabIndex = 3;
+			this.txtTelefono.TabIndex = 9;
 			// 
 			// label5
 			// 
@@ -161,13 +161,15 @@ namespace WinApp
 			// 
 			// cmbDepto
 			// 
+			this.cmbDepto.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+			this.cmbDepto.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
 			this.cmbDepto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cmbDepto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.cmbDepto.FormattingEnabled = true;
 			this.cmbDepto.Location = new System.Drawing.Point(204, 162);
 			this.cmbDepto.Name = "cmbDepto";
 			this.cmbDepto.Size = new System.Drawing.Size(420, 28);
-			this.cmbDepto.TabIndex = 7;
+			this.cmbDepto.TabIndex = 5;
 			this.cmbDepto.SelectedIndexChanged += new System.EventHandler(this.CmbDeptoSelectedIndexChanged);
 			// 
 			// label6
@@ -192,25 +194,29 @@ namespace WinApp
 			// 
 			// cmbCiudad
 			// 
+			this.cmbCiudad.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+			this.cmbCiudad.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
 			this.cmbCiudad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cmbCiudad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.cmbCiudad.FormattingEnabled = true;
 			this.cmbCiudad.Location = new System.Drawing.Point(204, 196);
 			this.cmbCiudad.Name = "cmbCiudad";
 			this.cmbCiudad.Size = new System.Drawing.Size(420, 28);
-			this.cmbCiudad.TabIndex = 8;
+			this.cmbCiudad.Sorted = true;
+			this.cmbCiudad.TabIndex = 6;
 			// 
 			// cmbCentroEstudios
 			// 
-			this.cmbCentroEstudios.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+			this.cmbCentroEstudios.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
 			this.cmbCentroEstudios.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-			this.cmbCentroEstudios.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cmbCentroEstudios.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.cmbCentroEstudios.FormattingEnabled = true;
 			this.cmbCentroEstudios.Location = new System.Drawing.Point(204, 375);
 			this.cmbCentroEstudios.Name = "cmbCentroEstudios";
 			this.cmbCentroEstudios.Size = new System.Drawing.Size(420, 28);
-			this.cmbCentroEstudios.TabIndex = 9;
+			this.cmbCentroEstudios.Sorted = true;
+			this.cmbCentroEstudios.TabIndex = 10;
+			this.cmbCentroEstudios.SelectedIndexChanged += new System.EventHandler(this.CmbCentroEstudiosSelectedIndexChanged);
 			// 
 			// label9
 			// 
@@ -238,7 +244,7 @@ namespace WinApp
 			this.dtpFechaNac.Location = new System.Drawing.Point(204, 230);
 			this.dtpFechaNac.Name = "dtpFechaNac";
 			this.dtpFechaNac.Size = new System.Drawing.Size(420, 26);
-			this.dtpFechaNac.TabIndex = 6;
+			this.dtpFechaNac.TabIndex = 7;
 			// 
 			// label4
 			// 
@@ -268,7 +274,7 @@ namespace WinApp
 			this.cmbFacultad.Location = new System.Drawing.Point(204, 431);
 			this.cmbFacultad.Name = "cmbFacultad";
 			this.cmbFacultad.Size = new System.Drawing.Size(420, 28);
-			this.cmbFacultad.TabIndex = 10;
+			this.cmbFacultad.TabIndex = 11;
 			this.cmbFacultad.SelectedIndexChanged += new System.EventHandler(this.CmbFacultadSelectedIndexChanged);
 			// 
 			// cmbCarrera
@@ -279,7 +285,8 @@ namespace WinApp
 			this.cmbCarrera.Location = new System.Drawing.Point(204, 465);
 			this.cmbCarrera.Name = "cmbCarrera";
 			this.cmbCarrera.Size = new System.Drawing.Size(420, 28);
-			this.cmbCarrera.TabIndex = 11;
+			this.cmbCarrera.TabIndex = 12;
+			this.cmbCarrera.SelectedIndexChanged += new System.EventHandler(this.CmbCarreraSelectedIndexChanged);
 			// 
 			// button2
 			// 
@@ -291,7 +298,7 @@ namespace WinApp
 			this.button2.Location = new System.Drawing.Point(388, 539);
 			this.button2.Name = "button2";
 			this.button2.Size = new System.Drawing.Size(115, 45);
-			this.button2.TabIndex = 13;
+			this.button2.TabIndex = 14;
 			this.button2.Text = "&Cancelar";
 			this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			this.button2.UseVisualStyleBackColor = true;
@@ -308,7 +315,7 @@ namespace WinApp
 			this.button1.Location = new System.Drawing.Point(509, 539);
 			this.button1.Name = "button1";
 			this.button1.Size = new System.Drawing.Size(115, 45);
-			this.button1.TabIndex = 12;
+			this.button1.TabIndex = 13;
 			this.button1.Text = "&Aceptar";
 			this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			this.button1.UseVisualStyleBackColor = true;
@@ -320,7 +327,7 @@ namespace WinApp
 			this.rbtnFemenino.Location = new System.Drawing.Point(348, 104);
 			this.rbtnFemenino.Name = "rbtnFemenino";
 			this.rbtnFemenino.Size = new System.Drawing.Size(104, 24);
-			this.rbtnFemenino.TabIndex = 16;
+			this.rbtnFemenino.TabIndex = 4;
 			this.rbtnFemenino.Text = "Femenino";
 			this.rbtnFemenino.UseVisualStyleBackColor = true;
 			// 
@@ -331,7 +338,7 @@ namespace WinApp
 			this.rbtnMasculino.Location = new System.Drawing.Point(204, 104);
 			this.rbtnMasculino.Name = "rbtnMasculino";
 			this.rbtnMasculino.Size = new System.Drawing.Size(104, 24);
-			this.rbtnMasculino.TabIndex = 15;
+			this.rbtnMasculino.TabIndex = 3;
 			this.rbtnMasculino.TabStop = true;
 			this.rbtnMasculino.Text = "Masculino";
 			this.rbtnMasculino.UseVisualStyleBackColor = true;

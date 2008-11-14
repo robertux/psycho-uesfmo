@@ -222,5 +222,15 @@ namespace WinApp
 		{
 			this.CheckAceptButton();
 		}
+		
+		void CmbCentroEstudiosSelectedIndexChanged(object sender, EventArgs e)
+		{
+			
+		}
+		
+		void CmbCarreraSelectedIndexChanged(object sender, EventArgs e)
+		{
+			
+		}
 	}
 }
