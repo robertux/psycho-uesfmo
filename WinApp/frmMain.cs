@@ -100,13 +100,8 @@ namespace WinApp
 				if(aspir.ResRaven.Diagnostico == "NO SE PUEDE DAR UN DIAGNOSTICO")
 				{
 					this.btnEvaluarRaven.Visible = true;
-					this.gridAspir1.SelectedRows[0].Cells[4].Value = "pendiente";					
-					this.gridAspir1.Aspirs[this.gridAspir1.SelectedRows[0].Index].ResRaven = null;	
-					manejadorAspirante.modificarAspirante(this.gridAspir1.Aspirs[this.gridAspir1.SelectedRows[0].Index], this.ad.ds.Tables["aspirantes"]);										
-					this.ad.Conectar();
-					this.ad.EjecutarComando("DELETE FROM resultadosraven where codaspirante = '" + this.gridAspir1.Aspirs[this.gridAspir1.SelectedRows[0].Index].Codigo +  "';");
-					this.ad.ActualizarBD();
-					this.ad.Desconectar();
+					//this.gridAspir1.SelectedRows[0].Cells[4].Value = "pendiente";					
+					
 				}
 				else
 				{
@@ -189,6 +184,13 @@ namespace WinApp
 		
 		void BtnEvaluarRavenClick(object sender, EventArgs e)
 		{
+			this.gridAspir1.Aspirs[this.gridAspir1.SelectedRows[0].Index].ResRaven = null;	
+			manejadorAspirante.modificarAspirante(this.gridAspir1.Aspirs[this.gridAspir1.SelectedRows[0].Index], this.ad.ds.Tables["aspirantes"]);										
+			this.ad.Conectar();
+			this.ad.EjecutarComando("DELETE FROM resultadosraven where codaspirante = '" + this.gridAspir1.Aspirs[this.gridAspir1.SelectedRows[0].Index].Codigo +  "';");
+			this.ad.ActualizarBD();
+			this.ad.Desconectar();
+			
 			frmRaven frmr = new frmRaven();
 			frmr.ShowDialog(this);
 			if(frmr.DialogResult == DialogResult.OK)
