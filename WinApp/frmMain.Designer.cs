@@ -40,6 +40,8 @@ namespace WinApp
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.button1 = new System.Windows.Forms.Button();
+			this.gridManager1 = new GridAddIns.GridManager();
 			this.label2 = new System.Windows.Forms.Label();
 			this.btnDelAspir = new System.Windows.Forms.Button();
 			this.btnEditAspir = new System.Windows.Forms.Button();
@@ -64,6 +66,8 @@ namespace WinApp
 			// groupBox1
 			// 
 			this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
+			this.groupBox1.Controls.Add(this.button1);
+			this.groupBox1.Controls.Add(this.gridManager1);
 			this.groupBox1.Controls.Add(this.label2);
 			this.groupBox1.Controls.Add(this.btnDelAspir);
 			this.groupBox1.Controls.Add(this.btnEditAspir);
@@ -73,11 +77,38 @@ namespace WinApp
 			this.groupBox1.Controls.Add(this.comboBox1);
 			this.groupBox1.Controls.Add(this.gridAspir1);
 			this.groupBox1.Controls.Add(this.label1);
-			this.groupBox1.Location = new System.Drawing.Point(58, 46);
+			this.groupBox1.Location = new System.Drawing.Point(58, 23);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(904, 669);
+			this.groupBox1.Size = new System.Drawing.Size(904, 681);
 			this.groupBox1.TabIndex = 0;
 			this.groupBox1.TabStop = false;
+			// 
+			// button1
+			// 
+			this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+			this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+			this.button1.Location = new System.Drawing.Point(820, 390);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(56, 37);
+			this.button1.TabIndex = 9;
+			this.button1.UseVisualStyleBackColor = true;
+			this.button1.Click += new System.EventHandler(this.Button1Click);
+			// 
+			// gridManager1
+			// 
+			this.gridManager1.CasoSensitivo = false;
+			this.gridManager1.Columnas = ((System.Collections.ObjectModel.Collection<string>)(resources.GetObject("gridManager1.Columnas")));
+			this.gridManager1.EstiloResaltadoBgColor = System.Drawing.Color.LightBlue;
+			this.gridManager1.EstiloResaltadoFgColor = System.Drawing.Color.DarkBlue;
+			this.gridManager1.EstiloResaltadoFuente = System.Drawing.FontStyle.Regular;
+			this.gridManager1.Location = new System.Drawing.Point(31, 385);
+			this.gridManager1.MostrarCombo = false;
+			this.gridManager1.Name = "gridManager1";
+			this.gridManager1.NombreDataGridView = "gridAspir1";
+			this.gridManager1.Operacion = GridAddIns.GridManagerOperaciones.Filtrado;
+			this.gridManager1.Size = new System.Drawing.Size(783, 42);
+			this.gridManager1.TabIndex = 8;
+			this.gridManager1.TabStop = false;
 			// 
 			// label2
 			// 
@@ -131,7 +162,7 @@ namespace WinApp
 			this.groupBox3.Controls.Add(this.lblDetallesResultadoCeps);
 			this.groupBox3.Controls.Add(this.lblResultadoCeps);
 			this.groupBox3.Controls.Add(this.btnEvaluarCeps);
-			this.groupBox3.Location = new System.Drawing.Point(31, 546);
+			this.groupBox3.Location = new System.Drawing.Point(31, 556);
 			this.groupBox3.Name = "groupBox3";
 			this.groupBox3.Size = new System.Drawing.Size(845, 104);
 			this.groupBox3.TabIndex = 5;
@@ -174,7 +205,7 @@ namespace WinApp
 			this.groupBox2.Controls.Add(this.lblDetallesResultadoRaven);
 			this.groupBox2.Controls.Add(this.lblResultadoRaven);
 			this.groupBox2.Controls.Add(this.btnEvaluarRaven);
-			this.groupBox2.Location = new System.Drawing.Point(31, 436);
+			this.groupBox2.Location = new System.Drawing.Point(31, 446);
 			this.groupBox2.Name = "groupBox2";
 			this.groupBox2.Size = new System.Drawing.Size(845, 104);
 			this.groupBox2.TabIndex = 4;
@@ -256,7 +287,7 @@ namespace WinApp
 			this.gridAspir1.ReadOnly = true;
 			this.gridAspir1.RowHeadersVisible = false;
 			this.gridAspir1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.gridAspir1.Size = new System.Drawing.Size(845, 353);
+			this.gridAspir1.Size = new System.Drawing.Size(845, 307);
 			this.gridAspir1.TabIndex = 2;
 			this.gridAspir1.TotalEvaluados = 0;
 			this.gridAspir1.TotalPendientes = 0;
@@ -277,7 +308,7 @@ namespace WinApp
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.SystemColors.AppWorkspace;
-			this.ClientSize = new System.Drawing.Size(1018, 739);
+			this.ClientSize = new System.Drawing.Size(1018, 753);
 			this.Controls.Add(this.groupBox1);
 			this.Name = "frmMain";
 			this.Text = "Psycho Evaluador";
@@ -288,6 +319,8 @@ namespace WinApp
 			((System.ComponentModel.ISupportInitialize)(this.gridAspir1)).EndInit();
 			this.ResumeLayout(false);
 		}
+		private System.Windows.Forms.Button button1;
+		private GridAddIns.GridManager gridManager1;
 		private System.Windows.Forms.Label lblDetallesResultadoRaven;
 		private System.Windows.Forms.Label lblDetallesResultadoCeps;
 		private System.Windows.Forms.Label label2;
