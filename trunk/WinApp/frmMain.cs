@@ -238,5 +238,10 @@ namespace WinApp
 				this.label2.Text = "Evaluados: " + this.gridAspir1.TotalEvaluados.ToString() + "    Pendientes: " + this.gridAspir1.TotalPendientes.ToString();
 			}
 		}
+		
+		void Button1Click(object sender, EventArgs e)
+		{
+			this.gridManager1.EjecutarAccion();
+		}
 	}
 }
