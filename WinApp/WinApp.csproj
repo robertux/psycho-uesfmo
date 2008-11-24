@@ -65,10 +65,6 @@
       <HintPath>..\Funcionalidad\bin\Debug\CrypterClassLib.dll</HintPath>
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="FuncionalidadClassLib">
-      <HintPath>..\Funcionalidad\bin\Debug\FuncionalidadClassLib.dll</HintPath>
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
     <Reference Include="GridAddIns">
       <HintPath>..\..\GridAddIns\bin\Debug\GridAddIns.dll</HintPath>
       <SpecificVersion>False</SpecificVersion>
@@ -104,6 +100,10 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmReportGen.cs" />
+    <Compile Include="frmReportGen.Designer.cs">
+      <DependentUpon>frmReportGen.cs</DependentUpon>
+    </Compile>
     <Compile Include="GridAspir.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -135,6 +135,9 @@
     <EmbeddedResource Include="frmRaven.resx">
       <DependentUpon>frmRaven.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmReportGen.resx">
+      <DependentUpon>frmReportGen.cs</DependentUpon>
+    </EmbeddedResource>
     <BaseApplicationManifest Include="Properties\app.manifest" />
     <None Include="WinApp.exe.config" />
   </ItemGroup>
@@ -147,6 +150,10 @@
     <ProjectReference Include="..\AccesoDatos\AccesoDatos.csproj">
       <Project>{C21194FC-0454-47B8-AC42-476351712AB8}</Project>
       <Name>AccesoDatos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Funcionalidad\Funcionalidad.vbproj">
+      <Project>{8620E460-23C7-4F5D-8275-9C3C30BC2649}</Project>
+      <Name>Funcionalidad</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>

@@ -36,10 +36,11 @@ namespace WinApp
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.button2 = new System.Windows.Forms.Button();
 			this.button1 = new System.Windows.Forms.Button();
 			this.gridManager1 = new GridAddIns.GridManager();
 			this.label2 = new System.Windows.Forms.Label();
@@ -57,6 +58,7 @@ namespace WinApp
 			this.comboBox1 = new System.Windows.Forms.ComboBox();
 			this.gridAspir1 = new WinApp.GridAspir();
 			this.label1 = new System.Windows.Forms.Label();
+			this.button3 = new System.Windows.Forms.Button();
 			this.groupBox1.SuspendLayout();
 			this.groupBox3.SuspendLayout();
 			this.groupBox2.SuspendLayout();
@@ -66,6 +68,8 @@ namespace WinApp
 			// groupBox1
 			// 
 			this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
+			this.groupBox1.Controls.Add(this.button3);
+			this.groupBox1.Controls.Add(this.button2);
 			this.groupBox1.Controls.Add(this.button1);
 			this.groupBox1.Controls.Add(this.gridManager1);
 			this.groupBox1.Controls.Add(this.label2);
@@ -82,6 +86,21 @@ namespace WinApp
 			this.groupBox1.Size = new System.Drawing.Size(904, 681);
 			this.groupBox1.TabIndex = 0;
 			this.groupBox1.TabStop = false;
+			// 
+			// button2
+			// 
+			this.button2.FlatAppearance.BorderSize = 0;
+			this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+			this.button2.Location = new System.Drawing.Point(443, 7);
+			this.button2.Name = "button2";
+			this.button2.Size = new System.Drawing.Size(55, 56);
+			this.button2.TabIndex = 10;
+			this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+			this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.button2.UseVisualStyleBackColor = true;
+			this.button2.Click += new System.EventHandler(this.Button2Click);
 			// 
 			// button1
 			// 
@@ -281,13 +300,13 @@ namespace WinApp
 			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
 			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
 			this.gridAspir1.DefaultCellStyle = dataGridViewCellStyle2;
-			this.gridAspir1.Location = new System.Drawing.Point(31, 77);
+			this.gridAspir1.Location = new System.Drawing.Point(31, 97);
 			this.gridAspir1.MultiSelect = false;
 			this.gridAspir1.Name = "gridAspir1";
 			this.gridAspir1.ReadOnly = true;
 			this.gridAspir1.RowHeadersVisible = false;
 			this.gridAspir1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.gridAspir1.Size = new System.Drawing.Size(845, 307);
+			this.gridAspir1.Size = new System.Drawing.Size(845, 287);
 			this.gridAspir1.TabIndex = 2;
 			this.gridAspir1.TotalEvaluados = 0;
 			this.gridAspir1.TotalPendientes = 0;
@@ -302,6 +321,21 @@ namespace WinApp
 			this.label1.Size = new System.Drawing.Size(143, 37);
 			this.label1.TabIndex = 1;
 			this.label1.Text = "Alumnos";
+			// 
+			// button3
+			// 
+			this.button3.FlatAppearance.BorderSize = 0;
+			this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
+			this.button3.Location = new System.Drawing.Point(840, 60);
+			this.button3.Name = "button3";
+			this.button3.Size = new System.Drawing.Size(34, 35);
+			this.button3.TabIndex = 11;
+			this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+			this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.button3.UseVisualStyleBackColor = true;
+			this.button3.Click += new System.EventHandler(this.Button3Click);
 			// 
 			// frmMain
 			// 
@@ -319,6 +353,8 @@ namespace WinApp
 			((System.ComponentModel.ISupportInitialize)(this.gridAspir1)).EndInit();
 			this.ResumeLayout(false);
 		}
+		private System.Windows.Forms.Button button3;
+		private System.Windows.Forms.Button button2;
 		private System.Windows.Forms.Button button1;
 		private GridAddIns.GridManager gridManager1;
 		private System.Windows.Forms.Label lblDetallesResultadoRaven;
