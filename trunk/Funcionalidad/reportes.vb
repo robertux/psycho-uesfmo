@@ -7,13 +7,14 @@
 
 Public Class reportes
 
-    Public Sub New(ByVal tabla As DataTable, ByVal datos As AccesoDatos.AccesoDatos)
+    Public Sub New(ByVal tabla As DataTable, ByVal datos As AccesoDatos.AccesoDatos, ByVal filename as String)
         Dim lista As New List(Of Aspirante)
         Dim asp As Aspirante
         Dim oWord As Word.Application
         Dim Doc As Word.Document
         Dim tabla1 As Word.Table
         Dim parra1 As Word.Paragraph
+        Dim parrafo5 As Word.Paragraph
         Dim praven As Word.Paragraph, pconsistencia As Word.Paragraph
         Dim ppercentilraven As Word.Paragraph, ppuntajeraven As Word.Paragraph
         Dim pceps As Word.Paragraph, pcontrol As Word.Paragraph
@@ -41,7 +42,7 @@ Public Class reportes
         For i = 0 To lista.Count - 1
 
             If lista(i).Estado = "evaluado" Then
-
+            	            	
                 tabla1 = Doc.Tables.Add(Doc.Bookmarks.Item("\endofdoc").Range, 7, 2)
 
                 tabla1.Range.ParagraphFormat.SpaceAfter = 2
@@ -215,7 +216,10 @@ Public Class reportes
 
             End If
         Next
-
+        
+        Doc.SaveAs(filename)
+        Doc.Close(True)
+        oWord.Quit()
     End Sub
 
 

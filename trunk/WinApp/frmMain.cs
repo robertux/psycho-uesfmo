@@ -240,8 +240,18 @@ namespace WinApp
 		}
 		
 		void Button1Click(object sender, EventArgs e)
-		{
+		{			
 			this.gridManager1.EjecutarAccion();
+		}
+		
+		void Button2Click(object sender, EventArgs e)
+		{
+			new frmReportGen(this.ad).ShowDialog(this);
+		}
+		
+		void Button3Click(object sender, EventArgs e)
+		{
+			this.ComboBox1SelectedIndexChanged(this, new EventArgs());
 		}
 	}
 }
