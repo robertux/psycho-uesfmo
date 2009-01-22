@@ -36,10 +36,16 @@ namespace WinApp
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.label6 = new System.Windows.Forms.Label();
+			this.label5 = new System.Windows.Forms.Label();
+			this.label4 = new System.Windows.Forms.Label();
+			this.label7 = new System.Windows.Forms.Label();
+			this.label3 = new System.Windows.Forms.Label();
+			this.button3 = new System.Windows.Forms.Button();
 			this.button2 = new System.Windows.Forms.Button();
 			this.button1 = new System.Windows.Forms.Button();
 			this.gridManager1 = new GridAddIns.GridManager();
@@ -58,7 +64,7 @@ namespace WinApp
 			this.comboBox1 = new System.Windows.Forms.ComboBox();
 			this.gridAspir1 = new WinApp.GridAspir();
 			this.label1 = new System.Windows.Forms.Label();
-			this.button3 = new System.Windows.Forms.Button();
+			this.label8 = new System.Windows.Forms.Label();
 			this.groupBox1.SuspendLayout();
 			this.groupBox3.SuspendLayout();
 			this.groupBox2.SuspendLayout();
@@ -68,6 +74,12 @@ namespace WinApp
 			// groupBox1
 			// 
 			this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
+			this.groupBox1.Controls.Add(this.label6);
+			this.groupBox1.Controls.Add(this.label8);
+			this.groupBox1.Controls.Add(this.label5);
+			this.groupBox1.Controls.Add(this.label4);
+			this.groupBox1.Controls.Add(this.label7);
+			this.groupBox1.Controls.Add(this.label3);
 			this.groupBox1.Controls.Add(this.button3);
 			this.groupBox1.Controls.Add(this.button2);
 			this.groupBox1.Controls.Add(this.button1);
@@ -86,6 +98,66 @@ namespace WinApp
 			this.groupBox1.Size = new System.Drawing.Size(904, 681);
 			this.groupBox1.TabIndex = 0;
 			this.groupBox1.TabStop = false;
+			// 
+			// label6
+			// 
+			this.label6.Location = new System.Drawing.Point(442, 64);
+			this.label6.Name = "label6";
+			this.label6.Size = new System.Drawing.Size(59, 26);
+			this.label6.TabIndex = 12;
+			this.label6.Text = "Generar Reportes";
+			this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// label5
+			// 
+			this.label5.AutoSize = true;
+			this.label5.Location = new System.Drawing.Point(388, 68);
+			this.label5.Name = "label5";
+			this.label5.Size = new System.Drawing.Size(43, 13);
+			this.label5.TabIndex = 12;
+			this.label5.Text = "Eliminar";
+			// 
+			// label4
+			// 
+			this.label4.AutoSize = true;
+			this.label4.Location = new System.Drawing.Point(332, 68);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(34, 13);
+			this.label4.TabIndex = 12;
+			this.label4.Text = "Editar";
+			// 
+			// label7
+			// 
+			this.label7.AutoSize = true;
+			this.label7.Location = new System.Drawing.Point(824, 90);
+			this.label7.Name = "label7";
+			this.label7.Size = new System.Drawing.Size(53, 13);
+			this.label7.TabIndex = 12;
+			this.label7.Text = "Refrescar";
+			// 
+			// label3
+			// 
+			this.label3.AutoSize = true;
+			this.label3.Location = new System.Drawing.Point(270, 68);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(44, 13);
+			this.label3.TabIndex = 12;
+			this.label3.Text = "Agregar";
+			// 
+			// button3
+			// 
+			this.button3.FlatAppearance.BorderSize = 0;
+			this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
+			this.button3.Location = new System.Drawing.Point(835, 53);
+			this.button3.Name = "button3";
+			this.button3.Size = new System.Drawing.Size(34, 35);
+			this.button3.TabIndex = 11;
+			this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+			this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.button3.UseVisualStyleBackColor = true;
+			this.button3.Click += new System.EventHandler(this.Button3Click);
 			// 
 			// button2
 			// 
@@ -106,7 +178,7 @@ namespace WinApp
 			// 
 			this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
 			this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-			this.button1.Location = new System.Drawing.Point(820, 390);
+			this.button1.Location = new System.Drawing.Point(820, 110);
 			this.button1.Name = "button1";
 			this.button1.Size = new System.Drawing.Size(56, 37);
 			this.button1.TabIndex = 9;
@@ -120,7 +192,7 @@ namespace WinApp
 			this.gridManager1.EstiloResaltadoBgColor = System.Drawing.Color.LightBlue;
 			this.gridManager1.EstiloResaltadoFgColor = System.Drawing.Color.DarkBlue;
 			this.gridManager1.EstiloResaltadoFuente = System.Drawing.FontStyle.Regular;
-			this.gridManager1.Location = new System.Drawing.Point(31, 385);
+			this.gridManager1.Location = new System.Drawing.Point(31, 105);
 			this.gridManager1.MostrarCombo = false;
 			this.gridManager1.Name = "gridManager1";
 			this.gridManager1.NombreDataGridView = "gridAspir1";
@@ -167,12 +239,13 @@ namespace WinApp
 			// 
 			this.btnAddAspir.FlatAppearance.BorderSize = 0;
 			this.btnAddAspir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnAddAspir.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnAddAspir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnAddAspir.Image = ((System.Drawing.Image)(resources.GetObject("btnAddAspir.Image")));
 			this.btnAddAspir.Location = new System.Drawing.Point(264, 7);
 			this.btnAddAspir.Name = "btnAddAspir";
 			this.btnAddAspir.Size = new System.Drawing.Size(55, 56);
 			this.btnAddAspir.TabIndex = 6;
+			this.btnAddAspir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
 			this.btnAddAspir.UseVisualStyleBackColor = true;
 			this.btnAddAspir.Click += new System.EventHandler(this.BtnAddAspirClick);
 			// 
@@ -300,13 +373,13 @@ namespace WinApp
 			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
 			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
 			this.gridAspir1.DefaultCellStyle = dataGridViewCellStyle2;
-			this.gridAspir1.Location = new System.Drawing.Point(31, 97);
+			this.gridAspir1.Location = new System.Drawing.Point(31, 164);
 			this.gridAspir1.MultiSelect = false;
 			this.gridAspir1.Name = "gridAspir1";
 			this.gridAspir1.ReadOnly = true;
 			this.gridAspir1.RowHeadersVisible = false;
 			this.gridAspir1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.gridAspir1.Size = new System.Drawing.Size(845, 287);
+			this.gridAspir1.Size = new System.Drawing.Size(845, 274);
 			this.gridAspir1.TabIndex = 2;
 			this.gridAspir1.TotalEvaluados = 0;
 			this.gridAspir1.TotalPendientes = 0;
@@ -322,20 +395,14 @@ namespace WinApp
 			this.label1.TabIndex = 1;
 			this.label1.Text = "Alumnos";
 			// 
-			// button3
+			// label8
 			// 
-			this.button3.FlatAppearance.BorderSize = 0;
-			this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-			this.button3.Location = new System.Drawing.Point(840, 60);
-			this.button3.Name = "button3";
-			this.button3.Size = new System.Drawing.Size(34, 35);
-			this.button3.TabIndex = 11;
-			this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-			this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.button3.UseVisualStyleBackColor = true;
-			this.button3.Click += new System.EventHandler(this.Button3Click);
+			this.label8.AutoSize = true;
+			this.label8.Location = new System.Drawing.Point(827, 147);
+			this.label8.Name = "label8";
+			this.label8.Size = new System.Drawing.Size(40, 13);
+			this.label8.TabIndex = 12;
+			this.label8.Text = "Buscar";
 			// 
 			// frmMain
 			// 
@@ -353,6 +420,12 @@ namespace WinApp
 			((System.ComponentModel.ISupportInitialize)(this.gridAspir1)).EndInit();
 			this.ResumeLayout(false);
 		}
+		private System.Windows.Forms.Label label8;
+		private System.Windows.Forms.Label label3;
+		private System.Windows.Forms.Label label7;
+		private System.Windows.Forms.Label label4;
+		private System.Windows.Forms.Label label5;
+		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.Button button3;
 		private System.Windows.Forms.Button button2;
 		private System.Windows.Forms.Button button1;

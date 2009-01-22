@@ -24,16 +24,18 @@ namespace WinApp
 		private AccesoDatos.AccesoDatos ad;
 		private List<Facultad> facultades;
 		private List<Carrera> carreras;
+		private int anioRegistrado;
 		
 		public frmReportGen()
 		{			
 			InitializeComponent();
 		}
 		
-		public frmReportGen(AccesoDatos.AccesoDatos pAd): this()
+		public frmReportGen(AccesoDatos.AccesoDatos pAd, int anioReg): this()
 		{
 			this.ad = pAd;
 			this.CargarFacultades();
+			this.anioRegistrado = anioReg;
 		}
 		
 		public void CargarFacultades()
@@ -43,12 +45,21 @@ namespace WinApp
 			foreach(Facultad fac in this.facultades)
 				this.cmbFacultad.Items.Add(fac.NombreFacultad);
 			if(this.cmbFacultad.Items.Count > 0)
+			{
+				this.cmbFacultad.Items.Add("[Todas]");
 				this.cmbFacultad.SelectedIndex = 0;
+			}
 		}
 		
 		public void CargarCarreras(string codFacultad)
 		{
 			this.cmbCarrera.Items.Clear();
+			if(this.cmbFacultad.Text == "[Todas]")
+			{
+				this.cmbCarrera.Items.Add("[Todas]");
+				this.cmbCarrera.SelectedIndex = 0;
+				return;
+			}
 			this.carreras = ManejadorMisc.GetCarreras(codFacultad, this.ad.ds.Tables["carreras"]);
 			foreach(Carrera ca in this.carreras)
 				this.cmbCarrera.Items.Add(ca.NombreCarrera);
@@ -68,7 +79,10 @@ namespace WinApp
 		
 		void CmbFacultadSelectedIndexChanged(object sender, EventArgs e)
 		{
-			this.CargarCarreras(this.facultades[this.cmbFacultad.SelectedIndex].CodFacultad);
+			if(this.cmbFacultad.Text == "[Todas]")
+				this.CargarCarreras(""); //Internamente, al darse cuenta que la facultad seleccionada es [Todas], hara lo mismo con las carreras
+			else
+				this.CargarCarreras(this.facultades[this.cmbFacultad.SelectedIndex].CodFacultad);
 		}				
 		
 		void Button1Click(object sender, EventArgs e)
@@ -84,14 +98,19 @@ namespace WinApp
 			}
 			
 			DataView vista = this.ad.ds.Tables["aspirantes"].DefaultView;
-			vista.RowFilter = "carrera= '" + carreraSelected + "'";
+			String strFiltro = "anioregistrado=" + this.anioRegistrado;
 			
+			if(this.cmbFacultad.Text == "[Todas]")
+				strFiltro += "carrera= '" + carreraSelected + "'";
+							
+			vista.RowFilter = strFiltro;
 			SaveFileDialog sfd = new SaveFileDialog();
 			sfd.Title = "Guardar reporte como...";
 			sfd.Filter = "Documento de Word 2003 (*.doc) | *.doc";
 			if(sfd.ShowDialog(this) == DialogResult.OK)
 			{
 				try{
+					//new FuncionalidadClassLib.reporte_oficial(vista.ToTable(), this.ad, sfd.FileName);
 					new FuncionalidadClassLib.reportes(vista.ToTable(), this.ad, sfd.FileName);
 					MessageBox.Show("Archivo generado existosamente", "Aviso");
 				}catch(Exception ex){

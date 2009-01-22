@@ -256,7 +256,7 @@ namespace AccesoDatos
         public object EjecutarComando(string cmdQuery)
         {
         	MySqlCommand cmd = new MySqlCommand(cmdQuery, this._cn);
-        	return cmd.ExecuteScalar();
+        	return cmd.ExecuteScalar();        	
         }
 
         #endregion

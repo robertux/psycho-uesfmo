@@ -42,10 +42,12 @@ namespace WinApp
 		}
 		
 		private void CargarCombo()
-		{
-			this.comboBox1.Items.Clear();
+		{			
+			/*this.comboBox1.Items.Clear();
 			for(int i = DateTime.Now.Year; i >= (DateTime.Now.Year - 10); i--)
-				this.comboBox1.Items.Add(i);
+				this.comboBox1.Items.Add(i);*/
+			foreach(int anio in manejadorAspirante.ConsultarAniosRegistroAspirantes(this.ad))
+				this.comboBox1.Items.Add(anio);
 			this.comboBox1.SelectedIndex = 0;
 		}
 		
@@ -246,7 +248,7 @@ namespace WinApp
 		
 		void Button2Click(object sender, EventArgs e)
 		{
-			new frmReportGen(this.ad).ShowDialog(this);
+			new frmReportGen(this.ad, int.Parse(this.comboBox1.Text)).ShowDialog(this);
 		}
 		
 		void Button3Click(object sender, EventArgs e)
