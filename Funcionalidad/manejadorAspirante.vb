@@ -1,3 +1,5 @@
+imports MySql.Data.MySqlClient
+
 ''' <summary>
 ''' Representa un conjunto de metodos que se encargan de las operaciones relacionadas con los aspirantes
 ''' </summary>
@@ -84,6 +86,20 @@ Public Class manejadorAspirante
         Next
         codigo = apl.PadLeft(2, "0").Substring(0, 1) + nom.PadLeft(2, "0").Substring(0, 1) + (cuantos).ToString().PadLeft(5, "0")
         Return codigo
+    End Function
+    
+    Public Shared Function ConsultarAniosRegistroAspirantes(ByVal ad As AccesoDatos.AccesoDatos) as List(Of Integer)
+	dim anios as New List(Of Integer)
+    	dim conn as  New MySqlConnection(ad.CadenaConexion)
+    	Dim cmd As New MySqlCommand("SELECT anioregistrado FROM aspirantes GROUP BY anioregistrado ORDER BY anioregistrado DESC", conn)
+    	conn.Open()
+    	Dim reader  As MySqlDataReader = cmd.ExecuteReader()
+    	Do While(reader.Read())
+    		anios.Add(reader.GetInt32(0))
+    	Loop
+    	reader.Close()
+    	conn.Close()
+    	return anios
     End Function
 
     Public Shared Function ConsultarAspirantes(ByVal anio As UInteger, ByVal ds As DataSet) As List(Of Aspirante)

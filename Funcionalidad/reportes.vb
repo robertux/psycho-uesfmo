@@ -82,7 +82,7 @@ Public Class reportes
                     tabla1.Cell(5, 2).Range.Text = "Femenino"
                 End If
                 tabla1.Cell(6, 1).Range.Text = "Fecha de Nacimiento"
-                tabla1.Cell(6, 2).Range.Text = lista(i).FechaNacimiento.ToString
+                tabla1.Cell(6, 2).Range.Text = lista(i).FechaNacimiento.ToLongDateString
                 tabla1.Cell(7, 1).Range.Text = "Facultad de la Carrera "
                 tabla1.Cell(7, 2).Range.Text = lista(i).Facultad.NombreFacultad
 

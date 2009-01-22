@@ -7,7 +7,7 @@
 
 Public Class reporte_oficial
 
-    Public Sub New(ByVal tabla As DataTable, ByVal datos As AccesoDatos.AccesoDatos)
+    Public Sub New(ByVal tabla As DataTable, ByVal datos As AccesoDatos.AccesoDatos, ByVal filename as String)
         Dim lista As New List(Of Aspirante)
         Dim asp As Aspirante
         Dim oWord As Word.Application
@@ -36,30 +36,31 @@ Public Class reporte_oficial
         oDoc = oWord.Documents.Add
 
 
-        For i = 0 To lista.Count - 1
+        'For i = 0 To lista.Count - 1
+        For i = 0 To 1
 
             If lista(i).Estado = "evaluado" Then
 
                 parrafo1 = oDoc.Content.Paragraphs.Add
-                parrafo1.Range.Text = "UNIVERSIDAD DE EL SALVADOR "
-                parrafo1.Range.Font.Bold = True
+                parrafo1.Range.Text = "INFORME INDIVIDUAL INGRESO 2009"
+                parrafo1.Range.Font.Bold = False
                 parrafo1.Range.Font.Size = 14
-                parrafo1.Range.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter
+                'parrafo1.Range.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter
                 parrafo1.Range.InsertParagraphAfter()
 
                 parrafo2 = oDoc.Content.Paragraphs.Add(oDoc.Bookmarks.Item("\endofdoc").Range)
-                parrafo2.Range.Text = "VICERRECTORÍA ACADÉMICA"
-                parrafo2.Range.Font.Bold = True
-                parrafo2.Range.Font.Size = 12
-                parrafo2.Range.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter
+                parrafo2.Range.Text = "RESULTADO DE PRUEBAS PSICOLOGICAS"
+                parrafo2.Range.Font.Bold = False
+                parrafo2.Range.Font.Size = 14
+                'parrafo2.Range.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter
                 parrafo2.Range.InsertParagraphAfter()
 
 
                 parrafo3 = oDoc.Content.Paragraphs.Add(oDoc.Bookmarks.Item("\endofdoc").Range)
-                parrafo3.Range.Text = "UNIDAD DE INGRESO UNIVERSITARIO"
-                parrafo3.Range.Font.Bold = True
-                parrafo3.Range.Font.Size = 10
-                parrafo3.Range.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter
+                parrafo3.Range.Text = "UNIDAD DE POSTGRADOS F.M.O. - U.E.S."
+                parrafo3.Range.Font.Bold = False
+                parrafo3.Range.Font.Size = 12
+                'parrafo3.Range.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter
                 parrafo3.Format.SpaceAfter = 8
                 parrafo3.Range.InsertParagraphAfter()
 
@@ -290,6 +291,10 @@ Public Class reporte_oficial
                 parrafofecha.Range.InsertParagraphAfter()
             End If
         Next
+        oDoc.SaveAs(filename)
+        oDoc.Close(True)
+        oWord.Quit()
+        
     End Sub
 
 
