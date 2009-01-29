@@ -68,7 +68,7 @@ namespace WinApp
 			Word.Paragraph oPara3;			
 			oPara3 = oDoc.Content.Paragraphs.Add(ref oMissing);
 			oPara3.Range.Font.Size = 12;			
-			oPara3.Range.Text = "UNIDAD DE PROFESORADOS F.M.O. - U.E.S.\n\n\n";			
+			oPara3.Range.Text = "UNIDAD DE PROFESORADOS F.M.O. - U.E.S.\n";			
 			oPara3.Range.InsertParagraphAfter();						
 			
 			Word.Table oTable;
@@ -194,7 +194,7 @@ namespace WinApp
 			oPara9.Range.Font.Size = 12;			
 			oPara9.Range.Font.Name = "Arial";
 			oPara9.Range.Font.Bold = 0;						
-			oPara9.Range.Text = aspir.ResCeps.Diagnostico + "\n\n";							
+			oPara9.Range.Text = aspir.ResCeps.Diagnostico.Replace("\n", " ") + "\n";
 			oPara9.Range.InsertParagraphAfter();
 			
 			Word.Paragraph oPara10;			
@@ -212,18 +212,26 @@ namespace WinApp
 			oPara11.Range.Font.Name = "Arial";
 			oPara11.Range.Font.Bold = 0;						
 			oPara11.Range.Text = "\n\nF.__________________________________ \n Eduardo José Armando Martínez Vides \n Psicólogo Evaluador. JVPP No. 744";
-			oPara11.Range.InsertParagraphAfter();	
+			oPara11.Range.InsertParagraphAfter();				
 			
-			
+			Word.Range wrdRng4 = oDoc.Bookmarks.get_Item(ref oEndOfDoc).Range;			
+			object oCollapseEnd = Word.WdCollapseDirection.wdCollapseEnd;
+			object oPageBreak = Word.WdBreakType.wdPageBreak;
+			wrdRng4.Collapse(ref oCollapseEnd);
+			wrdRng4.InsertBreak(ref oPageBreak);
+			wrdRng4.Collapse(ref oCollapseEnd);
 		}				
 		
 		public void Cerrar()
 		{			
-			/*
-			this.oDoc.SaveAs(this.rutaArchivo);
-        		this.oDoc.Close(true);
-        		this.oWord.Quit(0);
-			System.Diagnostics.Process.Start(this.rutaArchivo);*/
+			Object rutaArchivoObj = (object)this.rutaArchivo;
+			this.oDoc.SaveAs(ref rutaArchivoObj,
+			                 ref oMissing, ref oMissing, ref oMissing,
+			                 ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref oMissing,
+			                 ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref oMissing, 
+			                 ref oMissing, ref oMissing);
+			this.oDoc.Close(ref oMissing, ref oMissing, ref oMissing);
+			this.oWord.Quit(ref oMissing, ref oMissing, ref oMissing);
 		}		
 
 	}

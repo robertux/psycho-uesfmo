@@ -88,6 +88,8 @@ namespace WinApp
 			if(this.rutaArchivoGuardar == "")
 			{
 				this.Button3Click(this, new EventArgs());				
+				if(this.rutaArchivoGuardar == "")
+					return;
 			}
 			string carreraSelected = "";
 			foreach(Carrera cr in this.carreras)
@@ -102,8 +104,8 @@ namespace WinApp
 			DataView vista = this.ad.ds.Tables["aspirantes"].DefaultView;
 			String strFiltro = "anioregistrado=" + this.anioRegistrado;
 			
-			if(this.cmbFacultad.Text == "[Todas]")
-				strFiltro += "carrera= '" + carreraSelected + "'";
+			if(this.cmbCarrera.Text != "[Todas]")
+				strFiltro += " AND carrera= '" + carreraSelected + "'";
 							
 			vista.RowFilter = strFiltro;						
 				try{					
@@ -116,14 +118,14 @@ namespace WinApp
 					this.label1.Text = "Creando el documento " + this.rutaArchivoGuardar;
 					PsychoReportGenerator rGen = new PsychoReportGenerator(this.rutaArchivoGuardar, this.ad);
 					
-					int i = 0;
+					//int i = 0;
 					foreach(DataRow fila in vista.ToTable().Rows)
 					{																		
 						Aspirante currentAspir = manejadorAspirante.GetAspirante(fila["codigo"].ToString(), this.ad.ds);
 						this.label1.Text = "Agregando al reporte los datos del estudiante " + currentAspir.Apellidos + ", " + currentAspir.Nombres;
 						currentAspir = ManejadorPruebas.GetResultados(currentAspir, this.ad.ds.Tables["resultadosceps"], this.ad.ds.Tables["resultadosraven"]);
 						rGen.AgregarAspirante(currentAspir);					
-						if(++i == 5) break;
+						//if(++i == 10) break;
 					}
 					rGen.Cerrar();					
 					MessageBox.Show("Archivo generado existosamente", "Aviso");
