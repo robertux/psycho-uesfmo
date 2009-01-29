@@ -14,6 +14,7 @@ using System.Windows.Forms;
 using FuncionalidadClassLib;
 using System.Collections.Generic;
 
+
 namespace WinApp
 {
 	/// <summary>
@@ -25,6 +26,7 @@ namespace WinApp
 		private List<Facultad> facultades;
 		private List<Carrera> carreras;
 		private int anioRegistrado;
+		private string rutaArchivoGuardar;
 		
 		public frmReportGen()
 		{			
@@ -36,6 +38,7 @@ namespace WinApp
 			this.ad = pAd;
 			this.CargarFacultades();
 			this.anioRegistrado = anioReg;
+			this.rutaArchivoGuardar = "";
 		}
 		
 		public void CargarFacultades()
@@ -71,12 +74,7 @@ namespace WinApp
 		{
 			this.Close();
 		}
-		
-		void FrmReportGenLoad(object sender, EventArgs e)
-		{
-			
-		}
-		
+				
 		void CmbFacultadSelectedIndexChanged(object sender, EventArgs e)
 		{
 			if(this.cmbFacultad.Text == "[Todas]")
@@ -87,6 +85,10 @@ namespace WinApp
 		
 		void Button1Click(object sender, EventArgs e)
 		{
+			if(this.rutaArchivoGuardar == "")
+			{
+				this.Button3Click(this, new EventArgs());				
+			}
 			string carreraSelected = "";
 			foreach(Carrera cr in this.carreras)
 			{				
@@ -103,23 +105,45 @@ namespace WinApp
 			if(this.cmbFacultad.Text == "[Todas]")
 				strFiltro += "carrera= '" + carreraSelected + "'";
 							
-			vista.RowFilter = strFiltro;
-			SaveFileDialog sfd = new SaveFileDialog();
-			sfd.Title = "Guardar reporte como...";
-			sfd.Filter = "Documento de Word 2003 (*.doc) | *.doc";
-			if(sfd.ShowDialog(this) == DialogResult.OK)
-			{
-				try{
-					//new FuncionalidadClassLib.reporte_oficial(vista.ToTable(), this.ad, sfd.FileName);
-					new FuncionalidadClassLib.reportes(vista.ToTable(), this.ad, sfd.FileName);
+			vista.RowFilter = strFiltro;						
+				try{					
+					
+					this.cmbFacultad.Enabled = false;
+					this.cmbCarrera.Enabled = false;
+					this.button1.Enabled = false;
+					this.button3.Enabled = false;
+					
+					this.label1.Text = "Creando el documento " + this.rutaArchivoGuardar;
+					PsychoReportGenerator rGen = new PsychoReportGenerator(this.rutaArchivoGuardar, this.ad);
+					
+					int i = 0;
+					foreach(DataRow fila in vista.ToTable().Rows)
+					{																		
+						Aspirante currentAspir = manejadorAspirante.GetAspirante(fila["codigo"].ToString(), this.ad.ds);
+						this.label1.Text = "Agregando al reporte los datos del estudiante " + currentAspir.Apellidos + ", " + currentAspir.Nombres;
+						currentAspir = ManejadorPruebas.GetResultados(currentAspir, this.ad.ds.Tables["resultadosceps"], this.ad.ds.Tables["resultadosraven"]);
+						rGen.AgregarAspirante(currentAspir);					
+						if(++i == 5) break;
+					}
+					rGen.Cerrar();					
 					MessageBox.Show("Archivo generado existosamente", "Aviso");
 				}catch(Exception ex){
+					throw ex;
 					MessageBox.Show("Ocurrio un error al generar el reporte. Intentelo nuevamente", "Error");
-					this.Close();
-				}
-				//new FuncionalidadClassLib.reporte_oficial(vista.ToTable(), this.ad);
-			}
+				}				
 			this.Close();
+		}
+		
+		void Button3Click(object sender, EventArgs e)
+		{
+			SaveFileDialog sfd = new SaveFileDialog();
+			sfd.Title = "Guardar reporte como...";
+			sfd.Filter = "Archivo de Microsoft Word (*.doc) | *.doc";
+			if(sfd.ShowDialog() == DialogResult.OK)
+			{
+				this.rutaArchivoGuardar = sfd.FileName;
+				this.textBox1.Text = sfd.FileName;
+			}
 		}
 	}
 }
