@@ -69,7 +69,23 @@
       <HintPath>..\..\GridAddIns\bin\Debug\GridAddIns.dll</HintPath>
       <SpecificVersion>False</SpecificVersion>
     </Reference>
+    <Reference Include="Interop.Microsoft.Office.Interop.Word">
+      <HintPath>..\Funcionalidad\bin\Debug\Interop.Microsoft.Office.Interop.Word.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
     <Reference Include="MySql.Data, Version=1.0.7.30072, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="nunit.framework">
+      <HintPath>..\..\cds\trunk\Test\bin\Debug\nunit.framework.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="PdfSharp">
+      <HintPath>bin\Debug\PdfSharp.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="sharpPDF">
+      <HintPath>bin\Debug\sharpPDF.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -123,6 +139,7 @@
       <DependentUpon>frmRaven.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="PsychoReportGenerator.cs" />
     <EmbeddedResource Include="frmAddEditAspir.resx">
       <DependentUpon>frmAddEditAspir.cs</DependentUpon>
     </EmbeddedResource>

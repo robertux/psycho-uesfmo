@@ -41,6 +41,9 @@ namespace WinApp
 			this.button1 = new System.Windows.Forms.Button();
 			this.cmbCarrera = new System.Windows.Forms.ComboBox();
 			this.cmbFacultad = new System.Windows.Forms.ComboBox();
+			this.textBox1 = new System.Windows.Forms.TextBox();
+			this.button3 = new System.Windows.Forms.Button();
+			this.label1 = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
 			// button2
@@ -50,7 +53,7 @@ namespace WinApp
 			this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
 			this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.button2.Location = new System.Drawing.Point(196, 136);
+			this.button2.Location = new System.Drawing.Point(196, 179);
 			this.button2.Name = "button2";
 			this.button2.Size = new System.Drawing.Size(115, 45);
 			this.button2.TabIndex = 18;
@@ -66,7 +69,7 @@ namespace WinApp
 			this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
 			this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.button1.Location = new System.Drawing.Point(318, 136);
+			this.button1.Location = new System.Drawing.Point(318, 179);
 			this.button1.Name = "button1";
 			this.button1.Size = new System.Drawing.Size(115, 45);
 			this.button1.TabIndex = 17;
@@ -96,12 +99,49 @@ namespace WinApp
 			this.cmbFacultad.TabIndex = 19;
 			this.cmbFacultad.SelectedIndexChanged += new System.EventHandler(this.CmbFacultadSelectedIndexChanged);
 			// 
+			// textBox1
+			// 
+			this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.textBox1.Location = new System.Drawing.Point(12, 96);
+			this.textBox1.Name = "textBox1";
+			this.textBox1.ReadOnly = true;
+			this.textBox1.Size = new System.Drawing.Size(330, 26);
+			this.textBox1.TabIndex = 20;
+			this.textBox1.Text = "Nombre y ruta del archivo a generar...";
+			// 
+			// button3
+			// 
+			this.button3.FlatAppearance.BorderSize = 0;
+			this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+			this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.button3.Location = new System.Drawing.Point(348, 96);
+			this.button3.Name = "button3";
+			this.button3.Size = new System.Drawing.Size(85, 26);
+			this.button3.TabIndex = 18;
+			this.button3.Text = "&Examinar";
+			this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.button3.UseVisualStyleBackColor = true;
+			this.button3.Click += new System.EventHandler(this.Button3Click);
+			// 
+			// label1
+			// 
+			this.label1.AutoEllipsis = true;
+			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label1.Location = new System.Drawing.Point(11, 135);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(421, 23);
+			this.label1.TabIndex = 21;
+			// 
 			// frmReportGen
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(445, 196);
+			this.ClientSize = new System.Drawing.Size(445, 236);
+			this.Controls.Add(this.label1);
+			this.Controls.Add(this.textBox1);
 			this.Controls.Add(this.cmbFacultad);
+			this.Controls.Add(this.button3);
 			this.Controls.Add(this.button2);
 			this.Controls.Add(this.button1);
 			this.Controls.Add(this.cmbCarrera);
@@ -109,9 +149,12 @@ namespace WinApp
 			this.MinimizeBox = false;
 			this.Name = "frmReportGen";
 			this.Text = "Generar Reportes";
-			this.Load += new System.EventHandler(this.FrmReportGenLoad);
 			this.ResumeLayout(false);
+			this.PerformLayout();
 		}
+		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Button button3;
+		private System.Windows.Forms.TextBox textBox1;
 		private System.Windows.Forms.ComboBox cmbFacultad;
 		private System.Windows.Forms.ComboBox cmbCarrera;
 		private System.Windows.Forms.Button button1;
