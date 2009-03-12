@@ -66,7 +66,7 @@
       <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="GridAddIns">
-      <HintPath>..\..\GridAddIns\bin\Debug\GridAddIns.dll</HintPath>
+      <HintPath>bin\Debug\GridAddIns.dll</HintPath>
       <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Interop.Microsoft.Office.Interop.Word">
@@ -76,14 +76,6 @@
     <Reference Include="MySql.Data, Version=1.0.7.30072, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="nunit.framework">
       <HintPath>..\..\cds\trunk\Test\bin\Debug\nunit.framework.dll</HintPath>
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
-    <Reference Include="PdfSharp">
-      <HintPath>bin\Debug\PdfSharp.dll</HintPath>
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
-    <Reference Include="sharpPDF">
-      <HintPath>bin\Debug\sharpPDF.dll</HintPath>
       <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="System" />
@@ -151,9 +143,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmRaven.resx">
       <DependentUpon>frmRaven.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmReportGen.resx">
-      <DependentUpon>frmReportGen.cs</DependentUpon>
     </EmbeddedResource>
     <BaseApplicationManifest Include="Properties\app.manifest" />
     <None Include="WinApp.exe.config" />
