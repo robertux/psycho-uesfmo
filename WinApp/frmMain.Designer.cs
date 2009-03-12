@@ -40,11 +40,7 @@ namespace WinApp
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
-			this.label6 = new System.Windows.Forms.Label();
-			this.label5 = new System.Windows.Forms.Label();
-			this.label4 = new System.Windows.Forms.Label();
-			this.label7 = new System.Windows.Forms.Label();
-			this.label3 = new System.Windows.Forms.Label();
+			this.button4 = new System.Windows.Forms.Button();
 			this.button3 = new System.Windows.Forms.Button();
 			this.button2 = new System.Windows.Forms.Button();
 			this.button1 = new System.Windows.Forms.Button();
@@ -64,7 +60,6 @@ namespace WinApp
 			this.comboBox1 = new System.Windows.Forms.ComboBox();
 			this.gridAspir1 = new WinApp.GridAspir();
 			this.label1 = new System.Windows.Forms.Label();
-			this.label8 = new System.Windows.Forms.Label();
 			this.groupBox1.SuspendLayout();
 			this.groupBox3.SuspendLayout();
 			this.groupBox2.SuspendLayout();
@@ -73,13 +68,9 @@ namespace WinApp
 			// 
 			// groupBox1
 			// 
+			this.groupBox1.AutoSize = true;
 			this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
-			this.groupBox1.Controls.Add(this.label6);
-			this.groupBox1.Controls.Add(this.label8);
-			this.groupBox1.Controls.Add(this.label5);
-			this.groupBox1.Controls.Add(this.label4);
-			this.groupBox1.Controls.Add(this.label7);
-			this.groupBox1.Controls.Add(this.label3);
+			this.groupBox1.Controls.Add(this.button4);
 			this.groupBox1.Controls.Add(this.button3);
 			this.groupBox1.Controls.Add(this.button2);
 			this.groupBox1.Controls.Add(this.button1);
@@ -93,66 +84,35 @@ namespace WinApp
 			this.groupBox1.Controls.Add(this.comboBox1);
 			this.groupBox1.Controls.Add(this.gridAspir1);
 			this.groupBox1.Controls.Add(this.label1);
-			this.groupBox1.Location = new System.Drawing.Point(58, 23);
+			this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.groupBox1.Location = new System.Drawing.Point(0, 0);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(904, 681);
+			this.groupBox1.Size = new System.Drawing.Size(907, 678);
 			this.groupBox1.TabIndex = 0;
 			this.groupBox1.TabStop = false;
+			this.groupBox1.Text = "Psycho Evaluador";
 			// 
-			// label6
+			// button4
 			// 
-			this.label6.Location = new System.Drawing.Point(442, 64);
-			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(59, 26);
-			this.label6.TabIndex = 12;
-			this.label6.Text = "Generar Reportes";
-			this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// label5
-			// 
-			this.label5.AutoSize = true;
-			this.label5.Location = new System.Drawing.Point(388, 68);
-			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(43, 13);
-			this.label5.TabIndex = 12;
-			this.label5.Text = "Eliminar";
-			// 
-			// label4
-			// 
-			this.label4.AutoSize = true;
-			this.label4.Location = new System.Drawing.Point(332, 68);
-			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(34, 13);
-			this.label4.TabIndex = 12;
-			this.label4.Text = "Editar";
-			// 
-			// label7
-			// 
-			this.label7.AutoSize = true;
-			this.label7.Location = new System.Drawing.Point(824, 90);
-			this.label7.Name = "label7";
-			this.label7.Size = new System.Drawing.Size(53, 13);
-			this.label7.TabIndex = 12;
-			this.label7.Text = "Refrescar";
-			// 
-			// label3
-			// 
-			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(270, 68);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(44, 13);
-			this.label3.TabIndex = 12;
-			this.label3.Text = "Agregar";
+			this.button4.FlatAppearance.BorderSize = 0;
+			this.button4.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+			this.button4.Location = new System.Drawing.Point(792, 19);
+			this.button4.Name = "button4";
+			this.button4.Size = new System.Drawing.Size(84, 74);
+			this.button4.TabIndex = 12;
+			this.button4.Text = "Ayuda";
+			this.button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+			this.button4.UseVisualStyleBackColor = true;
+			this.button4.Click += new System.EventHandler(this.Button4Click);
 			// 
 			// button3
 			// 
 			this.button3.FlatAppearance.BorderSize = 0;
-			this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-			this.button3.Location = new System.Drawing.Point(835, 53);
+			this.button3.Location = new System.Drawing.Point(835, 110);
 			this.button3.Name = "button3";
-			this.button3.Size = new System.Drawing.Size(34, 35);
+			this.button3.Size = new System.Drawing.Size(41, 40);
 			this.button3.TabIndex = 11;
 			this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
 			this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -162,23 +122,22 @@ namespace WinApp
 			// button2
 			// 
 			this.button2.FlatAppearance.BorderSize = 0;
-			this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-			this.button2.Location = new System.Drawing.Point(443, 7);
+			this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+			this.button2.Location = new System.Drawing.Point(702, 19);
 			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(55, 56);
+			this.button2.Size = new System.Drawing.Size(84, 73);
 			this.button2.TabIndex = 10;
+			this.button2.Text = "Reportes";
 			this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-			this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.button2.UseVisualStyleBackColor = true;
 			this.button2.Click += new System.EventHandler(this.Button2Click);
 			// 
 			// button1
 			// 
-			this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+			this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
 			this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-			this.button1.Location = new System.Drawing.Point(820, 110);
+			this.button1.Location = new System.Drawing.Point(650, 110);
 			this.button1.Name = "button1";
 			this.button1.Size = new System.Drawing.Size(56, 37);
 			this.button1.TabIndex = 9;
@@ -197,13 +156,14 @@ namespace WinApp
 			this.gridManager1.Name = "gridManager1";
 			this.gridManager1.NombreDataGridView = "gridAspir1";
 			this.gridManager1.Operacion = GridAddIns.GridManagerOperaciones.Filtrado;
-			this.gridManager1.Size = new System.Drawing.Size(783, 42);
+			this.gridManager1.Size = new System.Drawing.Size(599, 42);
 			this.gridManager1.TabIndex = 8;
 			this.gridManager1.TabStop = false;
+			this.gridManager1.Text = "Ingrese un criterio de busqueda:";
 			// 
 			// label2
 			// 
-			this.label2.Location = new System.Drawing.Point(31, 59);
+			this.label2.Location = new System.Drawing.Point(31, 74);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(227, 15);
 			this.label2.TabIndex = 7;
@@ -212,39 +172,43 @@ namespace WinApp
 			// btnDelAspir
 			// 
 			this.btnDelAspir.FlatAppearance.BorderSize = 0;
-			this.btnDelAspir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnDelAspir.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnDelAspir.Image = ((System.Drawing.Image)(resources.GetObject("btnDelAspir.Image")));
-			this.btnDelAspir.Location = new System.Drawing.Point(382, 7);
+			this.btnDelAspir.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+			this.btnDelAspir.Location = new System.Drawing.Point(612, 18);
 			this.btnDelAspir.Name = "btnDelAspir";
-			this.btnDelAspir.Size = new System.Drawing.Size(55, 56);
+			this.btnDelAspir.Size = new System.Drawing.Size(84, 74);
 			this.btnDelAspir.TabIndex = 6;
+			this.btnDelAspir.Text = "Eliminar";
+			this.btnDelAspir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
 			this.btnDelAspir.UseVisualStyleBackColor = true;
 			this.btnDelAspir.Click += new System.EventHandler(this.BtnDelAspirClick);
 			// 
 			// btnEditAspir
 			// 
 			this.btnEditAspir.FlatAppearance.BorderSize = 0;
-			this.btnEditAspir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnEditAspir.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnEditAspir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
 			this.btnEditAspir.Image = ((System.Drawing.Image)(resources.GetObject("btnEditAspir.Image")));
-			this.btnEditAspir.Location = new System.Drawing.Point(325, 7);
+			this.btnEditAspir.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+			this.btnEditAspir.Location = new System.Drawing.Point(522, 19);
 			this.btnEditAspir.Name = "btnEditAspir";
-			this.btnEditAspir.Size = new System.Drawing.Size(55, 56);
+			this.btnEditAspir.Size = new System.Drawing.Size(84, 73);
 			this.btnEditAspir.TabIndex = 6;
+			this.btnEditAspir.Text = "Editar";
+			this.btnEditAspir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
 			this.btnEditAspir.UseVisualStyleBackColor = true;
 			this.btnEditAspir.Click += new System.EventHandler(this.BtnEditAspirClick);
 			// 
 			// btnAddAspir
 			// 
 			this.btnAddAspir.FlatAppearance.BorderSize = 0;
-			this.btnAddAspir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnAddAspir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnAddAspir.Image = ((System.Drawing.Image)(resources.GetObject("btnAddAspir.Image")));
-			this.btnAddAspir.Location = new System.Drawing.Point(264, 7);
+			this.btnAddAspir.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+			this.btnAddAspir.Location = new System.Drawing.Point(432, 18);
 			this.btnAddAspir.Name = "btnAddAspir";
-			this.btnAddAspir.Size = new System.Drawing.Size(55, 56);
+			this.btnAddAspir.Size = new System.Drawing.Size(84, 73);
 			this.btnAddAspir.TabIndex = 6;
+			this.btnAddAspir.Text = "Agregar";
 			this.btnAddAspir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
 			this.btnAddAspir.UseVisualStyleBackColor = true;
 			this.btnAddAspir.Click += new System.EventHandler(this.BtnAddAspirClick);
@@ -279,7 +243,6 @@ namespace WinApp
 			// 
 			// btnEvaluarCeps
 			// 
-			this.btnEvaluarCeps.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
 			this.btnEvaluarCeps.Image = ((System.Drawing.Image)(resources.GetObject("btnEvaluarCeps.Image")));
 			this.btnEvaluarCeps.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.btnEvaluarCeps.Location = new System.Drawing.Point(751, 10);
@@ -322,7 +285,6 @@ namespace WinApp
 			// 
 			// btnEvaluarRaven
 			// 
-			this.btnEvaluarRaven.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
 			this.btnEvaluarRaven.Image = ((System.Drawing.Image)(resources.GetObject("btnEvaluarRaven.Image")));
 			this.btnEvaluarRaven.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.btnEvaluarRaven.Location = new System.Drawing.Point(751, 10);
@@ -340,9 +302,9 @@ namespace WinApp
 			this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.comboBox1.FormattingEnabled = true;
-			this.comboBox1.Location = new System.Drawing.Point(638, 22);
+			this.comboBox1.Location = new System.Drawing.Point(724, 116);
 			this.comboBox1.Name = "comboBox1";
-			this.comboBox1.Size = new System.Drawing.Size(238, 28);
+			this.comboBox1.Size = new System.Drawing.Size(101, 28);
 			this.comboBox1.TabIndex = 3;
 			this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.ComboBox1SelectedIndexChanged);
 			// 
@@ -389,28 +351,20 @@ namespace WinApp
 			// 
 			this.label1.AutoSize = true;
 			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label1.Location = new System.Drawing.Point(31, 22);
+			this.label1.Location = new System.Drawing.Point(31, 19);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(143, 37);
 			this.label1.TabIndex = 1;
 			this.label1.Text = "Alumnos";
-			// 
-			// label8
-			// 
-			this.label8.AutoSize = true;
-			this.label8.Location = new System.Drawing.Point(827, 147);
-			this.label8.Name = "label8";
-			this.label8.Size = new System.Drawing.Size(40, 13);
-			this.label8.TabIndex = 12;
-			this.label8.Text = "Buscar";
 			// 
 			// frmMain
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.SystemColors.AppWorkspace;
-			this.ClientSize = new System.Drawing.Size(1018, 753);
+			this.ClientSize = new System.Drawing.Size(907, 678);
 			this.Controls.Add(this.groupBox1);
+			this.DoubleBuffered = true;
 			this.Name = "frmMain";
 			this.Text = "Psycho Evaluador";
 			this.groupBox1.ResumeLayout(false);
@@ -419,13 +373,9 @@ namespace WinApp
 			this.groupBox2.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.gridAspir1)).EndInit();
 			this.ResumeLayout(false);
+			this.PerformLayout();
 		}
-		private System.Windows.Forms.Label label8;
-		private System.Windows.Forms.Label label3;
-		private System.Windows.Forms.Label label7;
-		private System.Windows.Forms.Label label4;
-		private System.Windows.Forms.Label label5;
-		private System.Windows.Forms.Label label6;
+		private System.Windows.Forms.Button button4;
 		private System.Windows.Forms.Button button3;
 		private System.Windows.Forms.Button button2;
 		private System.Windows.Forms.Button button1;
@@ -446,5 +396,10 @@ namespace WinApp
 		private WinApp.GridAspir gridAspir1;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.GroupBox groupBox1;
+		
+		void Button4Click(object sender, System.EventArgs e)
+		{
+			
+		}
 	}
 }
