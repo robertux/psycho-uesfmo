@@ -216,8 +216,8 @@ namespace WinApp
 			this.cmbCentroEstudios.Size = new System.Drawing.Size(420, 28);
 			this.cmbCentroEstudios.Sorted = true;
 			this.cmbCentroEstudios.TabIndex = 10;
-			this.cmbCentroEstudios.SelectedIndexChanged += new System.EventHandler(this.CmbCentroEstudiosSelectedIndexChanged);
 			this.cmbCentroEstudios.Leave += new System.EventHandler(this.CmbCentroEstudiosLeave);
+			this.cmbCentroEstudios.SelectedIndexChanged += new System.EventHandler(this.CmbCentroEstudiosSelectedIndexChanged);
 			// 
 			// label9
 			// 
@@ -385,6 +385,7 @@ namespace WinApp
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.txtApellidos);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;
 			this.Name = "frmAddEditAspir";

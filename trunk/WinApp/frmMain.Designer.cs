@@ -408,6 +408,7 @@ namespace WinApp
 			this.ClientSize = new System.Drawing.Size(907, 678);
 			this.Controls.Add(this.groupBox1);
 			this.DoubleBuffered = true;
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "frmMain";
 			this.Text = "Psycho Evaluador";
 			this.groupBox1.ResumeLayout(false);
