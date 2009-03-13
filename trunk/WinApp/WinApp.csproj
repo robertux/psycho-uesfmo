@@ -161,5 +161,21 @@
       <Project>{8620E460-23C7-4F5D-8275-9C3C30BC2649}</Project>
       <Name>Funcionalidad</Name>
     </ProjectReference>
+    <COMReference Include="MSORUNLib">
+      <Guid>{B35FBDE9-7042-11D3-9C0F-00C04F72DD5F}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="Office">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
   </ItemGroup>
 </Project>

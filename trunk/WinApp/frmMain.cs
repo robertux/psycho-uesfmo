@@ -43,8 +43,8 @@ namespace WinApp
 		
 		private void CargarCombo()
 		{			
-			/*this.comboBox1.Items.Clear();
-			for(int i = DateTime.Now.Year; i >= (DateTime.Now.Year - 10); i--)
+			this.comboBox1.Items.Clear();
+			/*for(int i = DateTime.Now.Year; i >= (DateTime.Now.Year - 10); i--)
 				this.comboBox1.Items.Add(i);*/
 			foreach(int anio in manejadorAspirante.ConsultarAniosRegistroAspirantes(this.ad))
 				this.comboBox1.Items.Add(anio);
@@ -77,6 +77,8 @@ namespace WinApp
 		{
 			this.lblResultadoCeps.Text = "";
 			this.lblResultadoRaven.Text = "";
+			this.lblDetallesResultadoCeps.Text = "";
+			this.lblDetallesResultadoRaven.Text = "";
 			this.btnEvaluarCeps.Visible = false;
 			this.btnEvaluarRaven.Visible = false;
 			if(this.gridAspir1.SelectedRows.Count == 0) return;
@@ -147,6 +149,7 @@ namespace WinApp
 					this.btnDelAspir.Enabled = true;
 					this.label1.Text = "Alumnos(" + this.gridAspir1.Rows.Count.ToString() + ")";
 				}
+				this.CargarCombo();
 			}
 		}
 		
@@ -167,6 +170,7 @@ namespace WinApp
 					this.btnDelAspir.Enabled = false;
 				}
 				this.label1.Text = "Alumnos(" + this.gridAspir1.Rows.Count.ToString() + ")";
+				this.CargarCombo();
 			}
 		}
 		
@@ -254,6 +258,35 @@ namespace WinApp
 		void Button3Click(object sender, EventArgs e)
 		{
 			this.ComboBox1SelectedIndexChanged(this, new EventArgs());
+		}
+		
+		void GridAspir1MouseDown(object sender, MouseEventArgs e)
+		{
+			if(e.Button == MouseButtons.Right){
+				this.ctxGenReporte.Show((Control)this.gridAspir1, new Point(e.X, e.Y));
+			}
+		}
+		
+		void GridAspir1CellContextMenuStripNeeded(object sender, DataGridViewCellContextMenuStripNeededEventArgs e)
+		{
+			
+			
+		}
+		
+		void GenerarReporteIndividualToolStripMenuItemClick(object sender, EventArgs e)
+		{
+			frmReportGen frmGen = new frmReportGen(this.ad, int.Parse(this.comboBox1.Text));
+			frmGen.generarReporteAspir(this.gridAspir1.Aspirs[this.gridAspir1.SelectedCells[0].RowIndex]);
+		}
+		
+		void EditarAspiranteToolStripMenuItemClick(object sender, EventArgs e)
+		{
+			this.BtnEditAspirClick(this, new EventArgs());
+		}
+		
+		void EliminarAspiranteToolStripMenuItemClick(object sender, EventArgs e)
+		{
+			this.BtnDelAspirClick(this, new EventArgs());
 		}
 	}
 }

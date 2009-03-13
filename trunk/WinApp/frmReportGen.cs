@@ -57,12 +57,8 @@ namespace WinApp
 		public void CargarCarreras(string codFacultad)
 		{
 			this.cmbCarrera.Items.Clear();
-			if(this.cmbFacultad.Text == "[Todas]")
-			{
-				this.cmbCarrera.Items.Add("[Todas]");
-				this.cmbCarrera.SelectedIndex = 0;
-				return;
-			}
+			this.cmbCarrera.Items.Add("[Todas]");
+			if(codFacultad == "") return;
 			this.carreras = ManejadorMisc.GetCarreras(codFacultad, this.ad.ds.Tables["carreras"]);
 			foreach(Carrera ca in this.carreras)
 				this.cmbCarrera.Items.Add(ca.NombreCarrera);
@@ -92,6 +88,7 @@ namespace WinApp
 					return;
 			}
 			string carreraSelected = "";
+			string facultadSelected = "";
 			foreach(Carrera cr in this.carreras)
 			{				
 				if(cr.NombreCarrera == this.cmbCarrera.Text)
@@ -101,8 +98,20 @@ namespace WinApp
 				}
 			}
 			
+			foreach(Facultad fc in this.facultades)
+			{
+				if(fc.NombreFacultad == this.cmbFacultad.Text)
+				{
+					facultadSelected = fc.CodFacultad;
+					break;
+				}
+			}
+			
 			DataView vista = this.ad.ds.Tables["aspirantes"].DefaultView;
 			String strFiltro = "anioregistrado=" + this.anioRegistrado;
+			
+			if(this.cmbFacultad.Text != "[Todas]")
+				strFiltro += " AND facultad= '" + facultadSelected + "'";
 			
 			if(this.cmbCarrera.Text != "[Todas]")
 				strFiltro += " AND carrera= '" + carreraSelected + "'";
@@ -146,6 +155,19 @@ namespace WinApp
 				this.rutaArchivoGuardar = sfd.FileName;
 				this.textBox1.Text = sfd.FileName;
 			}
+		}
+		
+		public void generarReporteAspir(Aspirante aspir)
+		{
+			try{
+				PsychoReportGenerator rGen = new PsychoReportGenerator(this.rutaArchivoGuardar, this.ad);																						
+				aspir = ManejadorPruebas.GetResultados(aspir, this.ad.ds.Tables["resultadosceps"], this.ad.ds.Tables["resultadosraven"]);
+				rGen.AgregarAspirante(aspir);											
+				rGen.Cerrar();
+				MessageBox.Show("Archivo generado existosamente", "Aviso");
+				}catch(Exception ex){					
+					return;
+				}	
 		}
 	}
 }
