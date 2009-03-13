@@ -62,7 +62,7 @@
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
   <ItemGroup>
     <Reference Include="CrypterClassLib">
-      <HintPath>..\Funcionalidad\bin\Debug\CrypterClassLib.dll</HintPath>
+      <HintPath>bin\Debug\CrypterClassLib.dll</HintPath>
       <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="GridAddIns">
@@ -73,9 +73,12 @@
       <HintPath>..\Funcionalidad\bin\Debug\Interop.Microsoft.Office.Interop.Word.dll</HintPath>
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="MySql.Data, Version=1.0.7.30072, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
-    <Reference Include="nunit.framework">
-      <HintPath>..\..\cds\trunk\Test\bin\Debug\nunit.framework.dll</HintPath>
+    <Reference Include="Interop.Microsoft.Office.Interop.Word">
+      <HintPath>bin\Debug\Interop.Microsoft.Office.Interop.Word.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="MySql.Data">
+      <HintPath>bin\Debug\MySql.Data.dll</HintPath>
       <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="System" />
@@ -83,7 +86,10 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="XmlClassLib, Version=1.0.366.5448, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="XmlClassLib">
+      <HintPath>bin\Debug\XmlClassLib.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.cs" />
@@ -153,14 +159,6 @@
       <ProductName>.NET Framework 2.0</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
-    <ProjectReference Include="..\AccesoDatos\AccesoDatos.csproj">
-      <Project>{C21194FC-0454-47B8-AC42-476351712AB8}</Project>
-      <Name>AccesoDatos</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Funcionalidad\Funcionalidad.vbproj">
-      <Project>{8620E460-23C7-4F5D-8275-9C3C30BC2649}</Project>
-      <Name>Funcionalidad</Name>
-    </ProjectReference>
     <COMReference Include="MSORUNLib">
       <Guid>{B35FBDE9-7042-11D3-9C0F-00C04F72DD5F}</Guid>
       <VersionMajor>1</VersionMajor>
@@ -177,5 +175,13 @@
       <WrapperTool>tlbimp</WrapperTool>
       <Isolated>False</Isolated>
     </COMReference>
+    <ProjectReference Include="..\AccesoDatos\AccesoDatos.csproj">
+      <Project>{C21194FC-0454-47B8-AC42-476351712AB8}</Project>
+      <Name>AccesoDatos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Funcionalidad\Funcionalidad.vbproj">
+      <Project>{8620E460-23C7-4F5D-8275-9C3C30BC2649}</Project>
+      <Name>Funcionalidad</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>
