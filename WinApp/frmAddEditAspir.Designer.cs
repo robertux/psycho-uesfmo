@@ -73,7 +73,7 @@ namespace WinApp
 			this.txtApellidos.MaxLength = 50;
 			this.txtApellidos.Name = "txtApellidos";
 			this.txtApellidos.NumeroDeDecimales = 0;
-			this.txtApellidos.OtrosCaracteresPermitidos = "";
+			this.txtApellidos.OtrosCaracteresPermitidos = " ";
 			this.txtApellidos.Size = new System.Drawing.Size(420, 26);
 			this.txtApellidos.TabIndex = 0;
 			this.txtApellidos.TextChanged += new System.EventHandler(this.TxtApellidosTextChanged);
@@ -107,7 +107,7 @@ namespace WinApp
 			this.txtNombres.MaxLength = 50;
 			this.txtNombres.Name = "txtNombres";
 			this.txtNombres.NumeroDeDecimales = 0;
-			this.txtNombres.OtrosCaracteresPermitidos = "";
+			this.txtNombres.OtrosCaracteresPermitidos = " ";
 			this.txtNombres.Size = new System.Drawing.Size(420, 26);
 			this.txtNombres.TabIndex = 1;
 			this.txtNombres.TextChanged += new System.EventHandler(this.TxtNombresTextChanged);
@@ -132,7 +132,7 @@ namespace WinApp
 			this.txtDireccion.Multiline = true;
 			this.txtDireccion.Name = "txtDireccion";
 			this.txtDireccion.NumeroDeDecimales = 0;
-			this.txtDireccion.OtrosCaracteresPermitidos = "";
+			this.txtDireccion.OtrosCaracteresPermitidos = " ";
 			this.txtDireccion.Size = new System.Drawing.Size(420, 76);
 			this.txtDireccion.TabIndex = 8;
 			// 

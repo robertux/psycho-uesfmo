@@ -287,16 +287,6 @@ FuncionalidadClassLib
  aplica todos los criteios de evaluacion de las pruebas
  </summary>
 	<remarks></remarks>
-</member><member name="T:FuncionalidadClassLib.reporte_oficial">
-	<summary>
- Realiza los reportes oficiales
- Falta un pequeño manejo de errores, por si Word no esta instalado.
- </summary>
-</member><member name="T:FuncionalidadClassLib.reportes">
-	<summary>
- Objeto para crear reportes
- Falta un pequeño manejo de errores, por si Word no esta instalado.
- </summary>
 </member>
 </members>
 </doc>
