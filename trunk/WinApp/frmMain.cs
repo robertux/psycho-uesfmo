@@ -263,7 +263,7 @@ namespace WinApp
 		void GridAspir1MouseDown(object sender, MouseEventArgs e)
 		{
 			if(e.Button == MouseButtons.Right){
-				this.ctxGenReporte.Show((Control)this.gridAspir1, new Point(e.X, e.Y));
+				this.ctxAccionesAspir.Show((Control)this.gridAspir1, new Point(e.X, e.Y));
 			}
 		}
 		
@@ -283,8 +283,9 @@ namespace WinApp
 		{
 			this.BtnEditAspirClick(this, new EventArgs());
 		}
+								
 		
-		void EliminarAspiranteToolStripMenuItemClick(object sender, EventArgs e)
+		void ToolStripMenuItem2Click(object sender, EventArgs e)
 		{
 			this.BtnDelAspirClick(this, new EventArgs());
 		}

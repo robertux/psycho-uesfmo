@@ -36,6 +36,7 @@ namespace WinApp
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -60,10 +61,16 @@ namespace WinApp
 			this.comboBox1 = new System.Windows.Forms.ComboBox();
 			this.gridAspir1 = new WinApp.GridAspir();
 			this.label1 = new System.Windows.Forms.Label();
+			this.ctxAccionesAspir = new System.Windows.Forms.ContextMenuStrip(this.components);
+			this.editarAspiranteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+			this.generarReporteIndividualToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.groupBox1.SuspendLayout();
 			this.groupBox3.SuspendLayout();
 			this.groupBox2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.gridAspir1)).BeginInit();
+			this.ctxAccionesAspir.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// groupBox1
@@ -345,6 +352,7 @@ namespace WinApp
 			this.gridAspir1.TabIndex = 2;
 			this.gridAspir1.TotalEvaluados = 0;
 			this.gridAspir1.TotalPendientes = 0;
+			this.gridAspir1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.GridAspir1MouseDown);
 			this.gridAspir1.SelectionChanged += new System.EventHandler(this.GridAspir1SelectionChanged);
 			// 
 			// label1
@@ -356,6 +364,42 @@ namespace WinApp
 			this.label1.Size = new System.Drawing.Size(143, 37);
 			this.label1.TabIndex = 1;
 			this.label1.Text = "Alumnos";
+			// 
+			// ctxAccionesAspir
+			// 
+			this.ctxAccionesAspir.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+									this.editarAspiranteToolStripMenuItem,
+									this.toolStripMenuItem2,
+									this.toolStripSeparator1,
+									this.generarReporteIndividualToolStripMenuItem});
+			this.ctxAccionesAspir.Name = "ctxAccionesAspir";
+			this.ctxAccionesAspir.Size = new System.Drawing.Size(223, 76);
+			// 
+			// editarAspiranteToolStripMenuItem
+			// 
+			this.editarAspiranteToolStripMenuItem.Name = "editarAspiranteToolStripMenuItem";
+			this.editarAspiranteToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
+			this.editarAspiranteToolStripMenuItem.Text = "Editar aspirante...";
+			this.editarAspiranteToolStripMenuItem.Click += new System.EventHandler(this.EditarAspiranteToolStripMenuItemClick);
+			// 
+			// toolStripMenuItem2
+			// 
+			this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+			this.toolStripMenuItem2.Size = new System.Drawing.Size(222, 22);
+			this.toolStripMenuItem2.Text = "Eliminar aspirante...";
+			this.toolStripMenuItem2.Click += new System.EventHandler(this.ToolStripMenuItem2Click);
+			// 
+			// toolStripSeparator1
+			// 
+			this.toolStripSeparator1.Name = "toolStripSeparator1";
+			this.toolStripSeparator1.Size = new System.Drawing.Size(219, 6);
+			// 
+			// generarReporteIndividualToolStripMenuItem
+			// 
+			this.generarReporteIndividualToolStripMenuItem.Name = "generarReporteIndividualToolStripMenuItem";
+			this.generarReporteIndividualToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
+			this.generarReporteIndividualToolStripMenuItem.Text = "Generar reporte individual...";
+			this.generarReporteIndividualToolStripMenuItem.Click += new System.EventHandler(this.GenerarReporteIndividualToolStripMenuItemClick);
 			// 
 			// frmMain
 			// 
@@ -372,9 +416,15 @@ namespace WinApp
 			this.groupBox3.ResumeLayout(false);
 			this.groupBox2.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.gridAspir1)).EndInit();
+			this.ctxAccionesAspir.ResumeLayout(false);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+		private System.Windows.Forms.ToolStripMenuItem generarReporteIndividualToolStripMenuItem;
+		private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;		
+		private System.Windows.Forms.ToolStripMenuItem editarAspiranteToolStripMenuItem;
+		private System.Windows.Forms.ContextMenuStrip ctxAccionesAspir;
 		private System.Windows.Forms.Button button4;
 		private System.Windows.Forms.Button button3;
 		private System.Windows.Forms.Button button2;
@@ -395,11 +445,4 @@ namespace WinApp
 		private System.Windows.Forms.ComboBox comboBox1;
 		private WinApp.GridAspir gridAspir1;
 		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.GroupBox groupBox1;
-		
-		void Button4Click(object sender, System.EventArgs e)
-		{
-			
-		}
-	}
-}
+		private System.Windows.Forms.
