@@ -110,7 +110,6 @@ namespace WinApp
 			this.button4.Text = "Ayuda";
 			this.button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
 			this.button4.UseVisualStyleBackColor = true;
-			this.button4.Click += new System.EventHandler(this.Button4Click);
 			// 
 			// button3
 			// 
@@ -445,4 +444,6 @@ namespace WinApp
 		private System.Windows.Forms.ComboBox comboBox1;
 		private WinApp.GridAspir gridAspir1;
 		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.
+		private System.Windows.Forms.GroupBox groupBox1;
+        }
+}
