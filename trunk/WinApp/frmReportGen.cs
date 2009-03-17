@@ -138,8 +138,7 @@ namespace WinApp
 					}
 					rGen.Cerrar();					
 					MessageBox.Show("Archivo generado existosamente", "Aviso");
-				}catch(Exception ex){
-					throw ex;
+				}catch(Exception ex){					
 					MessageBox.Show("Ocurrio un error al generar el reporte. Intentelo nuevamente", "Error");
 				}				
 			this.Close();
