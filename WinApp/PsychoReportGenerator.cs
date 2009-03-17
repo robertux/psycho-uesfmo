@@ -109,7 +109,7 @@ namespace WinApp
 			oPara4.Range.Font.Bold = 1;						
 			oPara4.Range.Text = "\n\nResultados de la Prueba de Inteligencia (Tests de Raven)";			
 			oPara4.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter;
-			oPara4.SpaceAfter = 8;
+			oPara4.SpaceAfter = 5;
 			oPara4.Range.InsertParagraphAfter();						
 
 			Word.Table oTable2;
@@ -210,16 +210,21 @@ namespace WinApp
 			oPara11 = oDoc.Content.Paragraphs.Add(ref oMissing);
 			oPara11.Range.Font.Size = 12;			
 			oPara11.Range.Font.Name = "Arial";
-			oPara11.Range.Font.Bold = 0;						
-			oPara11.Range.Text = "\n\nF.__________________________________ \n Eduardo José Armando Martínez Vides \n Psicólogo Evaluador. JVPP No. 744";
-			oPara11.Range.InsertParagraphAfter();				
+			oPara11.Range.Font.Bold = 0;	
+			//oPara11.SpaceAfter = 5;
+			oPara11.Range.Text = "\n\nF.__________________________________ \n Eduardo José Armando Martínez Vides \n Psicólogo Evaluador. JVPP No. 744\n";
 			
-			Word.Range wrdRng4 = oDoc.Bookmarks.get_Item(ref oEndOfDoc).Range;			
-			object oCollapseEnd = Word.WdCollapseDirection.wdCollapseEnd;
 			object oPageBreak = Word.WdBreakType.wdPageBreak;
-			wrdRng4.Collapse(ref oCollapseEnd);
-			wrdRng4.InsertBreak(ref oPageBreak);
-			wrdRng4.Collapse(ref oCollapseEnd);
+			oPara11.Range.InsertBreak(ref oPageBreak);
+			
+			oPara11.Range.InsertParagraphAfter();
+			
+			
+			
+			//Word.Range wrdRng4 = oDoc.Bookmarks.get_Item(ref oEndOfDoc).Range;			
+			//object oCollapseEnd = Word.WdCollapseDirection.wdCollapseEnd;			
+			//wrdRng4.Collapse(ref oCollapseEnd);					
+			//wrdRng4.Collapse(ref oCollapseEnd);
 		}				
 		
 		public void Cerrar()
