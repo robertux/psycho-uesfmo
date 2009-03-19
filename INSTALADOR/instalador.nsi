@@ -263,9 +263,18 @@ Section "${NOMBREPROG}" SecBASE
   ;File ${RUTAEXE}\ayuda.swf
   ;File ${RUTAEXE}\busca.png
   
-  SetOutPath "$INSTDIR\recursos\"
+  SetOutPath "$INSTDIR\Media\"
   File ${RUTAEXE}\Media\*.png
+  
+  SetOutPath "$INSTDIR\Media\Raven\"
   File ${RUTAEXE}\Media\Raven\*.jpg
+  
+  SetOutPath "$INSTDIR\Ayuda\"
+  File ${RUTAEXE}\Ayuda\MANUAL*.doc
+  
+  SetOutPath "$INSTDIR\Ayuda\Videos\"
+  File ${RUTAEXE}\Ayuda\Videos\*
+  
   ;File ${RUTAEXE}\recursos\rac\*.png
   
   ;Store installation folder
@@ -290,9 +299,9 @@ Section "Accesos Directos" SecAccesosDirectos
   SetOutPath $INSTDIR
   CreateDirectory $SMPROGRAMS\${NOMBREPROG}
   CreateShortCut "$SMPROGRAMS\${NOMBREPROG}\${NOMBREPROG}.lnk" "$INSTDIR\${NOMBREPROG}.exe" ""
-  CreateShortCut "$SMPROGRAMS\${NOMBREPROG}\Ayuda.lnk" "$INSTDIR\ayuda.bat" ""
-  CreateShortCut "$SMPROGRAMS\${NOMBREPROG}\PlantillaExpediente.lnk" "$INSTDIR\plantillaExpediente.rtf" ""
-  CreateShortCut "$SMPROGRAMS\${NOMBREPROG}\PlantillaReceta.lnk" "$INSTDIR\plantillaReceta.rtf" ""
+  ;CreateShortCut "$SMPROGRAMS\${NOMBREPROG}\Ayuda.lnk" "$INSTDIR\ayuda.bat" ""
+  ;CreateShortCut "$SMPROGRAMS\${NOMBREPROG}\PlantillaExpediente.lnk" "$INSTDIR\plantillaExpediente.rtf" ""
+  ;CreateShortCut "$SMPROGRAMS\${NOMBREPROG}\PlantillaReceta.lnk" "$INSTDIR\plantillaReceta.rtf" ""
   ;CreateShortCut "$SMPROGRAMS\NSIS\MakeNSISW (Compiler GUI).lnk" "$INSTDIR\makensisw.exe"
   ;CreateShortCut "$SMPROGRAMS\NSIS\NSIS Documentation.lnk" "$INSTDIR\NSIS.chm"
   CreateShortCut "$SMPROGRAMS\${NOMBREPROG}\Desinstalar ${NOMBREPROG}.lnk" "$INSTDIR\Desinstalar-${NOMBREPROG}.exe"
