@@ -270,10 +270,10 @@ Section "${NOMBREPROG}" SecBASE
   File ${RUTAEXE}\Media\Raven\*.jpg
   
   SetOutPath "$INSTDIR\Ayuda\"
-  File ${RUTAEXE}\Ayuda\MANUAL*.doc
+  File ..\MANUAL\MANUAL*.doc
   
   SetOutPath "$INSTDIR\Ayuda\Videos\"
-  File ${RUTAEXE}\Ayuda\Videos\*
+  File ..\MANUAL\Videos\*
   
   ;File ${RUTAEXE}\recursos\rac\*.png
   
