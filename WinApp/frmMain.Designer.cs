@@ -102,6 +102,7 @@ namespace WinApp
 			// button4
 			// 
 			this.button4.FlatAppearance.BorderSize = 0;
+			this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
 			this.button4.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
 			this.button4.Location = new System.Drawing.Point(792, 19);
 			this.button4.Name = "button4";
@@ -195,9 +196,9 @@ namespace WinApp
 			this.btnEditAspir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
 			this.btnEditAspir.Image = ((System.Drawing.Image)(resources.GetObject("btnEditAspir.Image")));
 			this.btnEditAspir.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-			this.btnEditAspir.Location = new System.Drawing.Point(522, 19);
+			this.btnEditAspir.Location = new System.Drawing.Point(522, 18);
 			this.btnEditAspir.Name = "btnEditAspir";
-			this.btnEditAspir.Size = new System.Drawing.Size(84, 73);
+			this.btnEditAspir.Size = new System.Drawing.Size(84, 74);
 			this.btnEditAspir.TabIndex = 6;
 			this.btnEditAspir.Text = "Editar";
 			this.btnEditAspir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -212,7 +213,7 @@ namespace WinApp
 			this.btnAddAspir.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
 			this.btnAddAspir.Location = new System.Drawing.Point(432, 18);
 			this.btnAddAspir.Name = "btnAddAspir";
-			this.btnAddAspir.Size = new System.Drawing.Size(84, 73);
+			this.btnAddAspir.Size = new System.Drawing.Size(84, 74);
 			this.btnAddAspir.TabIndex = 6;
 			this.btnAddAspir.Text = "Agregar";
 			this.btnAddAspir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;

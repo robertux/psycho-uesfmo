@@ -44,6 +44,8 @@ namespace WinApp
 			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.button3 = new System.Windows.Forms.Button();
 			this.label1 = new System.Windows.Forms.Label();
+			this.label2 = new System.Windows.Forms.Label();
+			this.label3 = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
 			// button2
@@ -81,7 +83,7 @@ namespace WinApp
 			this.cmbCarrera.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cmbCarrera.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.cmbCarrera.FormattingEnabled = true;
-			this.cmbCarrera.Location = new System.Drawing.Point(12, 62);
+			this.cmbCarrera.Location = new System.Drawing.Point(12, 81);
 			this.cmbCarrera.Name = "cmbCarrera";
 			this.cmbCarrera.Size = new System.Drawing.Size(420, 28);
 			this.cmbCarrera.TabIndex = 16;
@@ -100,7 +102,7 @@ namespace WinApp
 			// textBox1
 			// 
 			this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.textBox1.Location = new System.Drawing.Point(12, 96);
+			this.textBox1.Location = new System.Drawing.Point(12, 115);
 			this.textBox1.Name = "textBox1";
 			this.textBox1.ReadOnly = true;
 			this.textBox1.Size = new System.Drawing.Size(330, 26);
@@ -112,7 +114,7 @@ namespace WinApp
 			this.button3.FlatAppearance.BorderSize = 0;
 			this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.button3.Location = new System.Drawing.Point(348, 96);
+			this.button3.Location = new System.Drawing.Point(348, 115);
 			this.button3.Name = "button3";
 			this.button3.Size = new System.Drawing.Size(85, 26);
 			this.button3.TabIndex = 18;
@@ -130,11 +132,29 @@ namespace WinApp
 			this.label1.Size = new System.Drawing.Size(421, 23);
 			this.label1.TabIndex = 21;
 			// 
+			// label2
+			// 
+			this.label2.Location = new System.Drawing.Point(12, 9);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(100, 16);
+			this.label2.TabIndex = 22;
+			this.label2.Text = "Facultad:";
+			// 
+			// label3
+			// 
+			this.label3.Location = new System.Drawing.Point(12, 63);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(100, 16);
+			this.label3.TabIndex = 23;
+			this.label3.Text = "Carrera:";
+			// 
 			// frmReportGen
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(445, 236);
+			this.Controls.Add(this.label3);
+			this.Controls.Add(this.label2);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.textBox1);
 			this.Controls.Add(this.cmbFacultad);
@@ -150,6 +170,8 @@ namespace WinApp
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private System.Windows.Forms.Label label3;
+		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Button button3;
 		private System.Windows.Forms.TextBox textBox1;
