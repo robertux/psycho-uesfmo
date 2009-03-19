@@ -1,0 +1,214 @@
+
+========================================================================
+	Léame de Biblioteca de Consulta Microsoft Encarta 2005
+	Léame de Biblioteca de Consulta Microsoft Encarta 2005 DVD
+	Léame de Enciclopedia Microsoft Encarta 2005
+========================================================================
+	Copyright 2004 Microsoft Corporation. Reservados todos los derechos.
+
+
+Gracias por comprar uno de los productos Microsoft Encarta 2005. Este archivo Léame contiene información actualizada sobre los productos Encarta, los requisitos del sistema y otros datos que no se han facilitado anteriormente. 
+
+Si desea obtener la información más reciente sobre productos Encarta, visite el sitio Web de soporte técnico de Microsoft en http://support.microsoft.com/default.aspx?LN=ES-ES&x=4&y=10
+
+
+Contenido de este archivo
+-----------------------------------------------------------------------
+
+1.  Requisitos del sistema para los productos Encarta 2005
+
+2.  Instalar los productos Encarta en una red
+
+3.  Cuestiones sobre Biblioteca de Consulta Encarta y Enciclopedia Encarta 
+
+4.  Cuestiones sobre el Investigador de Encarta
+
+========================================================================
+========================================================================
+1. Requisitos del sistema para los productos Encarta 2005
+
+========================================================================
+Los requisitos generales son:
+
+* Sistemas operativos de Windows 98, Windows 2000 Professional SP3, Windows Millennium Edition, Windows XP y Windows Server 2003
+
+* 64 MB de RAM para Windows 98 o Windows Millennium Edition (se recomienda 128 MB).
+
+* Al menos 128 MB de RAM para Windows 2000 Professional SP3, Windows XP o Windows Server 2003.
+
+* Monitor Super VGA de 16 bits o superior, compatible con resolución de 800 x 600 o superior.
+
+* 4 MB o más de memoria de vídeo.
+
+* Microsoft Mouse, IntelliMouse o compatible.
+
+* Tarjeta de sonido de 16 bits con altavoces o auriculares.
+
+* Internet Explorer 6.0 (incluido en el CD) o posterior. Puede utilizar otros exploradores predeterminados después de la instalación. La instalación de Internet Explorer 6.0 requiere más de 75 MB de espacio adicional en disco.
+
+* Para utilizar el Centro Web, Actualizar Encarta, Encarta Premium y otros componentes en línea necesita un módem de 28,8 Kbps o superior, acceso a Internet, 4 MB de espacio adicional en el disco duro para cada actualización mensual, estar registrado en Club Encarta y una cuenta en Microsoft Passport (necesaria para obtener acceso al Club Encarta). El acceso y uso de Internet puede implicar el pago de una tarifa a un proveedor de servicios de Internet, así como la aplicación de tarifas telefónicas locales o de larga distancia.
+
+
+Los requisitos adicionales para utilizar Biblioteca de Consulta Encarta 2005 DVD son:
+
+* PC Multimedia con procesador Pentium de 333 MHz o superior (recomendado al menos 500 MHz).
+* 430 MB de espacio libre en disco duro.
+* Para utilizar Mi primera Encarta, necesita 330 MB adicionales de espacio en el disco duro.
+* Para utilizar la función Copiar en el disco duro, se requieren 2.0 GB de espacio adicional en el disco duro.
+* Unidad de DVD.
+
+
+Los requisitos adicionales para utilizar Biblioteca de Consulta Encarta 2005 en CD (4 CD) son:
+
+* PC Multimedia con procesador Pentium de 333 MHz o superior (recomendado al menos 500 MHz).
+* 430 MB de espacio libre en disco duro.
+* Para utilizar Mi primera Encarta, necesita 330 MB adicionales de espacio en el disco duro.
+* Para utilizar la función Copiar en el disco duro, se requieren 2.0 GB de espacio adicional en el disco duro.
+* Unidad de CD de cuádruple velocidad o superior.
+
+
+Los requisitos adicionales para utilizar Enciclopedia Encarta 2005 son:
+
+* PC multimedia con un procesador Pentium de 300 MHz o superior.
+* 200 MB de espacio libre en disco duro.
+* Para utilizar la función Copiar en el disco duro, se requieren 500 MB de espacio adicional en el disco duro.
+* Unidad de CD de cuádruple velocidad o superior.
+
+========================================================================
+========================================================================
+2. Instalar los productos Encarta en una red
+
+========================================================================
+Los productos Encarta se pueden instalar en varios equipos de una red, por ejemplo, de un colegio o de una biblioteca. Consulte el Manual para el Administrador de la red (AG.rtf) para obtener instrucciones sobre el modo de instalar los productos Encarta en una red. Revise el Manual para el Administrador de la red antes de utilizar el Asistente para la instalación.
+
+Para ubicar el Manual para el Administrador de la red:
+1. Inserte el disco de instalación (CD 1 o DVD) de Encarta en la unidad de CD o DVD del equipo.
+2. En el Explorador de Windows, abra el CD o el DVD y, a continuación, abra la carpeta Support.
+3. Haga doble clic en el archivo AG.rtf.
+
+Nota: Enciclopedia Encarta, versión de prueba, no dispone de instalación en red. La instalación en red tampoco está disponible si Encarta venía instalada en su equipo, o si recibió los CD o el DVD de Encarta del fabricante de su equipo.
+
+========================================================================
+Ha fallado la instalación de Windows Media Player durante la instalación en red de una versión en japonés en Windows 2000
+
+Al realizar la instalación en red de la versión en japonés de Biblioteca de Consulta Encarta en un sistema operativo Windows 2000, es posible que reciba un mensaje de error y puede ser que Windows Media Player no se instale. Cuando finalice la instalación de Encarta, instale Windows Media Player haciendo doble clic en WMPMINI.EXE en la carpeta \REDIST\MS\WMPMINI del servidor de Encarta.
+
+========================================================================
+========================================================================
+3.  Cuestiones sobre Biblioteca de Consulta Encarta y Enciclopedia Encarta 
+
+========================================================================
+Mensaje de reiniciar el equipo al instalar Windows 2000 
+
+Si está instalando un producto Encarta en Windows 2000, es posible que reciba un mensaje indicando que reinicie el equipo durante el proceso de instalación. Cuando el equipo se haya reiniciado deberá iniciar una sesión como Administrador para completar la instalación. Si desea más información acerca de los privilegios del Administrador, consulte la Ayuda en pantalla de Windows 2000.
+
+========================================================================
+Mensaje de error al instalar en Windows 2000 
+
+Si instala el producto en un equipo con Windows 2000 en una versión no inglesa o en una versión en inglés pero sin configuración regional de fuera de Estados Unidos, puede ser que aparezca un error OLE32.dll durante la instalación. Haga clic en Aceptar. La instalación continuará normalmente.
+
+========================================================================
+Mensaje 1618 durante la instalación en Windows 98, Windows Millennium Edition, Windows 2000 o Windows XP.
+
+Haga clic en Aceptar si durante la instalación aparece el mensaje 1618. La instalación continuará normalmente.
+
+========================================================================
+Aparece el error No se encuentra la página o páginas en blanco al navegar por el contenido de Encarta
+
+Esto puede ser debido a un error con Microsoft XML Core Services(MSXML) 4.0. Descargue e instale la versión más actualizada de MSXML 4.0. Vaya a http://www.microsoft.com/downloads/search.aspx?displaylang=es y busque "MSXML 4.0".
+
+========================================================================
+Encarta se abre lentamente cuando el equipo tiene habilitado el software antivirus
+
+Si su equipo tiene habilitado un software antivirus, es posible que Encarta se abra muy lentamente. Para que Encarta se abra más rápidamente, agregue la extensión de archivo EIT a la lista de archivos seguros del software antivirus o no explore archivos con la extensión de archivo EIT.
+
+========================================================================
+Internet Explorer y Windows Media Player aparecen en otro idioma al instalar Encarta
+
+Internet Explorer y Windows Media Player pueden estar actualizados cuando instale Encarta. Si instala una versión de idioma de Encarta que no coincide con la versión de idioma de Internet Explorer o Windows Media Player, a partir de ese momento aparecerán en la misma versión de idioma que Encarta.
+
+========================================================================
+No se pueden reproducir elementos multimedia en Windows Media Player 9.0
+
+Es posible que algunos elementos multimedia, como los archivos de sonido, no se reproduzcan si Windows Media Player no está completamente instalado. Para finalizar la instalación de Windows Media Player, abra Windows Media Player (o haga doble clic en wmplayer.exe) y se le pedirá que complete el proceso de instalación.
+
+Nota: los productos de Encarta 2005 instalan Windows Media Player 7.1.
+ 
+========================================================================
+Puede ser que la rueda no funcione con IntelliMouse
+
+Encarta funciona con un mouse (ratón) de rueda, pero no utiliza todas las funciones de dicha rueda.
+ 
+========================================================================
+El comando Leer no funciona
+
+Si no puede utilizar la función Leer en Encarta, puede ser que el motor de síntesis de texto a voz haya sido desinstalado del equipo. 
+
+Para reinstalar el motor de síntesis de texto a voz:
+
+1. En Panel de control, haga doble clic en Agregar o quitar programas.
+2. En la lista de programas, haga doble clic en el nombre de su producto Encarta. (Si está utilizando Windows 2000 o Windows XP, haga clic en Cambiar.) 
+3. Haga clic en siguiente en el Asistente para la instalación.
+4. Seleccione Reparar y, a continuación, haga clic en Siguiente. 
+5. Siga las instrucciones de la pantalla para completar la instalación.
+
+Nota: el comando Leer no está disponible en Enciclopedia Encarta.
+
+========================================================================
+El texto no se lee o se lee en un idioma incorrecto
+
+El comando Leer no funciona correctamente si el idioma del sistema operativo es diferente al idioma de la versión que haya instalado de Encarta, y si ha iniciado la sesión como usuario y no como administrador.
+
+* Si tiene instalado Windows XP o Windows 2000 en inglés, el idioma en que este comando lee será inglés y no español.
+
+* Si tiene instalado Windows XP o Windows 2000 en español, el idioma en que este comando lee será español. Si no se da ninguno de estos casos, aparecerá la ventana Ayuda.
+
+========================================================================
+Los productos Encarta no son compatibles con versiones anteriores.
+
+Los productos Encarta no son compatibles con versiones de software de prelanzamiento o beta, como Windows Media Player, Internet Explorer o sistema operativo Windows. Los productos Encarta sólo son compatibles con versiones comercializadas de software.
+
+========================================================================
+No se escuchan sonidos
+
+Si inicia Encarta sin una tarjeta de sonido instalada, los archivos de sonido no se reproducirán.
+
+========================================================================
+========================================================================
+4. Cuestiones sobre el Investigador de Encarta
+
+========================================================================
+Disponibilidad
+
+El Investigador de Encarta sólo está disponible en los productos de Biblioteca de Consulta Encarta.
+
+========================================================================
+Requisitos del sistema
+
+Los requisitos mínimos del sistema para utilizar el Investigador de Encarta son:
+
+* 5 MB de espacio libre en disco duro además del espacio requerido para ejecutar el producto Encarta.
+
+* Internet Explorer 6.0 (incluido en el CD). Internet Explorer 6.0 requiere más de 75 MB de espacio adicional en disco además de la cantidad de espacio libre necesaria para ejecutar el producto Encarta. Puede utilizar otros exploradores predeterminados después de la instalación. 
+
+======================================================================== 
+No se pueden instalar versiones en idiomas diferentes
+
+En un equipo sólo puede instalarse la versión en un idioma del Investigador. Por ejemplo, si tiene instaladas la versión española y la inglesa de un producto Encarta, el investigador de Encarta utilizará la versión del idioma que instalara en primer lugar.
+
+========================================================================
+No es posible añadir caracteres japoneses al Investigador en un sistema operativo que no es japonés 
+
+No está admitida la adición de texto en japonés al Investigador de Encarta en sistemas operativos que no están en japonés. Si tiene que incluir caracteres japoneses en su informe, elabórelo en el Investigador de Encarta y, a continuación, copie directamente los caracteres de Internet Explorer en el documento final del informe.
+
+========================================================================
+Internet Explorer se abre con el panel Investigador de Encarta
+
+Si abre el Investigador de Encarta y, a continuación, abre Internet Explorer, el panel del Investigador de Encarta permanecerá abierto. Para cerrarlo, haga clic en la X de la parte superior derecha de la sección del Investigador.  
+
+========================================================================
+
+
+
+
+
