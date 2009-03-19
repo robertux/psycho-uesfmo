@@ -155,7 +155,9 @@
       <DependentUpon>frmReportGen.cs</DependentUpon>
     </EmbeddedResource>
     <BaseApplicationManifest Include="Properties\app.manifest" />
-    <None Include="WinApp.exe.config" />
+    <None Include="WinApp.exe.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
