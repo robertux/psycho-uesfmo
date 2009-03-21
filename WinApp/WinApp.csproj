@@ -151,9 +151,6 @@
     <EmbeddedResource Include="frmRaven.resx">
       <DependentUpon>frmRaven.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmReportGen.resx">
-      <DependentUpon>frmReportGen.cs</DependentUpon>
-    </EmbeddedResource>
     <BaseApplicationManifest Include="Properties\app.manifest" />
     <None Include="WinApp.exe.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
