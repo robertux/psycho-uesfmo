@@ -299,7 +299,7 @@ Section "Accesos Directos" SecAccesosDirectos
   SetOutPath $INSTDIR
   CreateDirectory $SMPROGRAMS\${NOMBREPROG}
   CreateShortCut "$SMPROGRAMS\${NOMBREPROG}\${NOMBREPROG}.lnk" "$INSTDIR\${NOMBREPROG}.exe" ""
-  ;CreateShortCut "$SMPROGRAMS\${NOMBREPROG}\Ayuda.lnk" "$INSTDIR\ayuda.bat" ""
+  CreateShortCut "$SMPROGRAMS\${NOMBREPROG}\Ayuda.lnk" "$INSTDIR\Ayuda\Videos\index.htm" ""
   ;CreateShortCut "$SMPROGRAMS\${NOMBREPROG}\PlantillaExpediente.lnk" "$INSTDIR\plantillaExpediente.rtf" ""
   ;CreateShortCut "$SMPROGRAMS\${NOMBREPROG}\PlantillaReceta.lnk" "$INSTDIR\plantillaReceta.rtf" ""
   ;CreateShortCut "$SMPROGRAMS\NSIS\MakeNSISW (Compiler GUI).lnk" "$INSTDIR\makensisw.exe"
